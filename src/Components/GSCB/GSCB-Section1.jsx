@@ -5,6 +5,7 @@ import Marquee from "react-fast-marquee";
 import { BsFillEnvelopeAtFill } from "react-icons/bs";
 import { MdPreview } from "react-icons/md";
 import { FaHandshake } from "react-icons/fa";
+import SplitType from "split-type";
 
 const marquee_imgs = [
   "https://www.make.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fun655fb9wln6%2F4XvJVi6UxVYuBoNcqtYnUO%2F51dc6ab3d5fb7a294e9c1ae82ec60c6f%2FGroup_86352.png&w=1200&q=90",
@@ -16,149 +17,211 @@ const marquee_imgs = [
 ];
 
 const Section1 = ({ dark }) => {
-  const [lettersRef, setlettersRef] = useArrayRef();
+  // const [lettersRef, setlettersRef] = useArrayRef();
   const triggerRef = useRef(null);
 
-  function useArrayRef() {
-    const lettersRef = useRef([]);
-    lettersRef.current = [];
-    return [lettersRef, (ref) => ref && lettersRef.current.push(ref)];
-  }
+  // function useArrayRef() {
+  // const lettersRef = useRef([]);
+  //   lettersRef.current = [];
+  //   return [lettersRef, (ref) => ref && lettersRef.current.push(ref)];
+  // }
 
   gsap.registerPlugin(ScrollTrigger);
   const text =
     "GCEP (Global Collabo Educational Partnership) is an initiative by BAOIAM aimed at building strong, innovative alliances with schools, colleges, and educational institutions worldwide. Through GCEP, we collaborate to enhance the quality of education and create new opportunities for students and educators alike.";
 
-    const color =dark ? "white":"black";
-    const defaultColor=dark?'text-indigo-500':'text-slate-200';
-    
+  const defaultColor = dark ? "text-indigo-500" : "text-black";
+
+  // useEffect(() => {
+  //   const typeSplit = new SplitText('.letter2', {
+  //     types: 'lines, words, chars',
+  //   });
+
+  // gsap.fromTo(
+  //     typeSplit.lines,
+  //     { opacity: 0, y: 40 },
+  //     {
+  //       opacity: 1,
+  //       duration: 1,
+  //       y: 0,
+  //       ease: 'back.inOut',
+  //       stagger: 0.2,
+  //       scrollTrigger: {
+  //         trigger: '.letterdivs',
+  //         start: 'top 90%',
+  //         end: 'bottom 85%',
+  //       },
+  //     }
+  //   );
+  // }, [dark]);
+
   useEffect(() => {
-    const anim = gsap.to(lettersRef.current, {
-      scrollTrigger: {
-        trigger: triggerRef.current,
-        scrub: 6,
-        start: "top 60%",
-        end: "bottom 85%",
-      },
-      color: color,
-      stagger: 0.1,
+    const typeSplit = new SplitType(".letter2", {
+      types: "lines",
     });
+
+    const anim = gsap.fromTo(
+      typeSplit.lines,
+      { opacity: 0, y: 40 },
+      {
+        opacity: 1,
+        duration: 0.7,
+        y: 0,
+        ease: "power1.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".letterdivs",
+          start: "top 60%",
+          end: "bottom 80%",
+        },
+      }
+    );
+
     return () => {
+      typeSplit.revert();
       anim.kill();
     };
-  }, [lettersRef,dark]);
-
-
-  const stepRefs = useRef([]); // Array to hold references for the steps
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    stepRefs.current.forEach((step, index) => {
-      gsap.fromTo(
-        step,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          delay: index * 0.3, // Adding a stagger effect
-          scrollTrigger: {
-            trigger: step, // Trigger animation for each step
-            start: "top 60%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
   }, [dark]);
 
-  return (
-    <section className="flex items-center justify-evenly flex-col  ">
-      <div
-        ref={triggerRef}
-        className="px-[6vw] xs:px-4 md:py-12 text-center  "
-      >
-        <div className="w-full  my-8 md:my-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
-        {text.split("").map((letter, index) => (
-          <span
-            className={`leading-[3rem] md:leading-[4rem] dark:drop-shadow-[0_0_0.03rem_white] text-xl md:text-3xl font-medium  max-xs:text-white ${defaultColor}`}
-            key={index}
-            ref={setlettersRef}
-          >
-            {letter}
-          </span>
-        ))}
-        <div className="w-full my-8 md:my-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+  useEffect(() => {
+    gsap.fromTo(
+      ".border-expand",
+      {
+        scaleX: 0.1,
+        transformOrigin: "center",
+      },
+      {
+        scaleX: 1,
+        duration: 1,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".gcepdiv1",
+          start: "top 80%",
+          end: "bottom 85%",
+        },
+      }
+    );
 
+    gsap.fromTo(
+      ".border-expand2",
+      {
+        scaleX: 0.1,
+        transformOrigin: "center",
+      },
+      {
+        scaleX: 1,
+        duration: 1,
+        ease: "back.inOut",
+        scrollTrigger: {
+          trigger: ".gcepdiv1",
+          start: "top 30%",
+          end: "bottom 85%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".cards",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".carddiv",
+          start: "top 80%",
+          end: "bottom 90%",
+        },
+      }
+    );
+  }, []);
+
+  return (
+    <section className="gcepdiv1 flex items-center justify-evenly flex-col  ">
+      <div className="letterdivs px-[6vw] xs:px-4 md:py-12 text-center">
+        <div className="border-expand  w-full  my-8 md:my-10 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
+
+        <h2
+          className='letter2 font-semibold leading-[2rem] md:leading-[3rem] lg:leading-[4rem] tracking-wide md:text-2xl lg:text-3xl'
+        >
+          GCEP (Global Collabo Educational Partnership) is an initiative by
+          BAOIAM aimed at building strong, innovative alliances with schools,
+          colleges, and educational institutions worldwide. Through GCEP, we
+          collaborate to enhance the quality of education and create new
+          opportunities for students and educators alike.
+        </h2>
+
+        <div className="border-expand2  w-full my-8 md:my-10 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 mx-auto"></div>
       </div>
-   
 
       {/* Join */}
 
-      <section className="w-full h-full py-8 px-6 lg:px-12 max-xs:px-4">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
-          How to <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent"> Join GCEP</span> ?
-        </h2>
-        <p className="text-base lg:text-lg mt-4 max-xs:text-sm">
-          Follow these steps to become a partner and collaborate with us.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-md:grid-cols-1">
-        {/* Step 1 */}
-        <div
-          ref={(el) => (stepRefs.current[0] = el)}
-          className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-        >
-          <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
-            <span className="text-2xl font-bold"><BsFillEnvelopeAtFill /></span>
-          </div>
-          <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
-            Submit an Inquiry
-          </h3>
-          <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
-            Submit an inquiry via the partnership form below.
+      <section className="carddiv w-full h-full pb-8 px-6 lg:px-12">
+        <div className="text-center mb-12">
+          <h2 className="cards text-nowrap text-3xl md:text-4xl text-center mb-8 lg:mb-5 font-bold">
+            How to{" "}
+            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+              {" "}
+              Join GCEP
+            </span>{" "}
+            ?
+          </h2>
+          <p className="cards text-base lg:text-lg mt-4 max-xs:text-sm">
+            Follow these steps to become a partner and collaborate with us.
           </p>
         </div>
 
-        {/* Step 2 */}
-        <div
-          ref={(el) => (stepRefs.current[1] = el)}
-          className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-        >
-          <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
-            <span className="text-2xl font-bold"><MdPreview /></span>
+        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-md:grid-cols-1">
+          {/* Step 1 */}
+          <div className="cards flex flex-col items-center bg-white dark:bg-white/10 dark:border dark:border-white p-6 lg:p-8 rounded-lg shadow-md hover:shadow-lg dark:shadow-gray-200 transition-shadow duration-300">
+            <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
+              <span className="text-2xl font-bold">
+                <BsFillEnvelopeAtFill />
+              </span>
+            </div>
+            <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200 max-xs:text-lg">
+              Submit an Inquiry
+            </h3>
+            <p className="text-sm lg:text-lg text-gray-600 dark:text-gray-400 text-center max-xs:text-base">
+              Submit an inquiry via the partnership form below.
+            </p>
           </div>
-          <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 max-xs:text-lg">
-            Review & Discuss
-          </h3>
-          <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
-            Our team will review your institution’s goals and discuss how we
-            can collaborate.
-          </p>
-        </div>
 
-        {/* Step 3 */}
-        <div
-          ref={(el) => (stepRefs.current[2] = el)}
-          className="flex flex-col items-center bg-white p-6 lg:p-8 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
-        >
-          <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
-            <span className="text-2xl font-bold"><FaHandshake/></span>
+          {/* Step 2 */}
+          <div className="cards flex flex-col items-center bg-white dark:bg-white/10 dark:border dark:border-white p-6 lg:p-8 rounded-lg shadow-md hover:shadow-lg dark:shadow-gray-200 transition-shadow duration-300">
+            <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
+              <span className="text-2xl font-bold">
+                <MdPreview />
+              </span>
+            </div>
+            <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200 max-xs:text-lg">
+              Review & Discuss
+            </h3>
+            <p className="text-sm lg:text-lg text-gray-600 dark:text-gray-400 text-center max-xs:text-base">
+              Our team will review your institution’s goals and discuss how we
+              can collaborate.
+            </p>
           </div>
-          <h3 className="text-xl lg:text-2xl font-semibold mb-4 w-full text-center text-gray-800 max-xs:text-lg">
-            Tailored Partnership
-          </h3>
-          <p className="text-sm lg:text-lg text-gray-600 text-center max-xs:text-base">
-            Once approved, we will co-create a tailored partnership plan to
-            meet your educational needs.
-          </p>
+
+          {/* Step 3 */}
+          <div className="cards flex flex-col items-center bg-white dark:border dark:border-white  dark:bg-white/10 p-6 lg:p-8 rounded-lg shadow-md hover:shadow-lg dark:shadow-gray-200 transition-shadow duration-300">
+            <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
+              <span className="text-2xl font-bold">
+                <FaHandshake />
+              </span>
+            </div>
+            <h3 className="text-xl lg:text-2xl font-semibold mb-4 w-full text-center text-gray-800 dark:text-gray-200 max-xs:text-lg">
+              Tailored Partnership
+            </h3>
+            <p className="text-sm lg:text-lg text-gray-600 dark:text-gray-400 text-center max-xs:text-base">
+              Once approved, we will co-create a tailored partnership plan to
+              meet your educational needs.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </section>
   );
 };

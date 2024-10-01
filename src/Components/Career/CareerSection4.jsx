@@ -53,29 +53,33 @@ export const CareerSection4 = () => {
   ];
   return (
     <>
-      <div className="dark:bg-black min-h-screen bg-amber-50 flex flex-col items-center justify-center p-8">
-        <h1 className="text-2xl lg:text-4xl md:text-4xl sm:text-3xl font-bold mb-8 text-gray-900">
-          {" "}
-          Current <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
-          Job Openings
-          </span>  
+      <div className="dark:bg-black bg-white w-full flex flex-col items-center justify-center p-4 lg:p-8 pt-0">
+        {/* Title Section */}
+        <h1 className="text-2xl xl:text-4xl lg:text-3xl md:text-4xl sm:text-3xl font-bold mb-4 lg:mb-8 text-gray-900 text-center dark:text-white dark:font-semibold">
+          Current{" "}
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+            Job Openings
+          </span>
         </h1>
-        <p className="text-gray-600 mb-8 text-xs lg:tex-bas md:text-base sm:text-base">
+        <p className="text-gray-600 mb-6 text-xs lg:text-base md:text-base sm:text-base text-center dark:text-gray-400">
           Hand-picked jobs featured depending on popularity and benefits
         </p>
-        <div className="flex flex-col items-center justify-center py-10">
-          <div className="mb-6">
+
+        {/* Illustration Section */}
+        <div className="flex flex-col items-center justify-center pt-2 pb-4">
+          <div className="mb-4 lg:mb-6">
             <img
               src={illu}
               alt="Job Vacancy Illustration"
-              className="w-72 h-72 object-cover" // Adjust width and height here
+              className="w-48 h-48 lg:w-72 lg:h-72 object-cover" // Adjust width and height for responsiveness
             />
           </div>
-          <h2 className="lg:text-lg md:text-lg sm:text-sm text-sm font-bold text-gray-700">
+          <h2 className="lg:text-lg md:text-lg sm:text-sm text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-pink-500 text-center">
             Currently No Open Positions, But Stay Tuned for Future
             Opportunities!
           </h2>
         </div>
+
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {jobs.map((job, index) => (
             <div

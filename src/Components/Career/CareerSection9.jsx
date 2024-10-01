@@ -42,20 +42,23 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="my-12 relative z-10">
+    <div className="pb-12 pt-3 relative z-10 dark:bg-black">
       <div className="text-center max-w-3xl mx-auto flex flex-col gap-2">
-        <h2 className="font-extrabold text-2xl md:text-4xl lg:text-4xl sm:text-4xl text-black p-3">
-          {data.title}
+        <h2 className="font-extrabold dark:text-white text-2xl md:text-4xl xl:text-4xl lg:text-3xl sm:text-4xl text-black p-3 ">
+          What Our{" "}
+          <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+            Employees Say
+          </span>{" "}
         </h2>
         {/* <p className="mt-4 leading-relaxed text-black">{data.description}</p> */}
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4">
+      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-6">
         {data.testimonials.map((testimonial, index) => (
           <div
             key={index}
             ref={(el) => (testimonialRefs.current[index] = el)}
-            className="relative w-full mb-6 p-6 rounded-lg shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white"
+            className="relative w-full dark:bg-[#080529] mb-6 p-6 rounded-lg shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white"
           >
             {/* Profile Image */}
             <img
@@ -65,7 +68,7 @@ const Testimonials = () => {
             />
             {/* Testimonial Quote */}
             <div className="mt-8 text-center">
-              <p className="lg:text-sm md:text-xs sm:text-xs text-xs text-gray-800 leading-relaxed">
+              <p className="dark:text-gray-100 lg:text-sm md:text-xs sm:text-xs text-xs text-gray-800 leading-relaxed">
                 {testimonial.quote}
               </p>
             </div>
@@ -77,7 +80,7 @@ const Testimonials = () => {
             </div>
             {/* Name */}
             <div className="mt-2 text-center">
-              <h4 className="lg:text-sm md:text-xs sm:text-xs text-xs font-bold text-gray-900">
+              <h4 className="dark:text-gray-100 lg:text-sm md:text-xs sm:text-xs text-xs font-bold text-gray-900">
                 {testimonial.name}
               </h4>
             </div>

@@ -11,79 +11,138 @@ gsap.registerPlugin(ScrollTrigger);
 const How = () => {
   const iconBoxesRef = useRef([]);
 
+
   useEffect(() => {
     // Ensure GSAP targets are correctly referenced
-    if (iconBoxesRef.current.length > 0) {
-      iconBoxesRef.current.forEach((el, index) => {
-        gsap.fromTo(
-          el,
-          { opacity: 0, y: 50 }, // Initial state
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: el, // Each icon box will be triggered when it comes into view
-              start: "top 80%", // When 85% of the element is in view
-              end: "bottom 60%", // Animation completes when 60% of the element is in view
-              toggleActions: "play none none reverse", // Trigger actions
-              markers: false, // Set to true for debugging markers
-            },
-          }
-        );
-      });
-    }
-  }, []);
+    // if (iconBoxesRef.current.length > 0) {
+    //   iconBoxesRef.current.forEach((el, index) => {
+    //     gsap.fromTo(
+    //       el,
+    //       { opacity: 0, y: 50 }, // Initial state
+    //       {
+    //         opacity: 1,
+    //         y: 0,
+    //         duration: 1.2,
+    //         ease: "power3.out",
+    //         scrollTrigger: {
+    //           trigger: el, // Each icon box will be triggered when it comes into view
+    //           start: "top 80%", // When 85% of the element is in view
+    //           end: "bottom 60%", // Animation completes when 60% of the element is in view
+    //           toggleActions: "play none none reverse", // Trigger actions
+    //           markers: false, // Set to true for debugging markers
+    //         },
+    //       }
+    //     );
+    //   });
+    // }
+
+
+
+
+
+
+const tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:'.sectiondiv1',
+    start:'top 80%',
+    end:'bottom 85%'
+  }
+})
+
+tl.fromTo('.section1',{
+  opacity:0,
+  y:30
+},
+{
+  opacity:1,
+  y:0,
+  duration:0.6,
+  ease:'power1.out',
+  stagger:0.2,
+})
+
+
+tl.fromTo('.sec-anime1',{
+  opacity:0,
+  y:30,
+},
+{
+  opacity:1,
+  y:0,
+  duration:0.6,
+  ease:'power1.out',
+
+},'-=0.5')
+
+tl.fromTo('.sec-anime2',{
+  opacity:0,
+  y:30,
+},
+{
+  opacity:1,
+  y:0,
+  duration:0.6,
+  ease:'power1.out',
+
+},
+'-=0.4')
+
+tl.fromTo('.sec-anime3',{
+  opacity:0,
+  y:30,
+},
+{
+  opacity:1,
+  y:0,
+  duration:0.6,
+  ease:'power1.out',
+},
+'-=0.3'
+)
+
+ }, []);
 
   return (
     <>
-      <div className="flex justify-center my-4">
-        <div className="w-[80%] xl:w-[85%] text-center">
-          <h1 className="text-3xl sm:text-4xl my-5 font-bold">
-            How we{" "}
-            <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
-              Work
+      <div className="sectiondiv1 flex justify-center xl:-mt-10">
+        <div className="w-[80%] text-center">
+          <h1 className="section1 text-3xl sm:text-4xl my-5 font-extrabold">
+            Our {" "}
+            <span className="bg-gradient-to-r from-pink-500 to-indigo-600 bg-clip-text text-transparent">
+              Workflow
             </span>
           </h1>
-          <p className="mx-auto w-full lg:w-[80%]">
-            We create high-quality courses mentored by experts, offering
-            full-time support, live corporate training, placement help, and
-            networking opportunities.
+          <p className="section1 text-xs md:text-base mx-auto text-slate-600 dark:text-slate-300 w-full lg:w-[80%]">
+            We provide the most in demand courses, accompanied by professional mentors and guidance at every stage. After a successful learning program, we offer placements support, ensuring assistance continues even after the courses conclude.
           </p>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5 w-full px-10 mt-10 mb-[4rem] mx-auto">
+      <div className="sec-anime1 grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-5 w-full px-10 xl:px-16 mt-10 mb-[4rem] mx-auto">
         <IconBox
-          ref={(el) => (iconBoxesRef.current[0] = el)}
           icon={<GoGear />}
-          title="Expert Guidance"
-          text="Boost your confidence with guidance from top experts."
+          title="Professional Mentorship"
+          text="Boost your career with right guidance from top notch experts"
         />
         <IconBox
-          ref={(el) => (iconBoxesRef.current[1] = el)}
           icon={<IoPeopleOutline />}
-          title="Community Support"
-          text="Join discussions and share ideas with a supportive community."
+          title="Group Collaboration"
+          text="You can participate in group discussions where your opinions are valued, heard and implemented.           "
         />
         <IconBox
-          ref={(el) => (iconBoxesRef.current[2] = el)}
           icon={<GoProjectRoadmap />}
-          title="Live Projects"
-          text="Gain practical knowledge by working on live corporate projects."
+          title="Real-Time Projects"
+          text="After completing theoretical knowledge, you will receive practical, hands-experience while working on live projects"
         />
         <IconBox
-          ref={(el) => (iconBoxesRef.current[3] = el)}
           icon={<HiOutlineRocketLaunch />}
-          title="Placement Help"
-          text="Learn interview skills and land top jobs with our guidance."
+          title="Placement Assistance"
+          text="Learn how to ace any interview with our comprehensive placement assistance program."
         />
         <IconBox
-          ref={(el) => (iconBoxesRef.current[4] = el)}
           icon={<GoGlobe />}
-          title="Networking & Funding"
-          text="Enhance networking and secure financial aid for your business."
+          title="Relationship Building"
+          text="Discover how to build valuable connections and access funding support."
         />
       </div>
     </>
@@ -91,14 +150,14 @@ const How = () => {
 };
 
 const IconBox = React.forwardRef(({ icon, title, text }, ref) => (
-  <div ref={ref} className="text-center my-2">
-    <div className="text-[3rem] flex justify-center mb-4">
-      <div className="rounded-full p-3 text-indigo-600 border-2 border-indigo-600">
+  <div className="sectiondiv1 text-center mx-auto w-full my-2">
+    <div className="text-4xl flex justify-center mb-4">
+      <div className="sec-anime1 rounded-full p-3 text-indigo-500 border-indigo-500 border-2">
         {icon}
       </div>
     </div>
-    <h2 className="text-nowrap text-lg font-bold mb-2">{title}</h2>
-    <p className="text-sm tracking-tight">{text}</p>
+    <h2 className="text-lg font-semibold mb-2 sec-anime2">{title}</h2>
+    <p className="text-sm tracking-tight sec-anime3">{text}</p>
   </div>
 ));
 

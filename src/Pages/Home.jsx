@@ -18,13 +18,15 @@ import { brands } from "../assets/BrandPartners/Brands";
 import { universities } from "../assets/Universities/Universities";
 import OurReach from "../Components/Home/OurReach";
 import ExploreSubjects from "../Components/College/ExploreSubjects";
+import TeamCard from "../Components/Home/TeamCard";
+import { TeamSwiper } from "../Components/OurTeam Components/TeamSwiper";
 const Home = ({ dark }) => {
-  document.title = "Baoiam - Home";
+  document.title = "Baoiam Innovations | Home";
   const navigate = useNavigate();
 
   return (
     <>
-      <div className="max-w-11/12 mx-auto">
+      {/* <div className="max-w-11/12 mx-auto"> */}
         <Hero />
         <How />
         {/* <ExploreSubjects /> */}
@@ -32,14 +34,16 @@ const Home = ({ dark }) => {
         <ServicesTab />
         <Partners />
         <Courses />
+        <Categories />
         <UniversityPartners />
-        {/* <Categories /> */}
 
         <Protocol />
-        <JoinNow />
+        {/* <JoinNow /> */}
         <OurTeam />
+        {/* <TeamCard /> */}
+        {/* <TeamSwiper /> */}
         <Phone />
-      </div>
+      {/* </div> */}
     </>
   );
 };

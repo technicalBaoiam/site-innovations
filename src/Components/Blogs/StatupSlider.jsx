@@ -53,7 +53,7 @@ export const StatupSlider = () => {
   const swiperRef = useRef(null);
   useEffect(() => {
     gsap.fromTo(
-      ".b3",
+      ".b4",
       { opacity: 0, y: 30 },
       {
         opacity: 1,
@@ -62,12 +62,13 @@ export const StatupSlider = () => {
         ease: "back.inOut",
         stagger: 0.3,
         scrollTrigger: {
-          trigger: ".bdiv2",
+          trigger: ".bdiv4",
           start: "top 90%",
           end: "bottom 80%",
         },
       }
     );
+
   }, []);
 
   const handlePrev = () => {
@@ -83,12 +84,12 @@ export const StatupSlider = () => {
   };
 
   return (
-    <div className='my-12'>
+    <div className='my-12 bdiv4'>
       <div>
         {" "}
-        <h1 className='m-8 text-3xl font-bold text-center'>Featured Blogs</h1>
+        <h1 className='b4 m-6 text-3xl font-bold text-center'>Featured Blogs</h1>
       </div>
-      <div className='mb-6 mt-8 px-10'>
+      <div className='mb-6 md:px-10 b4'>
         <Swiper
           keyboard={{
             enabled: true,
@@ -106,35 +107,35 @@ export const StatupSlider = () => {
               slidesPerView: 3,
             },
           }}
-          onSlideChange={() => console.log("hi")}
-          onSwiper={(swiper) => console.log("")}
-          className='b3 w-full m-auto p-6  rounded-lg  flex flex-col justify-center items-center gap-4'
+          // onSlideChange={() => console.log("hi")}
+          // onSwiper={(swiper) => console.log("")}
+          className="b3 w-full m-auto p-6  rounded-lg  flex flex-col justify-center items-center gap-4"
         >
           {blog_slider?.map((item, i) => {
             return (
               <SwiperSlide
-                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
+                className=' p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
                 key={item.id}
               >
                 <Link to={`/Blogdetail/${i}`}>
-                  <div className='relative'>
+                  <div className="relative">
                     <img
-                      className='w-full h-48 object-cover'
+                      className="w-full h-48 object-cover"
                       src={item.imgSrc}
                       alt={`${item.title}`}
                     />
                     {/* Button positioned over the image */}
                     <button
-                      type='button'
-                      className='absolute bottom-2 left-3  bg-slate-400 transition-all text-black text-xs font-medium rounded-full p-1'
+                      type="button"
+                      className="absolute bottom-2 left-3 dark:bg-slate-300  bg-slate-400 transition-all text-black text-xs font-medium rounded-lg p-2"
                     >
                       {item.category}
                     </button>
                   </div>
-                  <div className='p-4 flex-grow '>
-                    <h2 className='text-lg font-bold my-2'>{item.text}</h2>
+                  <div className="p-4 flex-grow ">
+                    <h2 className="text-lg font-bold my-2">{item.text}</h2>
                     <span
-                      className='text-sm text-slate-700 font-semibold'
+                      className="text-sm text-slate-700 dark:text-slate-300 font-semibold"
                       style={{
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
@@ -144,7 +145,7 @@ export const StatupSlider = () => {
                     >
                       {item.des}
                     </span>
-                    <p className='text-xs text-slate-500  font-medium mt-2'>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-2">
                       {item.info}
                     </p>
                   </div>
@@ -154,11 +155,11 @@ export const StatupSlider = () => {
           })}
           {/* Swiper navigation buttons */}
           <div
-            className='swiper-button-prev bg-gray-800 p-2 rounded-full'
+            className="swiper-button-prev bg-gray-800 p-2 rounded-full"
             onClick={handlePrev}
           ></div>
           <div
-            className='swiper-button-next bg-gray-800 p-2 rounded-full'
+            className="swiper-button-next bg-gray-800 p-2 rounded-full"
             onClick={handleNext}
           ></div>
         </Swiper>

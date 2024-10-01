@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CourseCard from "../Components/College/CourseCard";
+import CourseCard from "../Components/CourseCommon/CourseCard";
 import CoursesList from "../Components/CoursesList";
 import { Link, useParams } from "react-router-dom";
 import FilterSidebar from "../Components/College/CourseFilters";

@@ -7,17 +7,19 @@ import JoinUs from "../Components/OurTeam Components/JoinUs";
 import gsap from 'gsap'
 
 export const OurTeam = () => {
-  document.title = "Baoiam - Our Team";
+  document.title = "Baoiam Innovations | Our Team";
+
+
+
   useEffect(() => {
     window.scrollTo(0, 0);
-
-
-gsap.fromTo('.t1',{opacity:0,y:100},
+  gsap.fromTo('.t1',{opacity:0,
+  y:40},
   {opacity:1,
     y:0,
     duration:1,
     ease:'power1.inOut',
-    stagger:0.3,
+    stagger:0.2,
   })
 
 
@@ -25,12 +27,12 @@ gsap.fromTo('.t1',{opacity:0,y:100},
 
   return (
     <div className=" w-11/12 pb-12 mx-auto flex flex-col gap-4">
-      <div className="">
-        <h1 className="t1 p-6 font-serif text-center text-4xl md:text-5xl font-extrabold">
+      <div className="md:pt-20">
+        <h1 className="t1 p-6  text-center text-4xl md:text-5xl font-extrabold">
           A glance to <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent"> our team</span>
           
         </h1>
-        <div className="p-4 overflow-hidden w-[80%] lg:w-[60%] mx-auto">
+        <div className="p-4 overflow-hidden w-[90%] md:w-[80%] mx-auto">
           <p className="t1 text-md text-center md:text-xl">
             At BAOIAM, our team drives our vision with passion, creativity, and
             expertise. From strategic thinkers to hands-on innovators, we are a

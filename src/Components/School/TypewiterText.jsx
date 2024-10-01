@@ -7,8 +7,9 @@ const TypewriterText = () => {
     <div className="flex flex-col items-center justify-center pt-10 dark:bg-black dark:text-white bg-white px-4 sm:px-6 lg:px-8">
       <div className="text-center">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-          Master{" "}
-          <span className="text-amber-400">
+        Explore Our Range of Courses{" "}
+        </h1>
+          <h2 className="text-amber-500 text-3xl sm:text-4xl lg:text-5xl font-bold mt-3">
             <Typewriter
               options={{
                 strings: [
@@ -27,9 +28,9 @@ const TypewriterText = () => {
                 loop: true,
                 deleteSpeed: 50,
               }}
+             
             />
-          </span>
-        </h1>
+          </h2>
         {/* <p className="mt-4 ">
           Level up your skills with top-tier courses.
         </p> */}
@@ -37,7 +38,7 @@ const TypewriterText = () => {
           <input
             type="text"
             className="w-full px-4 bg-inherit py-3 pl-12 border shadow-lg rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400"
-            placeholder="What do you want to learn today?"
+            placeholder="What do you want to learn?"
           />
           <FaSearch className="absolute left-4 top-3.5 text-amber-400" />
         </div>

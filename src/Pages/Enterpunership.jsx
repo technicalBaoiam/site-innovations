@@ -6,10 +6,14 @@ import { School } from "../Data";
 import { CourseDesc2, CourseOverview } from "../assets/assets";
 import { MdCheck } from "react-icons/md";
 import Faq from "./Faq";
+import CareerSection9 from "../Components/Career/CareerSection9";
 
 import img1 from "../assets/ITIE&Entre/Entrepreneurship/img1.png";
 import img2 from "../assets/ITIE&Entre/Entrepreneurship/img2.png";
+import img from "../assets/ITIE&Entre/Entrepreneurship/img.jpg";
 import img3 from "../assets/ITIE&Entre/Entrepreneurship/img3.jpg";
+import img4 from "../assets/ITIE&Entre/Entrepreneurship/img4.jpg";
+import confused from "../assets/ITIE&Entre/Entrepreneurship/confused.jpg";
 
 import { IoIosArrowRoundForward } from "react-icons/io";
 import { WiStars } from "react-icons/wi";
@@ -32,43 +36,43 @@ import * as GOIcons from "react-icons/go";
 import * as PiIcons from "react-icons/pi";
 import gsap from "gsap";
 
-const testimonials = [
-  {
-    img: dummy2,
-    name: "Preet Rajput",
-    title: "Entrepreneur",
-    content:
-      "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
-  },
-  {
-    img: dummy1,
-    name: "Lavanya Singh",
-    title: "Entrepreneur",
-    content:
-      "I started my training at BAOIAM. With all the essential training and knowledge from my mentors, I landed a job for 12 LPA. Cannot thank enough for all the time and energy that BAOIAM and its mentors has invested in me.",
-  },
-  {
-    img: dummy1,
-    name: "Trisha Jain",
-    title: "Entrepreneur",
-    content:
-      "Trained with BAOIAM as a Product Management and it was due to their immense support and guidance, that I subsequently landed a job with 14 LPA. I extend my sincere gratitude to all my mentors and trainers for helping me out in shaping my life.",
-  },
-  {
-    img: dummy2,
-    name: "Rituraj Datta",
-    title: "Entrepreneur",
-    content:
-      "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career..",
-  },
-  {
-    img: dummy1,
-    name: "Shubham Daiya",
-    title: "Entrepreneur",
-    content:
-      "Started training in BAOIAM and got placed as a Android Developer with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
-  },
-];
+// const testimonials = [
+//   {
+//     img: dummy2,
+//     name: "Preet Rajput",
+//     title: "Entrepreneur",
+//     content:
+//       "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
+//   },
+//   {
+//     img: dummy1,
+//     name: "Lavanya Singh",
+//     title: "Entrepreneur",
+//     content:
+//       "I started my training at BAOIAM. With all the essential training and knowledge from my mentors, I landed a job for 12 LPA. Cannot thank enough for all the time and energy that BAOIAM and its mentors has invested in me.",
+//   },
+//   {
+//     img: dummy1,
+//     name: "Trisha Jain",
+//     title: "Entrepreneur",
+//     content:
+//       "Trained with BAOIAM as a Product Management and it was due to their immense support and guidance, that I subsequently landed a job with 14 LPA. I extend my sincere gratitude to all my mentors and trainers for helping me out in shaping my life.",
+//   },
+//   {
+//     img: dummy2,
+//     name: "Rituraj Datta",
+//     title: "Entrepreneur",
+//     content:
+//       "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career..",
+//   },
+//   {
+//     img: dummy1,
+//     name: "Shubham Daiya",
+//     title: "Entrepreneur",
+//     content:
+//       "Started training in BAOIAM and got placed as a Android Developer with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
+//   },
+// ];
 
 const cards = [
   {
@@ -92,11 +96,11 @@ const cards = [
 ];
 
 const Enterpunership = () => {
-  document.title = "Baoiam - Entrepreneurship";
+  document.title = "Baoiam Innovations | Careers";
   useEffect(() => {
     window.scrollTo(0, 0);
 
-    return () => {};
+    return () => { };
   }, []);
 
   const { id } = useParams();
@@ -282,28 +286,26 @@ const Enterpunership = () => {
   return (
     <div>
       {/*//! Banner */}
-      <div className="flex items-center flex-col gap-12 mt-8 md:mt-0 md:gap-8 lg:gap-0 md:flex-row px-8 md:px-20 w-full h-full md:h-[90vh]">
+      <div className="flex items-center flex-col gap-5  md:mt-0 md:gap-8 lg:gap-0 md:flex-row px-8 md:px-20 w-full h-full md:h-[60vh]">
         {/* Image Section */}
         <div className="w-full md:w-[40%]">
-          <div className="en2 w-full h-72 sm:h-80 md:h-96 lg:h-[30rem] rounded-3xl overflow-hidden">
+          <div className="en2  sm:h-80 md:h-96 lg:h-[40rem] overflow-hidden ">
             <img
-              src="https://images.stockcake.com/public/7/e/0/7e0f0d57-b367-441d-9530-b81b5378344f_large/botanical-store-owner-stockcake.jpg"
-              className="w-full h-full object-cover"
+              src={img}
+              className="rounded-2xl  md:mt-32 shadow-xl "
               alt="Entrepreneurship"
             />
           </div>
         </div>
 
         {/* Text Section */}
-        <div className="w-full text-center md:text-left lg:text-center md:w-[60%]">
-          <h2 className="text-3xl lg:text-5xl bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent font-bold">
-            ENTREPRENEURSHIP{" "}
-            <span className="text-black dark:text-white">
-              Course
-            </span>
+        <div className=" text-center md:text-left lg:text-right md:w-[70%]  ">
+          <h2 className="text-3xl px-1 md:text-4xl md:pl-7 lg:text-5xl bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent font-bold">
+            Entrepreneurship{" "}
+            <span className="text-black dark:text-white">Course</span>
           </h2>
 
-          <p className="mt-2 text-base text-slate-600 lg:text-xl">
+          <p className="mt-5 lg:text-lg md:text-base sm:text-sm text-sm md:pl-7 text-slate-600 ">
             Welcome to <strong>BAOIAM</strong>, the premier learning platform
             exclusively for women entrepreneurs! Ignite your entrepreneurial
             spirit and embark on your journey to success. As a launchpad for
@@ -311,7 +313,10 @@ const Enterpunership = () => {
             achieve success.
           </p>
 
-          <button onClick={()=> navigate('/Maintenance')}  className="en1 relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 sm:px-10 md:px-12 py-3 mt-8 lg:mt-16 text-sm sm:text-base dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+          <button
+            onClick={() => navigate("/Maintenance")}
+            className="en1 relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 sm:px-10 md:px-12 py-3 mt-10 lg:mt-16 text-sm sm:text-base dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group "
+          >
             <span className="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
             <span className="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
               <IoIosArrowRoundForward size={30} />
@@ -320,44 +325,18 @@ const Enterpunership = () => {
           </button>
         </div>
       </div>
-      {/* <div className="relative h-auto md:h-screen   mx-10">
-        <div className="hidden sm:block absolute inset-0">
-          <img
-            src={img1}
-            alt="Women Entrepreneurs"
-            className="object-cover w-full h-full"
-          />
-        </div>
 
-        <div className="relative z-10 flex flex-col justify-center items-center md:items-end px-4 md:px-10 h-full ">
-          <div className="max-w-xl  text-center md:text-center border-2  border-indigo-500 sm:border-none  rounded-lg">
-            <h1 className="text-3xl md:text-6xl font-bold text-indigo-600">
-              ENTREPRENEURSHIP
-            </h1>
-            <h2 className="text-2xl md:text-4xl font-bold text-black">
-              Course
-            </h2>
-            <p className="mt-4 pb-5 sm:text-lg md:text-2xl text-gray-800 ">
-              Welcome to <strong>BAOIAM</strong>, the premier learning platform
-              exclusively for women entrepreneurs! Ignite your entrepreneurial
-              spirit and embark on your journey to success. As a launchpad for
-              aspiring entrepreneurs, we empower you to learn, innovate, and
-              achieve success.
-            </p>
-          </div>
-        </div>
-      </div> */}
       {/*//! Program Overview */}
       <div className="p-6 md:p-10">
         <div className="endiv1 mx-auto max-w-7xl px-4 md:px-6">
           {/* Heading Section */}
           <div className="text-center my-10">
             <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
-            Program{" "}
-            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
-            Overview
-            </span>
-          </h2>
+              Program{" "}
+              <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+                Overview
+              </span>
+            </h2>
           </div>
 
           {/* Content Section */}
@@ -366,7 +345,7 @@ const Enterpunership = () => {
 
             {/* Text Section */}
             <div className="en4 w-full md:w-1/2 lg:w-1/2 md:ml-8 lg:ml-10">
-              <p className="mt-2 text-base text-slate-600  lg:text-xl">
+              <p className="mt-2 text-center md:text-left lg:text-lg md:text-base sm:text-sm text-sm text-slate-600  ">
                 Our Entrepreneurship Courses are formulated in a way that can be
                 easily studied and comprehended. We offer a plethora of courses
                 that are skill-centric and are purely based on practical
@@ -379,12 +358,12 @@ const Enterpunership = () => {
                 ⏳ Enrollment Deadline Approaching Soon!
               </div> */}
             </div>
-            <div className="en5 w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0">
+            <div className="en5 w-full md:w-1/2 lg:w-1/2 mb-6 md:pl-28 md:mb-0">
               <div className="relative">
                 <img
-                  src="https://images.stockcake.com/public/e/f/c/efc4e6ed-97e3-4349-b133-8c83211049e6_large/businesswomen-discussing-outdoors-stockcake.jpg"
+                  src={img4}
                   alt="Person"
-                  className="rounded-2xl w-full object-cover h-72 sm:h-96 md:h-full"
+                  className="rounded-2xl object-cover w-[500px] rounded-tr-3xl rounded-bl-3xl shadow-[7px_7px_#4338ca] sm:shadow-[15px_15px_#4338ca] lg:shadow-[20px_20px_#4338ca]"
                 />
               </div>
             </div>
@@ -394,26 +373,30 @@ const Enterpunership = () => {
       {/* //!Course Highlights */}
       <CourseHighlights />
       {/* //!Importance and Opportunities */}
-      <div className="py-16">
+      <div className="py-16 mb-20">
         <div className="endiv3 max-w-7xl mx-auto px-4 text-center">
           {/* Title */}
-          <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
+          <h2 className="text-3xl md:text-4xl  text-center mb-8 lg:mb-12 font-bold">
             Importance and{" "}
-            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Opportunities</span>
+            <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+              Opportunities
+            </span>
           </h2>
 
           {/* Cards Container */}
-          <div className="en7 flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-6 mt-10 md:mt-16">
+          <div className="en7 flex flex-col   md:flex-row  justify-center md:space-x-7 mt-10 md:mt-16">
             {cards.map((card, index) => (
               <div
                 key={index}
-                className="rounded-2xl shadow-xl border border-gray-200 bg-white hover:scale-105 hover:border-gray-500 hover:shadow-2xl transition-transform duration-300 ease-in-out p-6 sm:p-8 w-full md:w-1/3 lg:w-1/4 min-h-[300px] flex flex-col justify-between"
+                className={`relative rounded-2xl  shadow-xl border border-gray-200 bg-white hover:scale-105 hover:border-gray-500 hover:shadow-2xl transition-transform duration-300 ease-in-out p-6 sm:p-8 w-full md:w-1/2 lg:w-1/2 flex flex-col justify-between ${
+                  index === 1 ? "top-20" : index === 2 ? "top-40" : ""
+                }`}
               >
                 <div>
-                  {/* Card Number */}
-                  <h3 className="text-center text-2xl sm:text-3xl font-bold mb-4">
-                    {card.number}
-                  </h3>
+                  {/* Card icon */}
+                  {/* <h4 className="text-xl sm:text-xl font-semibold text-indigo-600 mb-4">
+              {card.number}
+            </h4> */}
 
                   {/* Card Title */}
                   <h4 className="text-xl sm:text-xl font-semibold text-indigo-600 mb-4">
@@ -421,7 +404,7 @@ const Enterpunership = () => {
                   </h4>
 
                   {/* Card Description */}
-                  <p className="text-gray-700 mt-8 leading-relaxed text-justify text-sm sm:text-base">
+                  <p className=" mt-8 leading-relaxed text-center lg:text-base md:text-base sm:text-sm text-sm text-gray-800">
                     {card.description}
                   </p>
                 </div>
@@ -436,15 +419,18 @@ const Enterpunership = () => {
           {/* Heading Section */}
           <div className="en8 text-center my-10">
             <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
-              <span className=" bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Women</span> Entrepreneurship
+              <span className=" bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+                Women
+              </span>{" "}
+              Entrepreneurship
             </h2>
           </div>
 
           {/* Content Section: Image and Text */}
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between">
+          <div className="flex flex-col-reverse text-center md:text-left md:flex-row items-center justify-between">
             {/* Text Section */}
             <div className="en9 w-full md:w-1/2 lg:w-1/2 md:ml-8 lg:ml-10">
-              <p className="mt-2 text-base text-slate-600  lg:text-xl">
+              <p className="mt-2 lg:text-lg md:text-base sm:text-sm text-sm text-slate-600  ">
                 Our Women Entrepreneurship Program aims to support and empower
                 women in starting and growing their businesses. This program is
                 specially pieced together by our experts to guide our women
@@ -461,11 +447,11 @@ const Enterpunership = () => {
 
             {/* Image Section */}
             <div className="en10 w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0">
-              <div className="relative">
+              <div className="relative md:pl-28">
                 <img
                   src={img3}
                   alt="Person"
-                  className="rounded-2xl w-full object-cover h-72 sm:h-96 md:h-full"
+                  className="rounded-2xl object-cover w-96 rounded-tr-3xl rounded-bl-3xl shadow-[7px_7px_#4338ca] sm:shadow-[15px_15px_#4338ca] lg:shadow-[20px_20px_#4338ca] "
                 />
               </div>
             </div>
@@ -473,7 +459,7 @@ const Enterpunership = () => {
         </div>
       </div>
       {/*//! Testimonials */}
-      <div className="endiv5">
+      {/* <div className="endiv5">
         <h1 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
           Our <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Testimonials</span>
         </h1>
@@ -512,12 +498,11 @@ const Enterpunership = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-
-          {/* Navigation buttons */}
           <div className="swiper-button-prev md:p-2"></div>
           <div className="swiper-button-next md:p-2"></div>
         </div>
-      </div>
+      </div> */}
+      <CareerSection9 />
       {/*//! Join with us */}
       {/* <div className="my-12 px-8 lg:px-24 w-full h-full">
         <div className="bg-white py-6 sm:py-8 lg:py-12">
@@ -583,73 +568,38 @@ const Enterpunership = () => {
           </div>
         </div>
       </div> */}
-      {/*//! Emi & Placement */}
-      {/* <div className="flex items-center flex-col md:flex-row gap-8 lg:justify-around px-8 lg:px-24 my-12 lg:my-32 ">
-        <div className="border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem] ">
-          <p className="text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2">
-            Easy EMI
-          </p>
-          <p className="text-neutral-600 mb-2 text-sm lg:text-base">
-            Easy monthly payment options with our emi facilities
-          </p>
-
-          <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-neutral-600'>
-            <li className="text-sm lg:text-base">
-              No upfront payment required
-            </li>
-            <li className="text-sm lg:text-base">Fixed monthly installments</li>
-            <li className="text-sm lg:text-base">Flexible repayment options</li>
-          </ul>
-        </div>
-
-        <div className="border border-orange-500 rounded-3xl px-6 py-4 shadow-xl md:w-[35rem] lg:h-[11.5rem] h-auto">
-          <p className="text-center font-semibold text-orange-500 text-[1.2rem] lg:text-2xl mb-2">
-            Pay After Placement
-          </p>
-          <p className="text-neutral-600 mb-2 text-sm lg:text-base">
-            Pay only when you get placed with our Pay After Placement support
-          </p>
-
-          <ul className='list-["✓"] list-inside marker:text-green-500 marker:text-xl text-neutral-600'>
-            <li className="text-sm lg:text-base">
-              With our Pay After Placement program, you invest in your career
-              development now and pay us only when yoy land a job.
-            </li>
-          </ul>
-        </div>
-      </div> */}
-      {/*//! Amazing Career */}
-      {/* <div className="py-8 px-8 lg:px-24 my-20 w-full h-full text-white bg-gradient-to-r from-orange-400 to-orange-600 text-center">
-        <h4 className="text-[2rem] lg:text-4xl font-semibold mb-2 lg:mb-4">
-          Amazing <span className="border-b">Career</span>
-        </h4>
-        <p className="text-sm lg:text-lg">
-          Grab these exclusive offers available only once a year.
-        </p>
-
-        <div className="flex items-center flex-col  md:flex-row gap-5 sm:gap-11  justify-center md:w-full mt-8 ">
-          <div className="bg-white w-72 rounded-3xl px-6 py-4 shadow-xl ">
-            <p className="text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2">
-              BUY 2 COURSES & GET
-            </p>
-            <p className="mb-2 text-2xl font-bold text-orange-500">15% OFF</p>
-          </div>
-          <div className="bg-white w-72 rounded-3xl px-6 py-4 shadow-xl">
-            <p className="text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2">
-              BUY 3 COURSES & GET
-            </p>
-            <p className="mb-2 text-2xl font-bold text-orange-500">20% OFF</p>
-          </div>
-          <div className="bg-white w-72 rounded-3xl px-6 py-4 shadow-xl">
-            <p className="text-center font-semibold text-neutral-500 text-[1rem] lg:text-xl mb-2">
-              BUY 4 COURSES & GET
-            </p>
-            <p className="mb-2 text-2xl font-bold text-orange-500">25% OFF</p>
-          </div>
-        </div>
-      </div> */}
+      
       {/*//! Faq */}
+      {/* <Faq /> */}
+      {/* <div>
+      <h2 className="font-bold text-4xl text-center mb-8 mt-20 mx-5 ">
+        Frequently Asked <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">Questions</span>
+      </h2>
+      <div className="flex">
       <Faq />
+      <img
+                  src={confused}
+                  alt="Person"
+                  className="rounded-xl mt-28 mr-20 size-96 "
+                />
+      </div>
+      </div> */}
+      <div>
+        <h2 className="font-bold text-4xl text-center md:mb-8 md:mt-10 mx-5">
+          Frequently Asked{" "}
+          <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Questions
+          </span>
+        </h2>
+        <div className="flex flex-col lg:flex-row">
+          <Faq />
+          <img
+            src={confused}
+            alt="Person"
+            className="rounded-xl mt-28 mr-20 size-96 lg:block hidden"
+          />
+        </div>
+      </div>
     </div>
   );
 };

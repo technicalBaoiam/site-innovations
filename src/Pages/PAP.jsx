@@ -44,11 +44,10 @@ import {
 } from "react-icons/bs";
 import ListSlide from "../Components/PAP/ListSlide";
 import { Link } from "react-router-dom";
-import gsap from 'gsap';
-
+import gsap from "gsap";
 
 const PAP = () => {
-  document.title = "Baoiam - PAP";
+  document.title = "Baoiam Innovations | Pay After Placement";
   const slides = [
     {
       imgSrc: Prasun,
@@ -164,234 +163,287 @@ const PAP = () => {
       image: Som,
     },
   ];
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
+    const tl = gsap.timeline();
 
-const tl = gsap.timeline()
+    tl.fromTo(
+      ".pap1",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+      }
+    );
 
-tl.fromTo('.pap1',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-})
+    tl.fromTo(
+      ".pap2",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      "-=1"
+    );
 
-tl.fromTo('.pap2',{opacity:0,x:50},{
-  opacity:1,
-  x:0,
-  duration:1,
-  ease:'power2.inOut',
-},
-'-=1')
+    gsap.fromTo(
+      ".pap3",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".papdiv1",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
 
+    gsap.fromTo(
+      ".pap4",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".papdiv2",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
 
-gsap.fromTo('.pap3',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.papdiv1',
-    start:'top 90%',
-    end:'bottom 80%'
-  }
-})
+    const te = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".papdiv3",
+        start: "top 90%",
+        end: "bottom 80%",
+      },
+    });
 
+    te.fromTo(
+      ".pap5",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "back.inOut",
+        y: 0,
+        stagger: 0.2,
+      }
+    );
 
-gsap.fromTo('.pap4',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.papdiv2',
-    start:'top 90%',
-    end:'bottom 80%'
-  }
-})
+    te.fromTo(
+      ".pap6",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power1.inOut",
+        x: 0,
+      },
+      "-=0.3"
+    );
 
+    te.fromTo(
+      ".pap7",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        duration: 1.3,
+        ease: "power1.inOut",
+        x: 0,
+      },
+      "-=0.3"
+    );
 
-const te = gsap.timeline({
-  scrollTrigger:{
-    trigger:'.papdiv3',
-    start:'top 90%',
-    end:'bottom 80%',
-  }
-})
+    gsap.fromTo(
+      ".pap8",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".papdiv4",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
 
-te.fromTo('.pap5',{opacity:0,y:30},{
-  opacity:1,
-  duration:1,
-  ease:'back.inOut',
-  y:0,
-  stagger:0.2,
-})
-
-te.fromTo('.pap6',{opacity:0,x:-50},{
-  opacity:1,
-  duration:1,
-  ease:'power1.inOut',
-  x:0
-},
-'-=0.3')
-
-te.fromTo('.pap7',{opacity:0,x:50},{
-  opacity:1,
-  duration:1.3,
-  ease:'power1.inOut',
-  x:0
-},
-'-=0.3')
-
-
-
-gsap.fromTo('.pap8',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.papdiv4',
-    start:'top 90%',
-    end:'bottom 80%'
-  }
-})
-
-gsap.fromTo('.pap9',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.papdiv5',
-    start:'top 90%',
-    end:'bottom 80%'
-  }
-})
-
-
-
-  },[])
-
+    gsap.fromTo(
+      ".pap9",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".papdiv5",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
+  }, []);
 
   useEffect(() => {
+    const tl = gsap.timeline();
 
-const tl = gsap.timeline()
+    tl.fromTo(
+      ".pap1",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+      }
+    );
 
-tl.fromTo('.pap1',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-})
+    tl.fromTo(
+      ".pap2",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power2.inOut",
+      },
+      "-=1"
+    );
 
-tl.fromTo('.pap2',{opacity:0,x:50},{
-  opacity:1,
-  x:0,
-  duration:1,
-  ease:'power2.inOut',
-},
-'-=1')
+    gsap.fromTo(
+      ".pap3",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".papdiv1",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
 
+    gsap.fromTo(
+      ".pap4",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".papdiv2",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
 
-gsap.fromTo('.pap3',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.papdiv1',
-    start:'top 90%',
-    end:'bottom 80%'
-  }
-})
+    const te = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".papdiv3",
+        start: "top 90%",
+        end: "bottom 80%",
+      },
+    });
 
+    te.fromTo(
+      ".pap5",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "back.inOut",
+        y: 0,
+        stagger: 0.2,
+      }
+    );
 
-gsap.fromTo('.pap4',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.papdiv2',
-    start:'top 90%',
-    end:'bottom 80%'
-  }
-})
+    te.fromTo(
+      ".pap6",
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power1.inOut",
+        x: 0,
+      },
+      "-=0.3"
+    );
 
+    te.fromTo(
+      ".pap7",
+      { opacity: 0, x: 50 },
+      {
+        opacity: 1,
+        duration: 1.3,
+        ease: "power1.inOut",
+        x: 0,
+      },
+      "-=0.3"
+    );
 
-const te = gsap.timeline({
-  scrollTrigger:{
-    trigger:'.papdiv3',
-    start:'top 90%',
-    end:'bottom 80%',
-  }
-})
+    gsap.fromTo(
+      ".pap8",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".papdiv4",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
 
-te.fromTo('.pap5',{opacity:0,y:30},{
-  opacity:1,
-  duration:1,
-  ease:'back.inOut',
-  y:0,
-  stagger:0.2,
-})
-
-te.fromTo('.pap6',{opacity:0,x:-50},{
-  opacity:1,
-  duration:1,
-  ease:'power1.inOut',
-  x:0
-},
-'-=0.3')
-
-te.fromTo('.pap7',{opacity:0,x:50},{
-  opacity:1,
-  duration:1.3,
-  ease:'power1.inOut',
-  x:0
-},
-'-=0.3')
-
-
-
-gsap.fromTo('.pap8',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.papdiv4',
-    start:'top 90%',
-    end:'bottom 80%'
-  }
-})
-
-gsap.fromTo('.pap9',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:1,
-  ease:'back.inOut',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.papdiv5',
-    start:'top 90%',
-    end:'bottom 80%'
-  }
-})
-
-
-
-  },[])
+    gsap.fromTo(
+      ".pap9",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "back.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".papdiv5",
+          start: "top 90%",
+          end: "bottom 80%",
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className="dark:bg-black dark:text-white overflow-hidden">
@@ -411,13 +463,13 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
         {/* <img src={banner_pap} alt="banner" /> */}
 
         <div className="w-full text-center md:text-left md:w-[60%]">
-          <span className="pap1 text-sm text-indigo-700 font-medium justify-center md:justify-normal flex items-center">
+          <span className="pap1 text-sm dark:text-indigo-500 text-indigo-700 font-medium justify-center md:justify-normal flex items-center">
             <WiStars className="animate-pulse" size={25} /> Invest in your
             future, pay after it's proven.
           </span>
           <h1 className="pap1 text-4xl lg:text-6xl mb-4 font-medium">
             Pay After
-            <span className="font-light italic text-indigo-700">
+            <span className="font-light italic dark:text-indigo-500 text-indigo-700">
               {" "}
               Placement
             </span>
@@ -429,12 +481,15 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
             entrepreneurs: Learn, innovate, succeed"
           </p>
 
-          <button onClick={()=> navigate('/Maintenance')} class="pap1 relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group">
+          <button
+            onClick={() => navigate("/Maintenance")}
+            class="pap1 relative inline-flex items-center bg-gradient-to-r from-indigo-700 to-indigo-500 px-8 md:px-12 py-3 mt-12 lg:mt-20 text-sm dark:text-white dark:border-white overflow-hidden text-white font-medium border border-indigo-600 rounded-full hover:text-indigo-600 group"
+          >
             <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
             <span class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease">
               <IoIosArrowRoundForward size={30} />
             </span>
-            <span  class="relative">Join Now</span>
+            <span class="relative">Join Now</span>
           </button>
         </div>
         <div className="w-full md:w-[40%]">
@@ -453,7 +508,7 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
           </span>{" "}
           Of Today
         </h2>
-        <p className="pap3 mt-2 text-base mb-6 text-slate-600  lg:text-xl">
+        <p className="pap3 mt-2 text-base mb-6 dark:text-slate-300 text-slate-600  lg:text-xl">
           Harnessing the wisdom of today's entrepreneurial gems, a new era of
           startup-focused business education is born.
         </p>
@@ -484,7 +539,10 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
             }}
           >
             {contentData.map((item, index) => (
-              <SwiperSlide key={index} className="pap3 flex justify-center pt-12">
+              <SwiperSlide
+                key={index}
+                className="pap3 flex justify-center pt-12"
+              >
                 <div className="flex flex-col bg-white my-4 pb-8 shadow-md px-4 md:pb-8 md:px-8 border-t-4 rounded-xl border-indigo-700 w-[20rem]  ">
                   <div className="size-16  relative bottom-11">
                     <img
@@ -494,7 +552,9 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
                     />
                   </div>
                   <div className="text-left">
-                    <h2 className="text-xl font-semibold mb-1">{item.name}</h2>
+                    <h2 className="text-xl dark:text-black font-semibold mb-1">
+                      {item.name}
+                    </h2>
                     <p className="text-gray-400">{item.role}</p>
                     <p className="text-gray-600">{item.description}</p>
                   </div>
@@ -514,7 +574,7 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
           </span>{" "}
           Startup Leader
         </h2>
-        <p className="pap4 mt-2 mb-6 text-base text-slate-600  lg:text-xl">
+        <p className="pap4 mt-2 mb-6 text-base dark:text-slate-300 text-slate-600  lg:text-xl">
           Develop an entrepreneurial mindset and become a visionary leader that
           will build nation’s next unicorns
         </p>
@@ -531,7 +591,7 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
           </span>{" "}
           Hunger For Success
         </h2>
-        <p className="pap5 mt-2 text-base text-slate-600  lg:text-xl">
+        <p className="pap5 mt-2 text-base dark:text-slate-300 text-slate-600  lg:text-xl">
           <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
             The Placement Bootcamp Program
           </span>
@@ -540,7 +600,7 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
 
         <div className="flex lg:flex-row flex-col-reverse sm:items-center items-stretch text-left px-12">
           <div className="pap6 w-[90%] mr-6 md:max-w-[70%] lg:max-w-[57%]">
-            <p className="mt-2 text-base text-slate-600  lg:text-xl">
+            <p className="mt-2 text-base dark:text-slate-300 text-slate-600  lg:text-xl">
               Join us on this transformative journey as we empower you to become
               the driving force behind India's startup ecosystem. Whether you
               have a groundbreaking idea or a burning passion for innovation,
@@ -548,13 +608,14 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
               skills, knowledge, and mindset to thrive in the ever-evolving
               entrepreneurial landscape.
             </p>
-            <p className="mb-4 text-base md:text-xl mt-4 text-indigo-800 font-bold">
+            <p className="mb-4 text-base md:text-xl mt-4 dark:text-indigo-500 text-indigo-800 font-bold">
               Unleash your potential and shape the future of business with us
             </p>
 
-
-            <button onClick={()=> navigate('/Maintenance')}  class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50">
-
+            <button
+              onClick={() => navigate("/Maintenance")}
+              class="relative inline-flex items-center justify-center bg-gradient-to-r from-indigo-700 to-indigo-500 text-white p-1.5 w-52 sm:w-52 md:w-48 sm:p-1.5 md:p-2 lg:p-2.5 text-sm overflow-hidden hover:text-indigo-600 font-medium border border-indigo-600 rounded-full group hover:bg-gray-50"
+            >
               <span class="absolute left-0 block w-full h-0 transition-all bg-white opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease-in-out"></span>
               <p class="relative">Click here</p>
             </button>
@@ -578,7 +639,7 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
             Bootcamp Program
           </span>
         </h2>
-        <p className="pap8 mt-2 text-base mb-6 text-slate-600  lg:text-xl">
+        <p className="pap8 mt-2 text-base dark:text-slate-300 mb-6 text-slate-600  lg:text-xl">
           A transformational journey designed to create budding founders of
           future unicorns
         </p>
@@ -586,10 +647,10 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
         <div className="pap8 flex flex-wrap gap-4 mb-10 py-10 max-w-7xl mx-auto justify-evenly lg:ml-10 lg:mr-10">
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <AcademicCapIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Foundation and Knowledge Acquisition:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Lay a strong foundation and acquire the necessary knowledge and
               skills. Study various aspects of entrepreneurship, including
               market analysis, business planning, financial management,
@@ -602,10 +663,10 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
 
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <WrenchScrewdriverIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Skill Development and Practical Application:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Focus on skill development and practical application. Hands-on
               learning experiences, such as workshops, simulations, and
               real-world projects. Activities that enhance their critical
@@ -618,10 +679,10 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
 
           <div className="mb-8 flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <UserGroupIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Mentorship, Networking, and Launch:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Get an opportunity to connect with experienced entrepreneurs,
               industry experts, and mentors who provide guidance and support.
               Receive feedback on their business ideas, refine their strategies,
@@ -634,10 +695,10 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <LightBulbIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Nurturing a leader:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Leadership plays a very crucial and multifaceted role in
               entrepreneurial business. Therefore, it is important to nurture a
               leader who can set a clear vision for the business, develop a
@@ -652,10 +713,10 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <DeviceTabletIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Exposure to new business trends and technology:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               Stay informed about new businesses and technology is essential for
               identifying the unique factors that set a business apart.
               Utilizing new and advanced technology can improve efficiency,
@@ -668,10 +729,10 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
 
           <div className="flex-shrink-0 w-full sm:w-[calc(33.33%-1rem)] border border-gray-200 rounded-xl shadow-xl flex flex-col justify-start items-center text-center py-8 transition-all duration-400 ease-in-out hover:-translate-y-2 px-4">
             <PresentationChartBarIcon className="h-12 w-12 text-amber-500 mb-4" />
-            <p className="text-indigo-700 font-bold mb-4 px-4">
+            <p className="text-indigo-700 dark:text-indigo-500 font-bold mb-4 px-4">
               Business Idea Presentation:
             </p>
-            <p className="mb-4 px-4 text-gray-500">
+            <p className="mb-4 px-4 dark:text-slate-300 text-gray-500">
               The final business idea will be presented to a panel of experts
               and potential investors. The most promising ideas will have the
               opportunity to secure investment from the panel. Other business
@@ -737,10 +798,10 @@ gsap.fromTo('.pap9',{opacity:0,y:30},{
                   <span className="text-gray-500 text-xs sm:text-sm block mb-2">
                     {slide.date}
                   </span>
-                  <div className="text-lg sm:text-xl lg:text-2xl font-bold text-indigo-700 mb-2 sm:mb-4">
+                  <div className="text-lg sm:text-xl lg:text-2xl font-bold dark:text-indigo-500 text-indigo-700 mb-2 sm:mb-4">
                     {slide.title}
                   </div>
-                  <div className="w-full sm:w-1/2 ml-auto text-gray-500 text-sm sm:text-base  lg:text-lg mb-4 text-left">
+                  <div className="w-full sm:w-1/2 ml-auto dark:text-slate-300 text-gray-500 text-sm sm:text-base  lg:text-lg mb-4 text-left">
                     {slide.text}
                   </div>
                 </div>

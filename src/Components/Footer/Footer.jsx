@@ -20,23 +20,18 @@ import logo from "../../assets/logo.jpeg";
 import { LogoDark, LogoLight } from "../../assets/assets";
 
 function Footer({ dark }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <footer className="bg-zinc-100 dark:bg-black dark:text-white">
       <div className="mx-auto px-4 pt-7 md:pt-14">
         <div className="flex md:px-10 flex-col gap-6 md:flex-row w-full">
-         
-            <div
-              onClick={()=> navigate('/')}
-              className={`w-[44%] md:w-[14%] `}
-            >
-              <img
-                src={dark ? LogoDark : LogoLight}
-                className="w-full"
-                alt="Baoiam Innovation brand image."
-              />
-            </div>
-          
+          <div onClick={() => navigate("/")} className={`w-[44%] md:w-[14%] `}>
+            <img
+              src={dark ? LogoDark : LogoLight}
+              className="w-full"
+              alt="Baoiam Innovation brand image."
+            />
+          </div>
 
           <div className="flex flex-col justify-evenly gap-4 md:pl-8 md:flex-row md:w-[85%] dark:text-white">
             {/* Quick Links */}
@@ -68,7 +63,7 @@ function Footer({ dark }) {
                   Careers
                 </Link>
                 <Link
-                  to={"/Maintenance"}
+                  to={"/courses"}
                   className="text-black dark:text-white text-nowrap flex items-center"
                 >
                   <MdKeyboardArrowRight className=" min-w-6 text-xl aspect-square" />
@@ -96,7 +91,7 @@ function Footer({ dark }) {
                   to={"/gcep"}
                   className="text-black text-nowrap max-w-fit hover:text-wrap dark:text-white group flex items-center"
                 >
-                  <MdKeyboardArrowRight className="min-w-6" size={20} />{" "}
+                  <MdKeyboardArrowRight size={20} />
                   <p className="truncate group-hover:text-wrap">
                     Global Collabo Educational Partnership
                   </p>
@@ -105,10 +100,8 @@ function Footer({ dark }) {
                   to={"/Maintenance"}
                   className="text-black text-nowrap max-w-fit  hover:text-wrap group dark:text-white flex items-center"
                 >
-                  <MdKeyboardArrowRight className="min-w-6" size={20} />{" "}
-                  <p className="truncate group-hover:text-wrap">
-                    Bridge
-                  </p>
+                  <MdKeyboardArrowRight size={20} />
+                  <p className="truncate group-hover:text-wrap">Bridge</p>
                 </Link>
                 <Link
                   to={"/itie"}

@@ -24,25 +24,27 @@ function Achievements() {
   }, [achievements]);
 
   return (
-    <div className="bg-gradient-to-r from-purple-500 to-blue-500 p-6 rounded-lg shadow-md text-white">
-      <h2 className="text-2xl font-bold mb-4 text-center">Achievements</h2>
-      {achievements.length > 0 ? (
-        <ul ref={listRef}>
-          {achievements.map((achievement) => (
-            <li
-              key={achievement.id}
-              className="mb-4 flex items-center space-x-2 p-3 bg-white bg-opacity-10 rounded-lg shadow-sm"
-            >
-              <FaAward className="text-yellow-400" />
-              <span>{achievement.name}</span>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div className="text-center text-lg font-semibold p-6 bg-white bg-opacity-10 rounded-lg">
-          <p>No certificates earned yet.</p>
-        </div>
-      )}
+    <div className="h-screen w-full px-4 py-12">
+      <div className="bg-indigo-600 p-4 rounded-lg shadow-md text-white">
+        <h2 className="text-2xl font-bold mb-4 text-center">Achievements</h2>
+        {achievements.length > 0 ? (
+          <ul ref={listRef}>
+            {achievements.map((achievement) => (
+              <li
+                key={achievement.id}
+                className="mb-4 flex items-center space-x-2 p-3 bg-white bg-opacity-10 rounded-lg shadow-sm"
+              >
+                <FaAward className="text-yellow-400" />
+                <span>{achievement.name}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className="text-center text-lg font-semibold p-6 bg-white bg-opacity-10 rounded-lg">
+            <p>No certificates earned yet.</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

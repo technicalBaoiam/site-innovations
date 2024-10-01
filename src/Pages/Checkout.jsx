@@ -14,7 +14,7 @@ import {
 import { FaCheck } from "react-icons/fa6";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { HiShieldCheck } from "react-icons/hi";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { School, CollegeCourseData, OtherCourseData } from "../Data";
 import axios from "axios";
 import { GoProjectRoadmap } from "react-icons/go";
@@ -25,49 +25,32 @@ const razorpayKeyId = import.meta.env.RAZORPAY_KEY_ID;
 
 const Checkout = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  
+  const course = { title: 'title', price: 4999, thumbnail_image: '', description: 'description' };
+  // const course = location.state.course;
+  // const price=useLocation().state;
   const invalidCouponToast = () => toast("Invalid Referral Code!");
-  const { id, plan, course } = useParams();
+  const { id, plan } = useParams();
+console.log(location.state?.course.price);
+
+  // const { course } = {course:{
+  //   title:"Course Title",
+  //   thumbnail_image:"",
+  //   description:"description",
+  //   price:4999,
+  // }};
   const [proceedButton, setProceedButton] = useState(
-    `PROCEED TO PAY ₹${plan == "Premium" ? 11999 : 2999}`
+    `PROCEED TO PAY ₹${course.price}`
   );
   const [referral, setReferral] = useState("");
   const [enrollingCourse, setEnrollingCourse] = useState({});
   const [isDescriptionVisible, setIsDescriptionVisible] = useState(false);
-
-  useEffect(() => {
-    if (!localStorage.getItem("access_token")) navigate("/login");
-    // alert('id is:',id , ' and plan is:',plan)
-    else {
-      // window.scrollTo(0, 0);
-      console.log(course, id, plan);
-      // if (course == "school") {
-      //   const course = School[0].subCate.filter((item) => {
-      //     return item.id == id;
-      //   });
-      //   setEnrollingCourse(course[0]);
-      //   console.log("course is: ", course);
-      // } else if (course == "college") {
-      //   const course = CollegeCourseData[0].subCate.filter((item) => {
-      //     return item.id == id;
-      //   });
-      //   setEnrollingCourse(course[0]);
-      //   console.log(course);
-      // } else {
-      //   const course = OtherCourseData[0].subCate.filter((item) => {
-      //     return item.id == id;
-      //   });
-      //   setEnrollingCourse(course[0]);
-      //   console.log(course);
-      // }
-    }
-    return () => { };
-  }, []);
-
-
+  
   const handleCheckout = () => {
     setProceedButton("Loading....");
     const buyCourse = async () => {
-      console.log(localStorage.getItem("access_token"));
+      // console.log(localStorage.getItem("access_token"));
       try {
         const { data } = await axios.post(
           `${apiUrl}/api/orders/`,
@@ -139,7 +122,7 @@ const Checkout = () => {
       } catch (err) {
         console.log(err.stack);
         console.log(proceedButton);
-        setProceedButton(`PROCEED TO PAY ₹${plan == "Premium" ? 11999 : 2999}`);
+        setProceedButton(`PROCEED TO PAY ₹${course.price}`);
         // toast.error("Something went wrong");
       }
     };
@@ -156,11 +139,11 @@ const Checkout = () => {
         {/* Course Content */}
         <div className="w-full h-fit flex items-center flex-col md:flex-row justify-between gap-4 bg-white px-8 py-4 rounded-lg">
           <div className="w-full md:w-[25%] h-full overflow-hidden rounded-xl">
-            <img className="w-full h-full object-cover" src="https://images.unsplash.com/flagged/photo-1556637640-2c80d3201be8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8c25lYWtlcnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="" />
+            <img className="w-full h-full object-cover" src={`https://miro.medium.com/v2/resize:fit:720/1*aBQrwweY6-qFVWeizUrTnQ.png`} alt="" />
           </div>
           <div className="w-full md:w-[75%] h-full">
-            <h1 className="text-xl font-semibold bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">Art and Craft (DIY)</h1>
-            <p className="text-sm mt-2">Welcome to the Art and Craft Exploration course, a vibrant and imaginative journey designed for students. You will dive into</p>
+            <h1 className="text-xl font-semibold bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">{course.title}</h1>
+            <p className="text-sm mt-2">{course.description.split(".")[0]}</p>
             <p className="text-sm mt-4 flex items-center gap-2">
               <span>25 Lessons</span>
               •
@@ -236,8 +219,9 @@ const Checkout = () => {
           <div className="flex mt-3 gap-4 justify-between items-center w-full">
             <input
               value={referral}
+              placeholder="Enter code"
               onChange={(e) => setReferral(e.target.value)}
-              className="border-2 flex-1 border-gray-400 text-black dark:text-white rounded-md outline-none dark:border-white dark:bg-black dark:border-2 w-40 xl:w-full py-1 px-1"
+              className="border-2 px-2 text-sm  flex-1 border-gray-400 text-black dark:text-white rounded-md outline-none dark:border-white dark:bg-black dark:border-2 w-40 xl:w-full py-1"
               type="text"
             />
             <button
@@ -257,7 +241,7 @@ const Checkout = () => {
         <div className="w-full bg-white rounded-lg mb-4 p-4">
           <p className="text-xl font-semibold">Order Summary</p>
           <div className="flex flex-col gap-2 w-full mt-4">
-            <p className="flex items-center justify-between w-full">Course: <span>₹999</span></p>
+            <p className="flex items-center justify-between w-full">Course: <span>₹{course.price}</span></p>
             <p className="flex items-center justify-between w-full">Discount: <span>₹100</span></p>
             <p className="flex items-center justify-between w-full">GST: <span>₹25</span></p>
           </div>
@@ -267,7 +251,7 @@ const Checkout = () => {
               Total
             </h2>
             <p className="text-black text-lg font-semibold dark:text-white">
-              ₹{plan == "Premium" ? 11999 : 2999}
+              ₹{course.price}
             </p>
           </div>
 

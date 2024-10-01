@@ -1,30 +1,32 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
+// Initial state with both isLoggedIn and accessToken
 const initialState = {
-  name: "",
-  email: "",
+  isLoggedIn: JSON.parse(localStorage.getItem("login")) || false,
+  accessToken: null, // Include accessToken in the initial state
 };
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    login(state, action) {
+      console.log("Logging in..."); // Debugging log
+      state.isLoggedIn = true;
+      state.accessToken = action.payload; // Store accessToken from action payload
+      localStorage.setItem("login", true); // Sync with localStorage
+      localStorage.setItem("access_token", action.payload); // Sync token
+    },
     logout(state) {
-      state.user = null;
+      console.log("Logging out..."); // Debugging log
+      state.isLoggedIn = false;
+      state.accessToken = null; // Clear accessToken on logout
+      localStorage.setItem("login", false); // Sync with localStorage
+      localStorage.removeItem("access_token"); // Remove token from localStorage
     },
   },
-  extraReducers: (builder) => {
-    builder
-      .addCase(loginUser.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(loginUser.fulfilled, (state, action) => {
-        state.loading = false;
-        state.user = action.payload;
-      })
-      .addCase(loginUser.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      });
-  },
 });
-export const { logout } = authSlice.actions;
+
+// Export both login and logout actions
+export const { login, logout } = authSlice.actions;
 export default authSlice.reducer;

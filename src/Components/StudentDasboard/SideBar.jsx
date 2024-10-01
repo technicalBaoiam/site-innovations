@@ -20,6 +20,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { setProfile1 } from "../../Redux/user/userSlice.js";
 import Achievements from "./Achievements.jsx";
+import axiosInstance from "../../axiosInstance.js";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const Sidebar = () => {
@@ -28,16 +29,12 @@ const Sidebar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [userInfo, setUserInfo] = useState({});
   const dispatch = useDispatch();
-  const getUserDetails = async () => {
-    const { data } = await axios.get(`${apiUrl}/api/auth/users/me/`, {
-      headers: {
-        Authorization: `JWT ${localStorage.getItem("access_token")}`,
-      },
-    });
-    console.log("user data got:", data);
-    localStorage.setItem("userInfo", JSON.stringify(data));
-    dispatch(setProfile1(data));
-  };
+  // const getUserDetails = async () => {
+  //   const { data } = await axiosInstance.get(`/api/auth/users/me/`);
+  //   console.log("user data got:(teriyaki chicken)", data);
+  //   localStorage.setItem("userInfo", JSON.stringify(data));
+  //   dispatch(setProfile1(data));
+  // };
   const closeSidebar = () => {
     setIsSidebarOpen(false);
   };
@@ -49,9 +46,9 @@ const Sidebar = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (localStorage.getItem("access_token")) {
-      getUserDetails();
-      console.log(userInfo);
-      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+      // getUserDetails();
+      // console.log(userInfo);
+      // localStorage.setItem("userInfo", JSON.stringify(userInfo));
     } else {
       navigate("/login");
     }
@@ -94,7 +91,7 @@ const Sidebar = () => {
 
   if (
     localStorage.getItem("access_token") ||
-    localStorage.getItem("userInfo") === null
+    localStorage.getItem("userInfo") !== null
   ) {
     return (
       <div className="flex relativez-40 h-full pt-8 my-8 transition duration-500">

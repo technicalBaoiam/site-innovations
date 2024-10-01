@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { MdOutlineSupportAgent } from "react-icons/md";
+import { MdHeadsetMic, MdOutlinePhonelink, MdOutlineSupportAgent } from "react-icons/md";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { FaTabletScreenButton } from "react-icons/fa6";
+import { BsPersonVideo } from "react-icons/bs";
 
 // Register ScrollTrigger with GSAP
 gsap.registerPlugin(ScrollTrigger);
@@ -12,80 +13,142 @@ const Protocol = () => {
   const itemsRef = useRef([]);
 
   useEffect(() => {
-    itemsRef.current.forEach((el, index) => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 50 }, // Initial state
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%", // When the element is 80% in view
-            toggleActions: "play none none reverse",
-            markers: false, // Set to true for debugging markers
-          },
-        }
-      );
-    });
+    // itemsRef.current.forEach((el, index) => {
+    //   gsap.fromTo(
+    //     el,
+    //     { opacity: 0, y: 50 }, // Initial state
+    //     {
+    //       opacity: 1,
+    //       y: 0,
+    //       duration: 1.2,
+    //       ease: "power3.out",
+    //       stagger:0.2,
+    //       scrollTrigger: {
+    //         trigger: el,
+    //         start: "top 80%", // When the element is 80% in view
+    //         toggleActions: "play none none reverse",
+    //         markers: false, // Set to true for debugging markers
+    //       },
+    //     }
+    //   );
+    // });
+
+
+
+const tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:'.sectiondiv4',
+    start:'top 70%',
+  }
+})
+
+tl.fromTo('.section4',{
+  opacity:0,
+  y:30
+},
+{
+  opacity:1,
+  y:0,
+  duration:0.6,
+  ease:'power1.out',
+  stagger:0.2,
+})
+
+
+tl.fromTo('.sec4-anime1',{
+  opacity:0,
+  y:30,
+},
+{
+  opacity:1,
+  y:0,
+  duration:0.6,
+  ease:'power1.out',
+
+},'-=0.5')
+
+tl.fromTo('.sec4-anime2',{
+  opacity:0,
+  y:30,
+},
+{
+  opacity:1,
+  y:0,
+  duration:0.6,
+  ease:'power1.out',
+
+},
+'-=0.4')
+
+tl.fromTo('.sec4-anime3',{
+  opacity:0,
+  y:30,
+},
+{
+  opacity:1,
+  y:0,
+  duration:0.6,
+  ease:'power1.out',
+},
+'-=0.3'
+)
+
+
+
+
   }, []);
 
   return (
-    <div className="md:px-16">
-      <div className="md:mt-[7rem]">
-        <h1 className="text-3xl sm:text-4xl my-2 text-center font-bold">
-          Virtues and protocols{" "}
+    <div className="md:px-16 sectiondiv4">
+      <div className="md:mt-[6rem]">
+        <h1 className="section4 text-3xl md:text-4xl my-2 text-center font-extrabold">
+          The ethics{" "}
           <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
-            BAOIAM
+            Baoiam
           </span>{" "}
-          works on
+          follows
         </h1>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 my-14 px-12">
         <div
-          ref={(el) => (itemsRef.current[0] = el)}
           className="flex flex-col items-center"
         >
-          <MdOutlineSupportAgent className="text-[4rem] text-indigo-700" />
-          <div className="text-center p-2.5 lg:p-0">
-            <h2 className="font-bold sm:text-[1.2rem] lg:text-[1.1rem] my-2">
-              FULL-TIME SUPPORT
+          <MdHeadsetMic className="sec4-anime1 text-[4rem] text-indigo-700" />
+          <div className="text-center p-3">
+            <h2 className="sec4-anime2 font-bold sm:text-[1.2rem] lg:text-[1.1rem] my-2">
+              Continuous Support
             </h2>
-            <p className="text-sm tracking-tight">
-              Baoiam is an e-learning platform that focuses on the overall skill development of its learners by furnishing courses in a variety of disciplines that can help anyone level their skills and pursue their passion.
+            <p className="sec4-anime3 text-sm tracking-tight">
+              Our excellent team is ready to serve you full time at every stage of your learning journey. We contribute to half of your success, believing that the right guidance can pave the way to achieving your goals
             </p>
           </div>
         </div>
 
         <div
-          ref={(el) => (itemsRef.current[1] = el)}
           className="flex flex-col items-center"
         >
-          <FaChalkboardTeacher className="text-[4rem] text-indigo-700" />
+          <BsPersonVideo className="sec4-anime1 text-[4rem] text-indigo-700" />
           <div className="text-center p-3">
-            <h2 className="font-bold lg:text-[1.1rem] sm:text-[1.2rem] my-2">
-              EXPERIENCED TRAINERS
+            <h2 className="sec4-anime2 font-bold lg:text-[1.1rem] sm:text-[1.2rem] my-2">
+              Highly Experienced Trainers
             </h2>
-            <p className="text-sm tracking-tight">
-              The guidance and expertise that the learners receive from the course is a lifetime experience. As our skilled trainers give their best to provide you with a memorable experience.
+            <p className="sec4-anime3 text-sm tracking-tight">
+              The guidance and experience you revive from our top tier mentors will benefit you at every stage of your learning journey. With their extensive expertise, our mentors ensure you're equipped for success.
             </p>
           </div>
         </div>
 
         <div
-          ref={(el) => (itemsRef.current[2] = el)}
           className="flex flex-col items-center"
         >
-          <FaTabletScreenButton className="text-[3.6rem] text-indigo-700" />
+          <MdOutlinePhonelink className="sec4-anime1 text-[3.6rem] text-indigo-700" />
           <div className="text-center p-3">
-            <h2 className="font-bold sm:text-[1.2rem] lg:text-[1.1rem] my-2">
-              EASE OF USE
+            <h2 className="sec4-anime2 font-bold sm:text-[1.2rem] lg:text-[1.1rem] my-2">
+              Seamless To Use
             </h2>
-            <p className="text-sm tracking-tight">
-              The user-friendly interface and intuitive design of our platform make the finest learning experience. The platform is easy to navigate and understand, making it accessible to people of all age groups and backgrounds.
+            <p className="sec4-anime3 text-sm tracking-tight">
+              Our platform is designed to be easily operated by anyone, with no complex fundamentals. We have implemented simple navigation that is easy for every age group to follow.
             </p>
           </div>
         </div>

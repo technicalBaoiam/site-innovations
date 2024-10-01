@@ -2681,13 +2681,23 @@ export const OtherCourseData = [
 export const industry = [
   {
     id: 1,
-    label: "School/Institute",
-    value: "School/Institute",
+    label: "Individual",
+    value: "individual",
   },
   {
     id: 2,
-    label: "University",
-    value: "University",
+    label: "Agency",
+    value: "agency",
+  },
+  {
+    id: 3,
+    label: "School/Institute",
+    value: "institution",
+  },
+  {
+    id: 4,
+    label: "Organisation",
+    value: "organisation",
   },
 ];
 

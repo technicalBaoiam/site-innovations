@@ -1,12 +1,17 @@
-import React, { useEffect } from 'react';
-import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
-import data from './testimonialsData.json';
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import data from "./testimonialsData.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Star = ({ filled }) => (
-  <svg className={`w-4 h-4 ${filled ? 'fill-[#facc15]' : 'fill-[#CED5D8]'}`} viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg
+    className={`w-4 h-4 ${filled ? "fill-[#facc15]" : "fill-[#CED5D8]"}`}
+    viewBox="0 0 14 13"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
   </svg>
 );
@@ -66,9 +71,13 @@ const Testimonials = () => {
       </div>
 
       {/* Testimonial Cards */}
-      <div className="grid md:grid-cols-3 gap-6 max-w-6xl relative mx-auto mt-20 px-4">
+      <div className="grid md:grid-cols-3 gap-6  max-w-6xl relative mx-auto mt-20 px-4">
         {data.testimonials.map((testimonial, index) => (
-          <div key={index} className="relative w-full mb-6 p-6 rounded-lg shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] bg-white testimonial-card">
+          <div
+            key={index}
+            // dark:bg-[#080529]
+            className="relative w-full mb-6 p-6 dark:bg-gradient-to-r from-white/15 to-white/5 backdrop-blur-lg backdrop-saturate-150  rounded-lg shadow-[0_4px_14px_-6px_rgba(93,96,127,0.4)] testimonial-card"
+          >
             {/* Profile Image */}
             <img
               src={testimonial.image}
@@ -77,7 +86,9 @@ const Testimonials = () => {
             />
             {/* Testimonial Quote */}
             <div className="mt-8 text-center">
-              <p className="text-sm text-gray-800 leading-relaxed">{testimonial.quote}</p>
+              <p className="text-sm text-gray-800 dark:text-gray-100 leading-relaxed">
+                {testimonial.quote}
+              </p>
             </div>
             {/* Star Rating */}
             <div className="mt-4 flex justify-center items-center space-x-1">
@@ -87,7 +98,9 @@ const Testimonials = () => {
             </div>
             {/* Name */}
             <div className="mt-2 text-center">
-              <h4 className="text-sm font-bold text-gray-900">{testimonial.name}</h4>
+              <h4 className="text-sm font-bold dark:text-gray-100 text-gray-900">
+                {testimonial.name}
+              </h4>
             </div>
           </div>
         ))}

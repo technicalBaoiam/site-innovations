@@ -94,7 +94,7 @@ body {
 
 /* Styling for the next button */
 .swiper-button-next {
-  background-color: #cfcedc; /* Indigo */
+  /* background-color: #cfcedc; */
   color: black; /* Text color */
   padding: 10px;
   border-radius: 50%;
@@ -107,7 +107,7 @@ body {
 
 /* Styling for the previous button */
 .swiper-button-prev {
-  background-color: #cfcedc; /* Indigo */
+  /* background-color: #cfcedc;  */
   color: black; /* Text color */
   padding: 10px;
   border-radius: 50%;

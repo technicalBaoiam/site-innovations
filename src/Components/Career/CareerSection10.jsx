@@ -10,14 +10,14 @@ const NewsletterSignup = () => {
      />
      <div className=" relative z-50 h-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center px-6 py-12">
        <div className="max-w-3xl mx-auto text-center">
-         <h3 className="text-white md:text-5xl text-3xl font-bold">
+         <h3 className="text-white lg:text-5xl md:text-3xl text-2xl font-bold">
            Contact for Recruitment Inquiries
          </h3>
-         <p className="text-gray-300 italic lg:text-lg   md:text-lg   sm:text-sm text-sm    mt-4">
+         <p className="text-gray-300 italic lg:text-lg   md:text-md   sm:text-sm text-xs    mt-4">
            Have questions about our open positions? Contact our HR team at
            <span className=" text-yellow-500 font-semibold">
              {" "}
-             recruitment@baoiam.com
+             hr@baoiam.com
            </span>
            .
          </p>

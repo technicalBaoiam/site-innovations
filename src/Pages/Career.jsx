@@ -12,7 +12,7 @@ import CareerSection10 from "../Components/Career/CareerSection10";
 //import Testimonals from "../Components/Testmonials/Testimonials"
 
 const Career = () => {
-  document.title = "Baoiam - Career";
+  document.title = "Baoiam Innovations | Careers";
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

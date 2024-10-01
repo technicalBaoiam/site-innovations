@@ -5,11 +5,14 @@ import gsap from "gsap";
 import { ToastContainer, toast } from "react-toastify";
 import { FiEye, FiEyeOff } from "react-icons/fi";
 import { FaCheckCircle } from "react-icons/fa";
+import { useSelector } from "react-redux";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 const SignUp = () => {
   document.title = "Baoiam - Sign Up";
   const navigate = useNavigate();
+  const authData = useSelector((state) => state.auth);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -87,8 +90,7 @@ const SignUp = () => {
   const Anime2 = useRef(null);
 
   useEffect(() => {
-    if (localStorage.getItem("access_token")) navigate("/profile");
-
+    if (authData && authData.isLoggedIn) navigate("/profile");
     const te = gsap.timeline({ repeat: -1, yoyo: true });
 
     // GSAP Timeline for background fading animations

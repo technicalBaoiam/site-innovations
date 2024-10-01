@@ -8,7 +8,6 @@ import b12 from "../../assets/Blogs/b12.png";
 import b14 from "../../assets/Blogs/b14.png";
 import { useEffect } from "react";
 import gsap from "gsap";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useRef } from "react";
 
@@ -55,7 +54,7 @@ export const TechBlogSlider = () => {
 
   useEffect(() => {
     gsap.fromTo(
-      ".b4",
+      ".b5",
       { opacity: 0, y: 30 },
       {
         opacity: 1,
@@ -64,7 +63,7 @@ export const TechBlogSlider = () => {
         ease: "back.inOut",
         stagger: 0.3,
         scrollTrigger: {
-          trigger: ".bdiv3",
+          trigger: ".bdiv5",
           start: "top 90%",
           end: "bottom 80%",
         },
@@ -85,12 +84,12 @@ export const TechBlogSlider = () => {
   };
 
   return (
-    <div className='my-14'>
+    <div className='my-14 bdiv5'>
       <div>
         {" "}
-        <h1 className='m-8 text-3xl font-bold text-center'>Recent Blogs</h1>
+        <h1 className='m-6 b5 text-3xl font-bold text-center'>Recent Blogs</h1>
       </div>
-      <div className='mb-6 mt-8 px-10'>
+      <div className='mb-6 md:px-10 b5'>
         <Swiper
           keyboard={{
             enabled: true,
@@ -108,35 +107,35 @@ export const TechBlogSlider = () => {
               slidesPerView: 3,
             },
           }}
-          onSlideChange={() => console.log("hi")}
-          onSwiper={(swiper) => console.log("")}
-          className='b4 w-full  p-6  m-auto rounded-lg  flex flex-col justify-center items-center gap-4'
+          // onSlideChange={() => console.log("hi")}
+          // onSwiper={(swiper) => console.log("")}
+          className="b4 w-full  p-6  m-auto rounded-lg  flex flex-col justify-center items-center gap-4"
         >
           {blog_slider?.map((item, i) => {
             return (
               <SwiperSlide
-                className='p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4'
+                className="p-4 cursor-pointer hover:shadow-indigo-400 hover:shadow-md duration-200 hover:scale-105 dark:bg-zinc-900 bg-zinc-100 rounded-md  flex flex-col justify-center items-center gap-4"
                 key={item.id}
               >
                 <Link to={`/Blog-detail/${i}`}>
-                  <div className='relative'>
+                  <div className="relative">
                     <img
-                      className='w-full h-48 object-cover'
+                      className="w-full h-48 object-cover"
                       src={item.imgSrc}
                       alt={`${item.title}`}
                     />
                     {/* Button positioned over the image */}
                     <button
-                      type='button'
-                      className='absolute bottom-2 left-3  bg-slate-400 transition-all text-black text-xs font-medium rounded-full p-1'
+                      type="button"
+                      className="absolute bottom-2 left-3 dark:bg-slate-300 bg-slate-400 transition-all text-black text-xs font-medium rounded-lg p-2"
                     >
                       {item.category}
                     </button>
                   </div>
-                  <div className='p-4 flex-grow '>
-                    <h2 className='text-lg font-bold my-2'>{item.text}</h2>
+                  <div className="p-4 flex-grow ">
+                    <h2 className="text-lg font-bold my-2">{item.text}</h2>
                     <span
-                      className='text-sm text-slate-700 font-semibold'
+                      className="text-sm text-slate-700 dark:text-slate-300 font-semibold"
                       style={{
                         display: "-webkit-box",
                         WebkitBoxOrient: "vertical",
@@ -146,7 +145,7 @@ export const TechBlogSlider = () => {
                     >
                       {item.des}
                     </span>
-                    <p className='text-xs text-slate-500  font-medium mt-2'>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mt-2">
                       {item.info}
                     </p>
                   </div>
@@ -156,11 +155,11 @@ export const TechBlogSlider = () => {
           })}
           {/* Swiper navigation buttons */}
           <div
-            className='swiper-button-prev bg-gray-800 p-2 rounded-full'
+            className="swiper-button-prev bg-gray-800 p-2 rounded-full"
             onClick={handlePrev}
           ></div>
           <div
-            className='swiper-button-next bg-gray-800 p-2 rounded-full'
+            className="swiper-button-next bg-gray-800 p-2 rounded-full"
             onClick={handleNext}
           ></div>
         </Swiper>

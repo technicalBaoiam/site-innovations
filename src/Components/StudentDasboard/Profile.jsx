@@ -18,7 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { setProfile } from "../../Redux/user/userSlice.js";
 
 function Profile({ userInfo }) {
-  console.log(userInfo, 'user profile')
+  console.log(userInfo, "user profile");
   const user = useSelector((state) => {
     console.log(state);
     return state.user;
@@ -64,7 +64,10 @@ function Profile({ userInfo }) {
               alt="Profile"
               className="object-cover w-full h-full mx-auto"
             />
-            <label htmlFor="profileImageInput" className="absolute top-0 left-0 right-0 bottom-0 w-full h-full group-hover:bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer">
+            <label
+              htmlFor="profileImageInput"
+              className="absolute top-0 left-0 right-0 bottom-0 w-full h-full group-hover:bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 cursor-pointer"
+            >
               Edit
               {/* <FiEdit className="text-xl md:text-3xl text-gray-500 rounded-full p-1 bg-white hover:text-gray-800" /> */}
             </label>
@@ -75,7 +78,6 @@ function Profile({ userInfo }) {
               className="hidden"
               onChange={handleChangeProfile}
             />
-
           </div>
           <div className="flex items-center justify-center mt-4 gap-2 socials">
             <div
@@ -131,7 +133,6 @@ function Profile({ userInfo }) {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>

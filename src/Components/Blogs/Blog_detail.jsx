@@ -43,8 +43,8 @@ const Blog_detail = () => {
   const { id } = useParams();
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(content_data);
-    console.log(content_data[id].heading1);
+    // console.log(content_data);
+    // console.log(content_data[id].heading1);
     return () => {};
   }, []);
   document.title = "Baoiam - Blog Details";
@@ -68,13 +68,13 @@ const Blog_detail = () => {
     //     email: email,
     //   })
     //   .then((res) => {
-    //     console.log(res);
+        // console.log(res);
     //   })
     //   .catch((err) => {
-    //     console.log(err);
+        // console.log(err);
     //   });
   };
-  console.log(datacmmt, "cc");
+  // console.log(datacmmt, "cc");
   return (
     <>
       <div className='h-[auto] w-[90%] sm:text-[1.6vw] mx-[5%] px-[2rem] py-[2.5rem] flex-col my-[2rem] bg-purple-100'>

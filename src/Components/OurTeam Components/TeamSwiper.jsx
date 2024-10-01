@@ -24,7 +24,7 @@ export const TeamSwiper = () => {
         stagger: 0.3,
         scrollTrigger: {
           trigger: '.tdiv1',
-          start: 'top 40%',
+          start: 'top 90%',
           end: 'bottom 80%'
         }
       }
@@ -44,35 +44,35 @@ export const TeamSwiper = () => {
       <div className="hidden p-6  md:grid h-full w-full items-center justify-around grid-cols-3 lg:grid-cols-4 gap-6">
         {swiperData.slice(0, 8).map((el) => {
           return (
-            <div className="group h-96 flip-card">
-              <div className="flip-card-inner">
+            <div className="group h-80 w-64 flip-card rounded-xl overflow-hidden">
+              <div className="flip-card-inner rounded-xl">
                 {/* Front Side (Image) */}
                 <div className="t2 flip-card-front mx-auto">
                   <img
-                    className="h-full w-80 sm:w-96 mx-auto  rounded-md object-cover"
-                    src={el.image}
+                    className="h-full w-full  mx-auto  rounded-md object-cover"
+                    src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoEAMYKHiwI5JH_IlxayW3-9UurHlASFy9A&s"}
                     alt={el.name}
                   />
                 </div>
 
                 {/* Back Side (Details) */}
-                <div className="flip-card-back bg-black/50 bg-opacity-80 text-white rounded-md flex flex-col justify-center items-center ">
+                <div className="flip-card-back rounded-xl bg-black/50 bg-opacity-80 text-black dark:text-white flex flex-col justify-center items-center ">
                   <img
                     className="h-full  absolute w-80 sm:w-96 mx-auto rounded-md object-cover"
-                    src={el.image}
+                    src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoEAMYKHiwI5JH_IlxayW3-9UurHlASFy9A&s"}
                     alt={el.name}
                   />
                   <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-md dark:bg-black/80 bg-slate/80"></div>
                   <h3 className="text-center z-10 font-sans font-medium text-sm md:text-lg">
-                    {el.name}
+                    {/* {el.name} */} Coming soon...
                   </h3>
                   <p className="text-center z-10 text-white font-bold text-xs md:text-sm">
-                    {el.role}
+                    {/* {el.role} */}
                   </p>
-                  <div className="py-2 flex z-10 items-center justify-center gap-2">
+                  {/* <div className="py-2 flex z-10 items-center justify-center gap-2">
                     <FaLinkedin className="text-blue-600 text-xl" />
                     <FaXTwitter className="text-white" />
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -112,20 +112,20 @@ export const TeamSwiper = () => {
               >
                 <img
                   className="h-full rounded-md object-cover w-full"
-                  src={el.image}
-                  alt=""
+                  src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoEAMYKHiwI5JH_IlxayW3-9UurHlASFy9A&s"}
+                  alt="team image"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 hover:backdrop-blur-md  flex flex-col justify-center items-center transition-opacity duration-300 rounded-md">
                   <h3 className="text-center text-white font-sans font-medium text-sm md:text-lg">
-                    {el.name}
+                    {/* {el.name} */}
                   </h3>
                   <p className="text-center text-gray-300 text-xs md:text-sm">
-                    {el.role}
+                    {/* {el.role} */}
                   </p>
-                  <div className=" py-2 flex items-center justify-center gap-2">
+                  {/* <div className=" py-2 flex items-center justify-center gap-2">
                     <FaLinkedin className="text-blue-600 text-xl text-center" />
                     <FaXTwitter className="text-black font-bold" />
-                  </div>
+                  </div> */}
                 </div>
               </SwiperSlide>
             );

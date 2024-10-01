@@ -7,6 +7,7 @@ import { swiperData } from "../../Components/OurTeam Components/teamData";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import {
   Autoplay,
   Pagination,
@@ -23,33 +24,35 @@ const TeamComponent = () => {
   const cardsRef = useRef([]);
 
   useEffect(() => {
-    cardsRef.current.forEach((el) => {
-      gsap.fromTo(
-        el,
-        { opacity: 0, y: 50 }, 
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.8,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 80%", 
-            toggleActions: "play none none reverse",
-            markers: false, 
-          },
+    
+    gsap.fromTo('.sectionanime-5',
+      {
+        opacity:0,
+        y:30
+      },
+      {
+        opacity:1,
+        y:0,
+        duration:0.6,
+        ease:'power1.out',
+        stagger:0.2,
+        scrollTrigger:{
+          trigger:'.sectiondiv-5',
+          start:'top 70%',
         }
-      );
-    });
+      }
+    )
+
+
   }, []);
 
   return (
-    <div className="team-component">
-      <div className="text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
+    <div className="sectiondiv-5 team-component">
+      <div className="sectionanime-5 text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
         Our <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">Team</span>
       </div>
 
-      <div className="p-6">
+      <div className="sectionanime-5 p-6">
         <Swiper
           keyboard={{ enabled: true }}
           navigation={true}
@@ -62,29 +65,30 @@ const TeamComponent = () => {
             768: { slidesPerView: 3 },
             1024: { slidesPerView: 4 },
           }}
-          onSlideChange={() => console.log("Slide changed")}
-          onSwiper={(swiper) => console.log("Swiper initialized")}
+          // onSlideChange={() => console.log("Slide changed")}
+          // onSwiper={(swiper) => console.log("Swiper initialized")}
           className="md:h-[350px] w-full md:w-[90%] m-auto flex flex-col justify-center items-center gap-4"
         >
           {data?.map((el, index) => (
             <SwiperSlide
               key={el.id}
               ref={(el) => (cardsRef.current[index] = el)} // Assigning ref to each card
-              className="group rounded-xl flip-card w-96 h-72 overflow-hidden"
+              className="group rounded-xl border shadow-md flip-card w-96 h-72 overflow-hidden"
             >
               <div className="flip-card-inner">
                 {/* Front Side (Image) */}
-                <div className="flip-card-front">
+                <div className="flip-card-front ">
                   <img
                     className="h-full w-full rounded-md object-cover"
-                    src={el.image}
+                    src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoEAMYKHiwI5JH_IlxayW3-9UurHlASFy9A&s"}
                     alt={el.name}
                   />
+                  
                 </div>
 
                 {/* Back Side (Details) */}
                 <div className="flip-card-back bg-black/90 text-white rounded-md flex flex-col justify-center items-center">
-                  <h3 className="text-center font-sans font-bold text-xl text-indigo-500">
+                  <h3 className="text-center font-sans font-bold text-xl bg-gradient-to-r bg-clip-text text-transparent from-pink-500 via-amber-500 to-violet-400">
                     {el.name}
                   </h3>
                   <p className="text-center italic text-sm">({el.role})</p>
@@ -93,7 +97,7 @@ const TeamComponent = () => {
                     <FaXTwitter className="" />
                   </div>
                   <p className="text-xs text-center px-4">
-                    {el.desc}
+                    {/* {el.desc} */} ...
                   </p>
                 </div>
               </div>

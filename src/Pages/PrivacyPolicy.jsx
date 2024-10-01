@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 const PrivacyPolicies = () => {
-  document.title = 'Baoiam - Privacy Policy'
+  document.title = "Baoiam Innovations | Privacy policy";
   useEffect(() => {
     window.scrollTo(0, 0);
 

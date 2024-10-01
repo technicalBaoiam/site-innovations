@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 const TermsAndConditions = () => {
-  document.title = 'Baoiam - Terms and Conditions'
+  document.title = "Baoiam Innovations | Terms & Conditions";
   useEffect(() => {
     window.scrollTo(0, 0);
 

@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 
 
 const HireFromUs = () => {
-    document.title = 'Baoiam - Hire from us'
+    document.title = "Baoiam Innovations | Hire from us";
 
     const [selectedCard, setSelectedCard] = useState(null);
   

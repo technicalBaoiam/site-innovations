@@ -10,7 +10,9 @@ const apiUrl = import.meta.env.VITE_API_URL;
 const domain = import.meta.env.VITE_DOMAIN_URL;
 import gsap from "gsap";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../Redux/auth/authSlice";
+import JSEncrypt from "jsencrypt";
 const Login = () => {
   document.title = "Baoiam - Login";
   axios.defaults.withCredentials = true;
@@ -19,23 +21,30 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const location = useLocation();
   const requestRef = useRef(false);
-
+  const from = "/profile";
   const [pass, setPass] = useState(false);
-
+  const [parentState, setParentState] = useState(location);
+  const dispatch = useDispatch();
+  const authData = useSelector((state) => state.auth);
+  console.log(parentState);
   useEffect(() => {
-    window.scrollTo(0, 0);
-    if (localStorage.getItem("access_token")) navigate("/profile");
-    const values = queryString.parse(location.search);
-    const state = values.state || null;
-    const code = values.code || null;
+    console.log("authData:", authData);
+    if (authData && authData.isLoggedIn) {
+      navigate(from, { state: { ...parentState }, replace: true });
+    } else {
+      window.scrollTo(0, 0);
+      const values = queryString.parse(location.search);
+      const state = values.state || null;
+      const code = values.code || null;
 
-    console.log("State:", state);
-    console.log("Code:", code);
+      console.log("State:", state);
+      console.log("Code:", code);
 
-    if (state && code && !localStorage.getItem("authenticated")) {
-      googleAuthenticate(state, code);
+      if (state && code && !localStorage.getItem("authenticated")) {
+        googleAuthenticate(state, code);
+      }
     }
-  }, [location]);
+  }, [authData, location.search]);
 
   const googleAuthenticate = async (state, code) => {
     if (requestRef.current) return;
@@ -75,9 +84,8 @@ const Login = () => {
 
         localStorage.setItem("access", data.access);
         localStorage.setItem("authenticated", true);
-
         setTimeout(() => {
-          navigate("/profile");
+          navigate(from, { state: { ...parentState }, replace: true });
         }, 2000);
       }
     } catch (error) {
@@ -106,6 +114,7 @@ const Login = () => {
           autoClose: 2000,
         });
         window.location.replace(response.data.authorization_url);
+        localStorage.setItem("login", true);
       } else {
         throw new Error("Failed to get authorization URL.");
       }
@@ -113,18 +122,34 @@ const Login = () => {
       toast.error(error.message);
     }
   };
-
+  const encryptPassword = (password) => {
+    const publicKey = `-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3Vd1BPejqLK5Cv2FiIl2
+2fSGOE9UhctpIlydD9wlQMMoA1oE71ELqJXIpN10hNowa1Am7WgpCqqcNhWH3Nxi
+csMXhOi39cxPsZhhIfry+LekOJKRwhG4legK+tm5QjLSZeASmu9iHALpchBQqzho
+MS3VnHbjErJtLNprzbPlSGU0/8czTKoRWw9lMX9qKzDoIneU8wHpmBefKS2bT8yX
+iN81rPTzzjB2zz/nTBGYDdrswkmDj9UrldierJLt1OXJKHrgY9DTK9ws6GWZAg+i
+/bc4bZ3ACNjyPRZiTRS2w9RGMgp4k+8Skb47hQmztj7knTKjgG7FojH9f1LaqhOv
+iwIDAQAB
+-----END PUBLIC KEY-----
+`;
+    const encrypt = new JSEncrypt();
+    encrypt.setPublicKey(publicKey);
+    console.log("inside method:", password);
+    const encryptedPassword = encrypt.encrypt(password);
+    return encryptedPassword;
+  };
   const handleLogin = async (e) => {
     e.preventDefault();
     const toastId = toast.loading("Processing your login...");
-
     try {
+      const encryptedPassword = encryptPassword(password);
       const response = await axios.post(
         `${apiUrl}/api/auth/jwt/create/`,
         { email, password },
         { withCredentials: true }
       );
-      console.log(response);
+      console.log("from login: ", response);
       if (response.status === 200) {
         localStorage.setItem("access_token", response.data.access);
         toast.update(toastId, {
@@ -133,9 +158,11 @@ const Login = () => {
           isLoading: false,
           autoClose: 2000,
         });
-
+        localStorage.setItem("login", true);
+        localStorage.setItem("refresh_token", response.data.refresh);
         setTimeout(() => {
-          navigate("/profile");
+          // navigate(from, { state: { ...parentState }, replace: true });
+          dispatch(login(response.data.access));
         }, 2000);
       } else {
         throw new Error(response.data?.detail || "Login failed.");
@@ -347,7 +374,7 @@ const Login = () => {
               </p>
               <Link
                 to={"/Signup"}
-                className="px-16 bg-black sm:py-1 sm:text-[1.2vw] px-9 py-2 border rounded-full border-black"
+                className="px-16 bg-black sm:py-1 sm:text-[1.2vw] py-2 border rounded-full border-black"
               >
                 Sign Up
               </Link>

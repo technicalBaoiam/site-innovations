@@ -8,6 +8,7 @@ import refer from "../assets/Refer/refer2.png";
 import Faq from "./Faq";
 
 const ReferAndEarn = () => {
+  document.title = "Baoiam Innovations | Refer and earn";
   return (
     <>
       {/* section-1 */}

@@ -44,16 +44,16 @@ const SearchBox = ({ courses }) => {
 
     return (
         <div className='relative'>
-            <div className='hidden md:flex items-center border border-slate-400 rounded-lg pl-4 pr-2 py-1 w-44 xl:w-60'>
+            <div className='hidden md:flex items-center border focus:outline focus:outline-orange-500 bg-slate-100 dark:bg-slate-200 dark:text-white border-slate-400 rounded-3xl w-40'>
                 <input
                     type="text"
-                    className='w-32 xl:w-44 bg-transparent outline-none'
+                    className='w-32 bg-transparent py-2 pl-3 text-slate-500 dark:text-white text-xs outline-none'
                     placeholder='Search...'
                     ref={inputRef}
                     value={searchQuery}
                     onChange={handleSearchChange}
                 />
-                <RiSearch2Line size={20} />
+                <RiSearch2Line size={16} className='text-slate-500'  />
             </div>
 
             {searchQuery && (

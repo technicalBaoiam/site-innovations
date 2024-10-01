@@ -16,7 +16,7 @@ export const LeadershipTeam = () => {
   return (
     <>
       <CommonComp
-        heading={"Visionary leaders"}
+        heading={"Our leaders"}
         para={
           "Our leadership team is committed to revolutionizing learning and equipping individuals with the skills needed to excel in today’s dynamic world. Through innovative technology and personalized solutions, we’re making education more accessible, engaging, and impactful, helping learners reach their fullest potential and confidently shape their futures."
         }

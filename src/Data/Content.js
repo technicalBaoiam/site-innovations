@@ -1,15 +1,75 @@
 const blog_contents = [
+  // {
+  //   title: "title1",
+  //   detail: `detailed view <h1>Hello world</h1><p>welcome to this website</p>
+  //   <ul>
+  //       <li>First</li>
+  //       <li>Second</li>
+  //   </ul>`,
+  // },
   {
-    title: "title1",
-    detail: `detailed view <h1>Hello world</h1><p>welcome to this website</p>
-    <ul>
-        <li>First</li>
-        <li>Second</li>
-    </ul>`,
+    heading1:
+      "The path to a successful tech career: The Importance of web development skills",
+    Category: "SCIENCE",
+    p1: "Discover the importance of web development skills in today’s era. Learn why programming languages like JavaScript, HTML, and CSS are important for front-end, back-end, and full-stack development. Explore how mastering these skills can shape your path to a successful tech career.",
+    heading2: "Introduction to Web Development in Tech Careers",
+    p2: "The tech industry is constantly growing and expanding , and web development is one of the most crucial skills for people who want to shape their career in this industry. Whether you are making a website, building an app, or optimizing a website, learning web development skills is important in a tech career. So let us know more about what these skills are and their importance.",
+    heading3: "Why Web Development Skills Are Essential",
+    p3: [
+      {
+        head: "High Demand for Web Developers",
+        desc: "Web Developers are responsible for the proper functioning and the visual appearance of the web. They design it according to the needs and requirements of users making it user - friendly. As most of the companies are going digital, the demand of the web developer is increasing to make a strong presence of the company online.",
+      },
+      {
+        head: "Job Security",
+        desc: "As the digital world is expanding, web development is becoming the most crucial and high-demand job across the world. This increases the stability and job security for the web developers",
+      },
+      {
+        head: "Continuous Learning and Growth",
+        desc: "As the tech industry keeps evolving and updating every day, it offers numerous new opportunities to the web developers. It helps them to keep up with the latest trends and technologies.",
+      },
+      {
+        head: "Creativity and Problem-Solving",
+        desc: "As a web developer you get the chance to enhance your creativity by designing the webpages according to the user requirements. It also exercises your critical thinking capability by complex problem - solving.",
+      },
+      {
+        head: "Versatility Across Industries",
+        desc: "Every sector including finance, entertainment, businesses, or healthcare, needs a web developer. It gives a web developer an opportunity to work in diverse fields",
+      },
+    ],
+    heading4: "Core Web Development Skills to Master",
+    p4: [
+      {
+        head: "HTML",
+        desc: "A web developer must master HTML( Hypertext Markup Language) as it is the foundation language which is used to give the structure of the content on a web. It contains headings, paragraphs,links, images, and more.",
+      },
+      {
+        head: "CSS",
+        desc: "Cascading Style Sheet is used to style and layout a web page — for example, to give the font, color, size, animation, etc",
+      },
+      {
+        head: "JavaScript",
+        desc: " It is used to make a webpage interactive — for example, to update content, build web applications, animate images, and handle user input.",
+      },
+      {
+        head: "Understanding Responsive Design",
+        desc: " It is used to design a web that can adjust its layout automatically on all devices such as mobile phones, tablets, or laptops.",
+      },
+      {
+        head: "Front-End and Back-End Development",
+        desc: ` Web development is divided into two types — front-end (client-side) and back-end (server-side) development.
+ Front-end developers focus  on creating visually appealing websites using  languages such as HTML, CSS, and JavaScript.`,
+      },
+      {
+        head: "Full Stack Development",
+        desc: "It covers both front - end and back - end development.",
+      },
+    ],
   },
   {
     heading1: "Balancing Screen Time: Healthy Technology Use In Education",
-    p1: " Learn how to balance screen time effectively while using technology in education. Know about strategies like digital detox, parental controls, and digital literacy. Discover performance monitoring tools like AppDynamics and DataDog to stay healthy and productive while learning in the digital age.", 
+    Category: "EDUCATION",
+    p1: " Learn how to balance screen time effectively while using technology in education. Know about strategies like digital detox, parental controls, and digital literacy. Discover performance monitoring tools like AppDynamics and DataDog to stay healthy and productive while learning in the digital age.",
     heading2: "The Importance of Healthy Technology Use In Education",
     p2: "As technology has become an integral part of our life, it is really necessary to understand the importance of healthy technology use to maintain your overall well being while learning. ",
     points1: [
@@ -58,6 +118,7 @@ const blog_contents = [
   {
     heading1:
       " Challenges of Implementing Ed-Tech Companies And How  to Overcome Them.",
+    Category: "EDUCATION",
     p1: "Edtech is the new trend in the educational world more than that it is reshaping how education is delivered. successfully running an Ed-Tech company is not a cakewalk. It comes with its own set of challenges. Exploring the challenges of using technology in education becomes crucial, no matter whether you are a student or an aspiring Ed-tech entrepreneur.",
     heading2: "Key Challenges in Ed-Tech Implementation",
     p2: "Here is a breakdown of some of the challenges in the effective implementation of ed-tech:-",
@@ -112,6 +173,7 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   {
     heading1:
       "The era of early childhood education:  take up changes, block challenges and, exercise of strategic tools",
+    Category: "TECHNOLOGY",
     p1: "Early childhood education is crucial for a child's overall development, encompassing cognitive, emotional, and social growth. Educational videos and interactive learning tools are increasingly essential in this stage, as they provide engaging and age-appropriate content that enhances learning experiences. Discover the profound impact of EdTech in shaping early childhood education, fostering a strong foundation for lifelong learning.",
     heading2: "What is early childhood education technology? ",
     p2: [
@@ -145,6 +207,7 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   {
     heading1:
       "How Ed-Tech Enhances Critical Thinking Skills: Strategies and Future Prospects",
+    Category: "FINANCE",
     p1: "Learn about how Ed-Tech enhances critical thinking abilities and approaches and possibilities in education technology. Understand the role of critical thinking in contemporary learners.  This blog evaluates how Ed-Tech changes the method of students’ critical thinking skills and the role it plays in the future.",
     heading2: "The Importance of Critical Thinking in Education",
     p2: "Among all practical skills relevant to the students of the current academic year, critical thinking skills have become significant in the context of globalization and advancement in education. Critical thinking, which entails assessing and solving issues, is vital When the global environment becomes more challenging. What is critical thinking? Essentially, critical thinking means-",
@@ -206,6 +269,7 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   },
   {
     heading1: "The Rise of EdTech: How It’s Shaping Modern Education",
+    Category: "EDUCATION",
     p1: "Here, uncover the rise of Edtech: how it’s shaping modern education. Education is the most prioritised sector that is evolving through the help of technology. In this blog, we share a detailed study of how technology gives a new insight to digital education.",
     heading2: "WHAT IS EDUCATION TECHNOLOGY?",
     p2: [
@@ -252,67 +316,11 @@ The more interesting the visuals, the more the engagement of students. Incorpora
     conclusion_para:
       "These are the most prolific features of EdTech, which most of us are aware of. Now, every educational technical company is increasing their market share in the education sector by managing all the associates needed which engage most students. Baoiam firmly believes in the rise of Ed tech so, Baoiam is constantly incorporating Ed tech and delivering the facilities in the best associating manner.",
   },
-  {
-    heading1:
-      "The path to a successful tech career: The Importance of web development skills",
-    p1: "Discover the importance of web development skills in today’s era. Learn why programming languages like JavaScript, HTML, and CSS are important for front-end, back-end, and full-stack development. Explore how mastering these skills can shape your path to a successful tech career.",
-    heading2: "Introduction to Web Development in Tech Careers",
-    p2: "The tech industry is constantly growing and expanding , and web development is one of the most crucial skills for people who want to shape their career in this industry. Whether you are making a website, building an app, or optimizing a website, learning web development skills is important in a tech career. So let us know more about what these skills are and their importance.",
-    heading3: "Why Web Development Skills Are Essential",
-    p3: [
-      {
-        head: "High Demand for Web Developers",
-        desc: "Web Developers are responsible for the proper functioning and the visual appearance of the web. They design it according to the needs and requirements of users making it user - friendly. As most of the companies are going digital, the demand of the web developer is increasing to make a strong presence of the company online.",
-      },
-      {
-        head: "Job Security",
-        desc: "As the digital world is expanding, web development is becoming the most crucial and high-demand job across the world. This increases the stability and job security for the web developers",
-      },
-      {
-        head: "Continuous Learning and Growth",
-        desc: "As the tech industry keeps evolving and updating every day, it offers numerous new opportunities to the web developers. It helps them to keep up with the latest trends and technologies.",
-      },
-      {
-        head: "Creativity and Problem-Solving",
-        desc: "As a web developer you get the chance to enhance your creativity by designing the webpages according to the user requirements. It also exercises your critical thinking capability by complex problem - solving.",
-      },
-      {
-        head: "Versatility Across Industries",
-        desc: "Every sector including finance, entertainment, businesses, or healthcare, needs a web developer. It gives a web developer an opportunity to work in diverse fields",
-      },
-    ],
-    heading4: "Core Web Development Skills to Master",
-    p4: [
-      {
-        head: "HTML",
-        desc: "A web developer must master HTML( Hypertext Markup Language) as it is the foundation language which is used to give the structure of the content on a web. It contains headings, paragraphs,links, images, and more.",
-      },
-      {
-        head: "CSS",
-        desc: "Cascading Style Sheet is used to style and layout a web page — for example, to give the font, color, size, animation, etc",
-      },
-      {
-        head: "JavaScript",
-        desc: " It is used to make a webpage interactive — for example, to update content, build web applications, animate images, and handle user input.",
-      },
-      {
-        head: "Understanding Responsive Design",
-        desc: " It is used to design a web that can adjust its layout automatically on all devices such as mobile phones, tablets, or laptops.",
-      },
-      {
-        head: "Front-End and Back-End Development",
-        desc: ` Web development is divided into two types — front-end (client-side) and back-end (server-side) development.
- Front-end developers focus  on creating visually appealing websites using  languages such as HTML, CSS, and JavaScript.`,
-      },
-      {
-        head: "Full Stack Development",
-        desc: "It covers both front - end and back - end development.",
-      },
-    ],
-  },
+
   {
     heading1:
       "Mastering Financial Literacy for All: Essential Skills for a Brighter Future",
+    Category: "FINANCE",
     p1: "Knowing how to mastering financial literacy for all: essential skills for a brighter future, is a burning topic for the students belonging from the different age groups.Students are well aware about their financial needs and how to manage them properly. ",
     heading2: "Introduction-",
     p2: "Financial literacy for all is no longer a luxury but a necessity in today's globalised speedy world. Understanding money management, savings, investments, and debt can dramatically improve one’s quality of life and future prospects. The good news is that there are countless financial literacy resources for all available today, making it easier than ever to enhance your financial knowledge. This blog post will delve into the importance of financial literacy, key concepts to master, and the resources and courses that can guide your learning journey to the summit. Demand for financial literacy is rising to its verge, so all the Learning Platforms across India, here Baoiam is getting familiar to provide the knowledge of financial literacy.",
@@ -470,6 +478,7 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   },
   {
     heading1: "Unlocking the Future of Education: Ed-Tech Latest Trends ",
+    Category: "EDUCATION",
     p1: "Ed-tech stands for Educational Technologies. It is the use of digital technologies, tools, and platforms to improve teaching, learning, and educational administration. Some successful EdTech companies are Baoiam, Coursera, Khan Academy, etc. ",
     heading2: "Personalized Learning Experiences:",
     p2: "One of the major changes in Ed-Tech is the transition towards personalized learning, in which material and pace are adapted to individual learners' requirements. Baoiam's platform employs AI-powered algorithms to evaluate students' strengths and weaknesses, allowing for personalized lesson plans that improve learning outcomes. This technique not only accommodates different learning styles but also keeps students engaged and motivated.",
@@ -497,6 +506,7 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   },
   {
     heading1: "What is software testing and its importance?",
+    Category: "TECHNOLOGY",
     p1: "software testing is essential to assess the functionality of a software program while developing a product — it's crucial for ensuring quality and reliability in software development. By learning about software testing we can guarantee reliability, security, and safety for users",
     heading2: "What is software testing?",
     p2: "Software testing is the process of evaluating and verifying the functionality of a software application works according to input. It checks the input and outcome expected. Good testing helps prevent bugs and improve performance with efficiency. It not only aims at fixing issues but also provides measures to improve them.",
@@ -546,12 +556,13 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   },
   //  additional
   {
-    heading1: "A Complete Guide to Graphic Designing: Career Paths, Tools, and Opportunities",
+    heading1:
+      "A Complete Guide to Graphic Designing: Career Paths, Tools, and Opportunities",
+    Category: "SCIENCE",
     p1: "Graphic designing is among the most exciting and fulfilling careers you can pursue in the current world where technology is strongly emphasized. This field can excite any student with a zeal for creativity and a desire to bring stories alive through visuals. Whether you want to develop eye-catching designs for clients and companies, produce easy website and application interfaces, or generate captivating advertising images, the field of graphic designing can provide not only the satisfaction of realizing your creativity but also potentially high income.",
     heading2: "What is software testing?",
     p2: "Software testing is the process of evaluating and verifying the functionality of a software application works according to input. It checks the input and outcome expected. Good testing helps prevent bugs and improve performance with efficiency. It not only aims at fixing issues but also provides measures to improve them.",
-    heading3:
-      "Why Choose Graphic Designing?",
+    heading3: "Why Choose Graphic Designing?",
     p3: [
       {
         head: "The employment rate in graphic designing careers is on the rise. Marketers in today’s businesses require highly skilled individuals to help develop appealing content in different industries.",
@@ -596,6 +607,7 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   },
   {
     heading1: "What is software testing and its importance?",
+    Category: "TECHNOLOGY",
     p1: "software testing is essential to assess the functionality of a software program while developing a product — it's crucial for ensuring quality and reliability in software development. By learning about software testing we can guarantee reliability, security, and safety for users",
     heading2: "What is software testing?",
     p2: "Software testing is the process of evaluating and verifying the functionality of a software application works according to input. It checks the input and outcome expected. Good testing helps prevent bugs and improve performance with efficiency. It not only aims at fixing issues but also provides measures to improve them.",
@@ -644,7 +656,9 @@ The more interesting the visuals, the more the engagement of students. Incorpora
     ],
   },
   {
-    heading1: "The Role of Social Media and Digital Marketing in Shaping the Youth",
+    heading1:
+      "The Role of Social Media and Digital Marketing in Shaping the Youth",
+    Category: "DIGITAL MARKETING",
     p1: "software testing is essential to assess the functionality of a software program while developing a product — it's crucial for ensuring quality and reliability in software development. By learning about software testing we can guarantee reliability, security, and safety for users",
     heading2: "What is software testing?",
     p2: "Software testing is the process of evaluating and verifying the functionality of a software application works according to input. It checks the input and outcome expected. Good testing helps prevent bugs and improve performance with efficiency. It not only aims at fixing issues but also provides measures to improve them.",
@@ -695,6 +709,7 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   {
     heading1: "",
     p1: "software testing is essential to assess the functionality of a software program while developing a product — it's crucial for ensuring quality and reliability in software development. By learning about software testing we can guarantee reliability, security, and safety for users",
+    Category: "TECHNOLOGY",
     heading2: "What is software testing?",
     p2: "Software testing is the process of evaluating and verifying the functionality of a software application works according to input. It checks the input and outcome expected. Good testing helps prevent bugs and improve performance with efficiency. It not only aims at fixing issues but also provides measures to improve them.",
     heading3:
@@ -744,6 +759,7 @@ The more interesting the visuals, the more the engagement of students. Incorpora
   {
     heading1: "",
     p1: "software testing is essential to assess the functionality of a software program while developing a product — it's crucial for ensuring quality and reliability in software development. By learning about software testing we can guarantee reliability, security, and safety for users",
+    Category: "SCIENCE",
     heading2: "What is software testing?",
     p2: "Software testing is the process of evaluating and verifying the functionality of a software application works according to input. It checks the input and outcome expected. Good testing helps prevent bugs and improve performance with efficiency. It not only aims at fixing issues but also provides measures to improve them.",
     heading3:

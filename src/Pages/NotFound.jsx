@@ -2,6 +2,7 @@ import { FaExclamationTriangle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 const NotFound = () => {
+  document.title = "Baoiam Innovations | 404 Not found";
   const navigate = useNavigate();
 
   const handleHomeClick = () => {

@@ -60,19 +60,19 @@ const FilterSidebar = ({toggler,isOpen,setCategory,setDifficulty, setPrice}) => 
             <h3 className="font-semibold">Category</h3>
             <label className="block">
               <input type="checkbox" name="category" value={"Frontend Development"} className="mr-2" onClick={(e)=>{
-                console.log(e.target.value)
+                // console.log(e.target.value)
                 handleFilterSelect(e.target);
               }} /> Frontend Development
             </label>
             <label className="block">
               <input type="checkbox" name="category" value={"Backend Development"} className="mr-2" onClick={(e)=>{
-                console.log(e.target.value)
+                // console.log(e.target.value)
                 handleFilterSelect(e.target);
               }} /> Backend Development
             </label>
             <label className="block">
               <input type="checkbox" name="category" value={"Full Stack Development"} className="mr-2" onClick={(e)=>{
-                console.log(e.target.value)
+                // console.log(e.target.value)
                 handleFilterSelect(e.target);
               }} /> Full Stack Development
             </label>
@@ -81,19 +81,19 @@ const FilterSidebar = ({toggler,isOpen,setCategory,setDifficulty, setPrice}) => 
             <h3 className="font-semibold">Difficulty Level</h3>
             <label className="block">
               <input type="checkbox" value="Beginner" name='difficulty' className="mr-2"  onClick={(e)=>{
-                console.log(e.target.value)
+                // console.log(e.target.value)
                 handleFilterSelect(e.target);
               }} /> Beginner
             </label>
             <label className="block">
               <input type="checkbox" value="Intermediate" name='difficulty' className="mr-2"  onClick={(e)=>{
-                console.log(e.target.value)
+                // console.log(e.target.value)
                 handleFilterSelect(e.target);
               }} /> Intermediate
             </label>
             <label className="block">
               <input type="checkbox" value="Advanced" name='difficulty' className="mr-2"  onClick={(e)=>{
-                console.log(e.target.value)
+                // console.log(e.target.value)
                 handleFilterSelect(e.target);
               }} /> Advanced  
             </label>

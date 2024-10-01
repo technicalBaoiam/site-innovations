@@ -12,7 +12,7 @@ import Testimonials from '../Components/Testmonials/Testimonials';
 
 
 const School = () => {
-  document.title = "Baoiam - School";
+  document.title = "Baoiam Innovations | Courses";
   const navigate = useNavigate();
 
   const handleExploreCourses = () => {

@@ -52,7 +52,7 @@ const CourseHighlights = () => {
   };
 
   return (
-    <div className="py-8 px-8 lg:px-24 w-full h-full">
+    <div className="py-8 px-8 xl:px-24 w-full h-full">
       <h4 className="mb-8 text-3xl md:text-4xl text-center lg:mb-12 font-bold">
         Course{" "}
         <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
@@ -65,9 +65,9 @@ const CourseHighlights = () => {
           return (
             <div
               key={i}
-              className="bg-white group hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 xl:py-0 md:h-[210px] rounded-xl flex flex-col gap-4 w-full sm:w-[21rem] lg:w-[30%] highlight-card"
+              className="bg-white group dark:bg-[#080529] hover:scale-105 overflow-hidden lg:h-[230px] justify-center shadow-2xl px-4 py-8 xl:py-0 md:h-[210px] rounded-xl flex flex-col gap-4 w-full sm:w-[21rem] lg:w-[30%] highlight-card"
             >
-              <p className="tracking-tighter flex items-center gap-2">
+              <p className="tracking-tighter dark:text-white flex items-center gap-2">
                 <span className="text-4xl drop-shadow-2xl group-hover:text-gradient-to-r from-pink-500 to-violet-600 group-hover:shadow-orange-600 group-hover:animate-bounce transition-all ease-in-out">
                   {React.createElement(highlightIcons(h.icon))}
                 </span>
@@ -76,7 +76,7 @@ const CourseHighlights = () => {
                 </span>
               </p>
               <p>
-                <span>{h.desc}</span>
+                <span className="dark:text-slate-300">{h.desc}</span>
               </p>
             </div>
           );

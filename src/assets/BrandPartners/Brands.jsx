@@ -13,5 +13,10 @@ import Lenskart from './Lenskart.png';
 import Internshala from './Internshala.png';
 
 
-export const brands=[Intel,Flipkart,HCL,Visa,Accenture,Ola,Facebook,Paytm,HelloIntern,Hirect,Lenskart,Internshala];
+import adobe from './adobe.jpg';
+import Google from './Google.png';
+import microsoft from './microsoft.jpg';
+
+
+export const brands=[adobe, Google,Intel,microsoft,Flipkart,HCL,Visa,Accenture,Ola,Facebook,Paytm,HelloIntern,Hirect,Lenskart,Internshala];
  

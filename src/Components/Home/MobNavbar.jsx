@@ -23,15 +23,15 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
     setIsDark();
   };
 
-  useEffect(() => {
-    console.log(isDark);
-  }, [isDark]);
+  // useEffect(() => {
+  //   // console.log(isDark);
+  // }, [isDark]);
 
   const closeSideBar = () => {
     setShowmenu(false);
   };
-
-  console.log(course);
+ 
+  // console.log(course);
 
   return (
     <div>
@@ -40,8 +40,8 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
           showmenu ? "translate-x-0" : "-translate-x-full"
         }  `}
       >
-        <div className="block lg:hidden h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-[#080529]">
-          <div className="flex justify-between items-center w-full px-2 py-4 sticky top-0 z-50 dark:bg-[#080529]">
+        <div className="block lg:hidden h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-black">
+          <div className="flex justify-between items-center w-full px-2 py-4 sticky top-0 z-50 dark:bg-black">
             <Logo isDark={isDark} />
             <RxCross2
               className="text-black dark:text-white"
@@ -73,19 +73,20 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                   : "text-gray-600 dark:text-gray-400"
               }`}
             >
-              <button
-                onClick={() => {
+              <div
+                className="flex justify-between w-full items-center"
+              >
+                <Link to="/courses" onClick={closeSideBar} className="flex-1 dark:text-white ms-3 text-left rtl:text-right whitespace-nowrap">
+                  Course
+                </Link>
+                {subCateDrop ? <FaChevronUp onClick={() => {
                   setSubCateDrop((old) => !old);
                   setActiveTab("Course");
-                }}
-                className="flex justify-between w-full items-center"
-                type="button"
-              >
-                <span className="flex-1 dark:text-white ms-3 text-left rtl:text-right whitespace-nowrap">
-                  Course
-                </span>
-                {subCateDrop ? <FaChevronUp /> : <FaChevronDown />}
-              </button>
+                }} /> : <FaChevronDown onClick={() => {
+                  setSubCateDrop((old) => !old);
+                  setActiveTab("Course");
+                }} />}
+              </div>
               {subCateDrop && (
                 <ul className="py-2 relative flex flex-col gap-2 w-full items-start ">
                   <li
@@ -170,7 +171,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                       setCollegeCate(false);
                       setSchoolCate(false);
                     }}
-                    className="flex items-center justify-between gap-2 w-full p-2 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:bg-gray-700"
+                    className="flex items-center justify-between gap-2 w-full p-2 transition duration-75 rounded-lg pl-6 group hover:bg-gray-100 text-gray-600 dark:bg-black hover:text-gray-900 dark:hover:bg-gray-700"
                   >
                     <div className="flex items-center gap-2">
                       <IoBookSharp />
@@ -256,7 +257,7 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
             <li
               className={`${mobTabtyles} ${
                 location.pathname === "/gcep" && activeTab === "GCEP"
-                  ? "text-[#1638C9]  dark:text-white dark:bg-[#060606]"
+                  ? "text-[#1638C9]  dark:text-white dark:bg-black"
                   : "text-gray-600 dark:text-gray-400"
               }`}
               onClick={() => {

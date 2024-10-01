@@ -1,15 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger"; // Import ScrollTrigger
+
 
 const GSCPBottom = () => {
   const textRef = useRef(null); // Reference for the text to animate
 
   useEffect(() => {
-    // Register ScrollTrigger with GSAP
-    gsap.registerPlugin(ScrollTrigger);
-
-    // GSAP ScrollTrigger animation
     gsap.fromTo(
       textRef.current,
       { opacity: 0, y: 50 },

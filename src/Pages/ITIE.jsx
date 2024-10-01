@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import img2 from "../assets/ITIE&Entre/ITIE/img2.jpeg";
+import img2 from "../assets/ITIE&Entre/ITIE/img2.png";
 import intern1 from "../assets/ITIE&Entre/ITIE/intern1.jpg";
 import productm from "../assets/ITIE&Entre/ITIE/productm .png";
 import hr from "../assets/ITIE&Entre/ITIE/hr.png";
@@ -180,43 +180,58 @@ const testimonials = [
 ];
 
 const ITIE = () => {
-  document.title = "Baoiam - ITIE";
+  document.title = "Baoiam Innovations | Intern Teach Intern Earn";
   const navigate = useNavigate();
 
   //  gsap
   useEffect(() => {
-    
     gsap.fromTo(
       ".text-section h1",
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out", scrollTrigger: {
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
           trigger: ".text-section",
-          start: "top 80%", 
-          toggleActions: "play none none reverse", 
-        }
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
       }
     );
 
     gsap.fromTo(
       ".text-section h2, .text-section p, .text-section button",
       { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration: 1, ease: "power3.out", delay: 0.3, stagger: 0.2, scrollTrigger: {
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.3,
+        stagger: 0.2,
+        scrollTrigger: {
           trigger: ".text-section",
           start: "top 80%",
           toggleActions: "play none none reverse",
-        }
+        },
       }
     );
 
-    
     gsap.fromTo(
       ".image-section img",
       { opacity: 0, x: 50 },
-      { opacity: 1, x: 0, duration: 1, ease: "power3.out", scrollTrigger: {
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
           trigger: ".image-section",
           start: "top 80%",
           toggleActions: "play none none reverse",
-        }
+        },
       }
     );
     gsap.fromTo(
@@ -269,7 +284,7 @@ const ITIE = () => {
         },
       }
     );
-    gsap.utils.toArray(".swiper-slide").forEach(slide => {
+    gsap.utils.toArray(".swiper-slide").forEach((slide) => {
       gsap.fromTo(
         slide,
         { opacity: 0, y: 30 },
@@ -342,37 +357,37 @@ const ITIE = () => {
       {/* Program Overview */}
 
       <div className="program-overview md:mx-10">
-      <h1 className="text-3xl md:text-5xl font-bold text-gray-800 text-center mt-10 md:my-10">
-        Program{" "}
-        <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
-          Overview
-        </span>
-      </h1>
-      <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-        <div className="image-section w-full md:w-1/2 justify-center md:justify-start md:mr-4 hidden md:block">
-          <img
-            src={intern1}
-            alt="Person"
-            className="rounded-tl-2xl rounded-br-2xl w-2/3 md:w-4/5 md:ml-20 object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
-          />
-        </div>
+        <h1 className="text-3xl md:text-5xl font-bold dark:text-white text-gray-800 text-center mt-10 md:my-10">
+          Program{" "}
+          <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Overview
+          </span>
+        </h1>
+        <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+          <div className="image-section w-full md:w-1/2 justify-center md:justify-start md:mr-4 hidden md:block">
+            <img
+              src={intern1}
+              alt="Person"
+              className="rounded-tl-2xl rounded-br-2xl w-2/3 md:w-4/5 md:ml-20 object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
+            />
+          </div>
 
-        <div className="text-section w-full md:w-1/2 p-4">
-          <p className="text-gray-600 mb-4 text-justify mx-4 md:mr-10 md:pr-5">
-            ITIE is a program that has been formulated by our team and leading
-            experts for young enthusiasts to build a strong and powerful
-            career path. Through this program, not only do the interns get the
-            chance to learn and hone their skills, but also to monetise their
-            skill by cascading the knowledge they have gained so far into
-            others. Hence, after learning a skill, they will be tested on it
-            and if they clear the tests, they get the opportunity to teach a
-            new intern who wishes to learn the same skill as them. The
-            'Teacher Interns' will then earn exciting compensation offers and
-            incentives.
-          </p>
+          <div className="text-section w-full md:w-1/2 p-4">
+            <p className="text-gray-600 dark:text-slate-300 mb-4 text-justify mx-4 md:mr-10 md:pr-5">
+              ITIE is a program that has been formulated by our team and leading
+              experts for young enthusiasts to build a strong and powerful
+              career path. Through this program, not only do the interns get the
+              chance to learn and hone their skills, but also to monetise their
+              skill by cascading the knowledge they have gained so far into
+              others. Hence, after learning a skill, they will be tested on it
+              and if they clear the tests, they get the opportunity to teach a
+              new intern who wishes to learn the same skill as them. The
+              'Teacher Interns' will then earn exciting compensation offers and
+              incentives.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
       {/* Course Highlight */}
 
@@ -446,51 +461,53 @@ const ITIE = () => {
       {/* Our Testimonials */}
 
       <div className="relative">
-      <h1 className="text-3xl md:text-5xl text-center font-bold mt-5 md:mt-20 md:my-10 text-black">
-        Our{" "}
-        <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
-          Testimonials
-        </span>
-      </h1>
+        <h1 className="text-3xl md:text-5xl dark:text-white text-center font-bold mt-5 md:mt-20 md:my-10 text-black">
+          Our{" "}
+          <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Testimonials
+          </span>
+        </h1>
 
-      <div className="relative w-full px-4 md:px-1 pb-10 md:pb-20 mx-auto max-w-7xl swiper-container">
-        <Swiper
-          navigation={{
-            prevEl: ".swiper-button-prev",
-            nextEl: ".swiper-button-next",
-          }}
-          modules={[Navigation, Pagination]}
-          spaceBetween={25}
-          slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 1, spaceBetween: 20 },
-            768: { slidesPerView: 2, spaceBetween: 25 },
-            1024: { slidesPerView: 3, spaceBetween: 30 },
-          }}
-        >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="border border-indigo-600 text-sm md:text-base shadow-xl rounded-2xl text-center mt-5 px-6 md:px-5 flex flex-col py-6 w-full h-[400px] swiper-slide">
-                <img
-                  className="w-16 md:w-24 h-16 md:h-24 mx-auto rounded-full object-cover"
-                  src={testimonial.img}
-                  alt="Student img"
-                />
-                <h3 className="text-lg md:text-xl text-gray-800 font-bold mt-4">
-                  {testimonial.name}
-                </h3>
-                <p className="text-gray-600 font-semibold">
-                  {testimonial.title}
-                </p>
-                <p className="mt-3 text-gray-600">{testimonial.content}</p>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="swiper-button-prev text-indigo-600 rounded-full p-5 md:p-7 absolute top-1/2 md:left-[-60px] transform -translate-y-1/2 z-10"></div>
-        <div className="swiper-button-next text-indigo-600 rounded-full p-5 md:p-7 absolute top-1/2 md:right-[-60px] transform -translate-y-1/2 z-10"></div>
+        <div className="relative w-full px-4 md:px-1 pb-10 md:pb-20 mx-auto max-w-7xl swiper-container">
+          <Swiper
+            navigation={{
+              prevEl: ".swiper-button-prev",
+              nextEl: ".swiper-button-next",
+            }}
+            modules={[Navigation, Pagination]}
+            spaceBetween={25}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 1, spaceBetween: 20 },
+              768: { slidesPerView: 2, spaceBetween: 25 },
+              1024: { slidesPerView: 3, spaceBetween: 30 },
+            }}
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={index}>
+                <div className="border border-indigo-600 text-sm md:text-base shadow-xl rounded-2xl text-center mt-5 px-6 md:px-5 flex flex-col py-6 w-full h-[400px] swiper-slide">
+                  <img
+                    className="w-16 md:w-24 h-16 md:h-24 mx-auto rounded-full object-cover"
+                    src={testimonial.img}
+                    alt="Student img"
+                  />
+                  <h3 className="text-lg md:text-xl dark:text-white text-gray-800 font-bold mt-4">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-gray-600 dark:text-slate-400 font-semibold">
+                    {testimonial.title}
+                  </p>
+                  <p className="mt-3 dark:text-slate-300 text-gray-600">
+                    {testimonial.content}
+                  </p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="swiper-button-prev text-indigo-600 rounded-full p-5 md:p-7 absolute top-1/2 md:left-[-60px] transform -translate-y-1/2 z-10"></div>
+          <div className="swiper-button-next text-indigo-600 rounded-full p-5 md:p-7 absolute top-1/2 md:right-[-60px] transform -translate-y-1/2 z-10"></div>
+        </div>
       </div>
-    </div>
 
       {/* Amazing Career */}
       <Amazingcareer />

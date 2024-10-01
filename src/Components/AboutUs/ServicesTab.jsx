@@ -1,18 +1,41 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { SiTicktick } from "react-icons/si";
 import { Career, Perks, Review, Service } from "../../assets/assets";
+import gsap from "gsap";
 
 const ServicesTab = () => {
   const [activeTab, setActiveTab] = useState("services");
   const renderContent = () => {
+
+    useEffect(() => {
+      
+      gsap.fromTo('.trig6',{
+        opacity:0,
+        y:30
+      },
+      {
+        opacity:1,
+        y:0,
+        duration:0.6,
+        ease:'power1.out',
+        stagger:0.2,
+        scrollTrigger:{
+          trigger:'.sectiondiv-2',
+          start:'top 80%',
+          end:'bottom 80%'
+        }
+      })
+
+      },[])
+
     switch (activeTab) {
       case "services":
         return (
-          <div className="p-4">
+          <div className="p-4 sectiondiv-2">
             <div className="container mx-auto ">
               <div className="text-start ">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 dark:text-white mb-4">
                   Expand your{" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
                     knowledge
@@ -22,34 +45,30 @@ const ServicesTab = () => {
                     career
                   </span>
                 </h1>
-                <p className="text-gray-500 text-sm">
-                  Baoiam provides various services, including personalized
-                  career counseling, resume and cover letter writing, interview
-                  preparation, and networking opportunity to ensure students'
-                  career growth is accelerated.
+                <p className="text-gray-500 dark:text-gray-200">
+                  Instead of results speak louder than words we can use we don't deliver promises, we believe in achievements.
                 </p>
               </div>
 
               {/* Content Section */}
-              <div className="flex flex-col lg:flex-row justify-between gap-8 mt-10 sm:mt-8 ">
+              <div className="flex flex-col lg:flex-row justify-center gap-10 mt-10 sm:mt-8 ">
                 <div className="flex justify-center w-full lg:w-[30%]">
                   <img
                     src={Service}
                     alt="Service"
-                    className="rounded-tl-2xl rounded-br-2xl w-full h-full object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
+                    className="rounded-tl-2xl rounded-br-2xl w-full h-full object-cover shadow-none sm:shadow-lg"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full lg:w-[60%] gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:w-[60%] gap-6">
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Counseling
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Get Employed in International Firms
                       </div>
-                      <p className="text-gray-600 text-sm">
-                        Guiding students with personalized education advice for
-                        academic success digitally.
+                      <p className="text-gray-600 text-sm dark:text-gray-400">
+                        Accelerating professional development with guidance from industry experts, driving impactful career outcomes
                       </p>
                     </div>
                   </div>
@@ -57,12 +76,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Mentorship
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Top Tier Earning Packages
                       </div>
-                      <p className="text-gray-600 text-sm">
-                        Guidance, support, and growth through personalized
-                        learning from expert mentors.
+                      <p className="text-gray-600 text-sm dark:text-gray-400">
+                        Get a top tier salary package with our right guidance and secure a great lifestyle
                       </p>
                     </div>
                   </div>
@@ -70,12 +88,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Assistance
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Contest Champions
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        We have the best personalized learning, expert guidance,
-                        and innovative educational solutions.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                        Encouraging learners to participate in competitions, get rewarded by us, and boosting confidence to excel in cutting-edge challenges.
                       </p>
                     </div>
                   </div>
@@ -83,41 +100,15 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Networking
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Proficient Expert
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        Building connections for knowledge sharing and growth in
-                        educational technology.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                        Achieve professional development with our top mentorship from industry experts and drive major impact and career results.
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-2">
-                    <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Investment
-                      </div>
-                      <p className="text-gray-500 text-sm">
-                        We invest in technology, innovation, and personalized
-                        learning solutions.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-2">
-                    <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Support
-                      </div>
-                      <p className="text-gray-500 text-sm">
-                        Provides efficient, personalized assistance for seamless
-                        learning experiences and growth.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -126,44 +117,41 @@ const ServicesTab = () => {
 
       case "features":
         return (
-          <div className="p-4 sm:p-8 md:mr-20">
+          <div className="p-4">
             <div className="container mx-auto">
               <div className="text-start">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                  Accelerate your career, unleash your{" "}
+                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 dark:text-white">
+                  Ignite your  <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+                  professional path
+                  </span>, aim for {" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
-                    potential
+                  highest achievements
                   </span>
                 </h1>
-                <p className="text-gray-500 text-sm">
-                  Baoiam provides various features like live expert classes,
-                  mock tests, and real-time projects to make sure students'
-                  career growth is accelerated. These interactive sessions
-                  provide students with the oppotunity to learn from the best,
-                  ask questions, clear doubts, and receive proper feedback.
+                <p className="text-gray-500 text-sm dark:text-gray-400">
+                  Baoiam offers interactive session with live experts class mock test and real time projects and targeted feedback
                 </p>
               </div>
 
               {/* Content Section */}
-              <div className="flex flex-col lg:flex-row justify-between gap-8 mt-6 sm:mt-8 ">
+              <div className="flex flex-col lg:flex-row justify-center gap-10 mt-10 sm:mt-8 ">
                 <div className="flex justify-center w-full lg:w-[30%] ">
                   <img
                     src={Career}
                     alt="Service"
-                    className="rounded-tl-2xl rounded-br-2xl w-full h-full object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
+                    className="rounded-tl-2xl rounded-br-2xl w-full h-full object-cover shadow-none sm:shadow-lg "
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full lg:w-[60%] gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:w-[60%] gap-6">
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Live Expert Classes
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Interactive Session
                       </div>
-                      <p className="text-gray-600 text-sm">
-                        Live expert classes deliver personalized, interactive
-                        learning experiences for everyone.
+                      <p className="text-gray-600 text-sm dark:text-gray-400">
+                        Encouraging learners through highly interactive sessions with experts, creating a comfortable environment that drives engagement and knowledge transfer
                       </p>
                     </div>
                   </div>
@@ -171,12 +159,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Doubts & Query Sessions
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Doubts Clearing Session
                       </div>
-                      <p className="text-gray-600 text-sm">
-                        Empowering learners through interactive doubt resolution
-                        and query sessions.
+                      <p className="text-gray-600 text-sm dark:text-gray-400">
+                        Clear every doubt with engaging doubts clearing session led by professional, fostering clarity and boosting confidence
                       </p>
                     </div>
                   </div>
@@ -184,12 +171,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Real-Time Projects
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        How to Crack Interview
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        Empowering students through innovative real-time
-                        projects and interactive learning.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                        Crack every interview on your path to success with our expert guidance, and secure a top position in your dream company
                       </p>
                     </div>
                   </div>
@@ -197,41 +183,15 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Interview Preparations
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Workshops and Intern Experience
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        Empowering learners with innovative tools for growth and
-                        success.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                        Gain valuable work experience with our diving internships and accurate your career development through immersive workshops
                       </p>
                     </div>
                   </div>
 
-                  <div className="flex items-start space-x-2">
-                    <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Internships and Trainings
-                      </div>
-                      <p className="text-gray-500 text-sm">
-                        Offering cutting-edge internships and training programs
-                        to boost career skills.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-2">
-                    <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Mock Assessments
-                      </div>
-                      <p className="text-gray-500 text-sm">
-                        Offering innovative mock assessments to evaluate and
-                        enhance learning outcomes.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -240,43 +200,40 @@ const ServicesTab = () => {
 
       case "perks":
         return (
-          <div className="p-4 sm:p-8 md:mr-20">
+          <div className="p-4">
             <div className="container mx-auto">
               <div className="text-start">
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                  Perks{" "}
+                <h1 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 dark:text-white">
+                  Uplift and {" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
-                    strengthen & reinforce
+                    secure organizational
                   </span>{" "}
-                  company culture
+                  identity
                 </h1>
-                <p className="text-gray-500 text-sm">
-                  Companies often provide various perks to their employees in
-                  order to enhance their overall job satisfaction and well being.
-                  Perks offered by our company includes the following.
+                <p className="text-gray-500 text-sm dark:text-gray-400">
+                  Baoiam offers various perks to boost students and learners overall learning and satisfaction, common benefits include total academic and career support, placements assistance etc.
                 </p>
               </div>
 
               {/* Content Section */}
-              <div className="flex flex-col lg:flex-row justify-between gap-8 mt-6 sm:mt-8 ">
+              <div className="flex flex-col lg:flex-row justify-center gap-10 mt-10 sm:mt-8 ">
                 <div className="flex justify-center w-full lg:w-[30%]">
                   <img
                     src={Perks}
                     alt="Service"
-                    className="rounded-tl-2xl rounded-br-2xl w-full h-full object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
+                    className="rounded-tl-2xl rounded-br-2xl w-full h-full object-cover shadow-none sm:shadow-lg"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full lg:w-[60%] gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:w-[60%] gap-6">
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        100% Learning and Employment
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Total Academic and Career Support
                       </div>
-                      <p className="text-gray-600 text-sm">
-                        Delivering excellence and career success for every
-                        learner.
+                      <p className="text-gray-600 text-sm dark:text-gray-400">
+                        We're here to support you at every stage offering comprehensive assistance for both academic and career growth
                       </p>
                     </div>
                   </div>
@@ -284,12 +241,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Placement Assistance
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        One-on-one Sessions with Experts
                       </div>
-                      <p className="text-gray-600 text-sm">
-                        Placement assistance ensures students secure job
-                        opportunities with top companies.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                        Receive personalized one on one sessions with top exports for tailored guidance and valuable insights.
                       </p>
                     </div>
                   </div>
@@ -297,12 +253,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Real-Time Group Discussion Rounds
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Interactive Dissection Session
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        We provide revolutionized learning with cutting-edge
-                        technology and innovation.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                        Participate in group discussions that enhance your learning and foster meaningful exchanges.
                       </p>
                     </div>
                   </div>
@@ -310,38 +265,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Personal Interaction
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Contests and Tech Competitions
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        Transforming education through innovative technology,
-                        empowering learners to succeed.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-2">
-                    <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Membership Access
-                      </div>
-                      <p className="text-gray-500 text-sm">
-                        Unlock exclusive learning with Membership Access:
-                        growth, skills, empowerment, and success!
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-2">
-                    <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Hackathons and Contest Entries
-                      </div>
-                      <p className="text-gray-500 text-sm">
-                        Hackathons and contest entries foster innovation,
-                        creativity, learning, and growth.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                        Participate in various contests and tech competitions to showcase and test your skills gaining valuable recognition
                       </p>
                     </div>
                   </div>
@@ -353,41 +281,44 @@ const ServicesTab = () => {
 
       case "reviews":
         return (
-          <div className="p-4 sm:p-8 md:mr-20">
+          <div className="p-4">
             <div className="container mx-auto">
               <div className="text-start">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                  We don't deliver promises, we{" "}
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 dark:text-white">
+                  Broaden your {" "}
                   <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
-                    believe
+                    skills
                   </span>{" "}
-                  in achievements
+                  with our{" "}
+                  <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+                    advanced
+                  </span>{" "}
+                  services.
                 </h2>
-                {/* <p className="text-gray-500 text-sm">
-                  Check out the top reviews from our top performers.
-                </p> */}
+                <p className="text-gray-500 text-sm dark:text-gray-400">
+                  Our highly qualitative services include professional counseling, mentoring, guidance, building connections etc.
+                </p>
               </div>
 
               {/* Content Section */}
-              <div className="flex flex-col lg:flex-row justify-between gap-8 mt-6 sm:mt-8 ">
+              <div className="flex flex-col lg:flex-row justify-center gap-10 mt-10 sm:mt-8 ">
                 <div className="flex justify-center w-full lg:w-[30%]">
                   <img
                     src={Review}
                     alt="Service"
-                    className="rounded-tl-2xl rounded-br-2xl w-full h-full object-cover shadow-none sm:shadow-lg lg:shadow-[20px_25px_#4338ca]"
+                    className="rounded-tl-2xl rounded-br-2xl w-full h-full object-cover shadow-none sm:shadow-lg"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full lg:w-[60%] gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:w-[60%] gap-6">
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Be employed in international firms
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                        Professional Counseling
                       </div>
-                      <p className="text-gray-600 text-sm">
-                        Empowering learners through innovative technology,
-                        fostering growth, success, and transformation.
+                      <p className="text-gray-600 text-sm dark:text-gray-400">
+                        Get top notch counseling from leading professionals to drive your career growth and achieve your goals
                       </p>
                     </div>
                   </div>
@@ -395,12 +326,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Top tier earning packages
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                      Mentoring 
                       </div>
-                      <p className="text-gray-600 text-sm">
-                        Empowering students with cutting-edge skills for success
-                        in high-paying careers.
+                      <p className="text-gray-600 text-sm dark:text-gray-400">
+                      Receive expert advice tailored to your domain and make a lasting impact on your career
                       </p>
                     </div>
                   </div>
@@ -408,12 +338,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Contest champions
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                      Guidance 
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        Contest winners showcase skills, innovation, growth,
-                        learning, talent, and transformation.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                      Gain valuable insights to create a clear career roadmap and reach your destination safely with our guidance.
                       </p>
                     </div>
                   </div>
@@ -421,38 +350,11 @@ const ServicesTab = () => {
                   <div className="flex items-start space-x-2">
                     <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
                     <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Proficient expert
+                      <div className="text-lg font-bold text-gray-800 mb-2 dark:text-gray-200">
+                      Encouragement 
                       </div>
-                      <p className="text-gray-500 text-sm">
-                        Empowering skilled professionals through innovative
-                        technology and accessible learning for growth.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-2">
-                    <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Get funding
-                      </div>
-                      <p className="text-gray-500 text-sm">
-                        Empower learners globally through innovative technology,
-                        fostering growth and success.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-2">
-                    <SiTicktick className="text-indigo-600 text-8xl pb-16 " />
-                    <div>
-                      <div className="text-lg font-bold text-gray-800 mb-2">
-                        Exclusive subscribers
-                      </div>
-                      <p className="text-gray-500 text-sm">
-                        Premium members enjoy exclusive access to advanced
-                        courses, resources, and support.
+                      <p className="text-gray-500 text-sm dark:text-gray-400">
+                      Motivation is key, but encouragement makes it possible to stay motivated. Cultivate a positive study spirit at every stage with us.
                       </p>
                     </div>
                   </div>
@@ -469,43 +371,39 @@ const ServicesTab = () => {
   return (
     <div>
       <div className="p-4 mx-4 sm:mx-10 ">
-        <div className="flex flex-col mb-2 sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
+        <div className="trig6 flex flex-col mb-2 sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
           <button
-            className={`text-sm md:text-base font-semibold ${
-              activeTab === "services"
-                ? "border-b-4 border-indigo-600 text-indigo-600"
-                : "text-blue-950"
-            }`}
+            className={`text-sm md:text-base font-bold ${activeTab === "services"
+              ? "text-indigo-600 dark:text-indigo-400"
+              : "text-blue-950 dark:text-white"
+              }`}
             onClick={() => setActiveTab("services")}
           >
             What we provide
           </button>
           <button
-            className={`text-sm md:text-base font-semibold ${
-              activeTab === "features"
-                ? "border-b-4 border-indigo-600 text-indigo-600"
-                : "text-blue-950"
-            }`}
+            className={`text-sm md:text-base font-bold ${activeTab === "features"
+              ? "text-indigo-600 dark:text-indigo-400"
+              : "text-blue-950 dark:text-white"
+              }`}
             onClick={() => setActiveTab("features")}
           >
             Our unique elements
           </button>
           <button
-            className={`text-sm md:text-base font-semibold ${
-              activeTab === "perks"
-                ? "border-b-4 border-indigo-600 text-indigo-600"
-                : "text-blue-950"
-            }`}
+            className={`text-sm md:text-base font-bold ${activeTab === "perks"
+              ? "text-indigo-600 dark:text-indigo-400"
+              : "text-blue-950 dark:text-white"
+              }`}
             onClick={() => setActiveTab("perks")}
           >
             Rewards
           </button>
           <button
-            className={`text-sm md:text-base font-semibold ${
-              activeTab === "reviews"
-                ? "border-b-4 border-indigo-600 text-indigo-600"
-                : "text-blue-950"
-            }`}
+            className={`text-sm md:text-base font-bold ${activeTab === "reviews"
+              ? "text-indigo-600 dark:text-indigo-400"
+              : "text-blue-950 dark:text-white"
+              }`}
             onClick={() => setActiveTab("reviews")}
           >
             Highlights of top appraisals
@@ -513,7 +411,7 @@ const ServicesTab = () => {
         </div>
 
         {/* Render content based on selected tab */}
-        <div>{renderContent()}</div>
+        <div className="trig6">{renderContent()}</div>
       </div>
     </div>
   );
