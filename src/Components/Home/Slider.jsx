@@ -52,6 +52,22 @@ export default function SliderSection() {
     if(status==='idle'){
       dispatch(fetchFeaturedCourses());
     }
+
+    gsap.fromTo('.slide1',{
+      opacity:0,
+      y:30
+    },
+    {
+      opacity:1,
+      y:0,
+      duration:0.6,
+      ease:'power1.out',
+      stagger:0.2,
+      scrollTrigger:{
+        trigger:'.sectiondiv2',
+        start:'top 80%',
+        end:'bottom 80%'
+      }
   }, [dispatch, status]);
 
   if (status === 'loading') {
@@ -61,26 +77,6 @@ export default function SliderSection() {
   }
   // console.log(featuredCourses, 'program courses')
   // redux end
-
-
-useEffect(() => {
-
-gsap.fromTo('.slide1',{
-  opacity:0,
-  y:30
-},
-{
-  opacity:1,
-  y:0,
-  duration:0.6,
-  ease:'power1.out',
-  stagger:0.2,
-  scrollTrigger:{
-    trigger:'.sectiondiv2',
-    start:'top 80%',
-    end:'bottom 80%'
-  }
-})
 
 
 },[])
