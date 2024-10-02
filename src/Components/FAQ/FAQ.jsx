@@ -33,7 +33,7 @@ useEffect(() => {
   return (
     <div className="faq border rounded-lg mx-5 shadow-lg text-gray-600 px-4 py-1 my-4 sm:px-6 lg:px-8">
       <button
-        className="w-full text-left flex justify-between items-center py-2 sm:py-4 text-md sm:text-lg text-black font-bold dark:text-slate-200 hover:scale-105 dark:hover:text-indigo-500 hover:text-indigo-600 transition-all duration-200 " 
+        className="w-full text-left flex justify-between items-center py-2 sm:py-4 text-md sm:text-lg text-black font-bold dark:text-slate-200  dark:hover:text-indigo-500 hover:text-indigo-600 transition-all duration-200 " 
         onClick={() => setIsOpen(!isOpen)}
       >
         {question}
@@ -87,7 +87,7 @@ const Faq = () => {
         <p className="faq1 text-sm dark:text-slate-300 sm:text-md">
           Didn’t find what you were looking for? Contact us at{" "}
           <a href="mailto:support@yourcompany.com" className="text-indigo-600">
-            support@yourcompany.com
+          support@baoiam.com
           </a>{" "}
           or fill out the form below, and we’ll get back to you as soon as
           possible.
