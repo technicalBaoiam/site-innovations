@@ -158,7 +158,7 @@ export default function SliderSection() {
                     {/* Price and Button */}
                     <div className="mt-auto flex justify-between items-center">
                       <p className="font-bold text-orange-600 text-base mb-6 dark:text-amber-500">
-                        ₹{slide.plans[0].price}
+                        {`₹${Math.round(slide.plans[0].price)}/-`}
                       </p>
                       <button
                         onClick={() =>
