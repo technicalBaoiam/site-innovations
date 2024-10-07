@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
-const SortPopover = ({setFilteredCourses,courses }) => {
+const SortPopover = ({ setFilteredCourses, courses }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -19,38 +19,38 @@ const SortPopover = ({setFilteredCourses,courses }) => {
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    // return () => {
+    //   document.removeEventListener('mousedown', handleClickOutside);
+    // };
   }, []);
-const sortMixedArray = (arr,order) => {
+  const sortMixedArray = (arr, order) => {
 
-        const strings = arr.filter((item) => item.price === 'Free');
-        const numbers = arr.filter((item) => item.price !== 'Free');
-        strings.sort((a, b) => a.price.localeCompare(b.price));      
-        numbers.sort((a, b) =>  order==='asc'?(a.price.substr(1) - b.price.substr(1)):(b.price.substr(1) - a.price.substr(1)));
-        // Concatenate sorted strings first, then sorted numbers
-        
-        // console.log("strings",strings)
-        console.log("numbers",numbers.map(x=>x.price))
-        return order==='asc'?[...strings, ...numbers]:[...numbers,...strings];
-      };
+    const strings = arr.filter((item) => item.price === 'Free');
+    const numbers = arr.filter((item) => item.price !== 'Free');
+    strings.sort((a, b) => a.price.localeCompare(b.price));
+    numbers.sort((a, b) => order === 'asc' ? (a.price.substr(1) - b.price.substr(1)) : (b.price.substr(1) - a.price.substr(1)));
+    // Concatenate sorted strings first, then sorted numbers
+
+    // console.log("strings",strings)
+    console.log("numbers", numbers.map(x => x.price))
+    return order === 'asc' ? [...strings, ...numbers] : [...numbers, ...strings];
+  };
 
 
   const sortCourses = (sortBy) => {
-    
+
     switch (sortBy) {
-      case 'Price: Low to High':{
-        return sortMixedArray(courses,'asc')
+      case 'Price: Low to High': {
+        return sortMixedArray(courses, 'asc')
       }
-      case 'Price: High to Low':{
-        
-          return sortMixedArray(courses,'dec')
+      case 'Price: High to Low': {
+
+        return sortMixedArray(courses, 'dec')
       }
       case 'Duration: Low to High':
-        return [...courses].sort((a, b) => a.courseDuration.split(" ")[0]- b.courseDuration.split(" ")[0]);
+        return [...courses].sort((a, b) => a.courseDuration.split(" ")[0] - b.courseDuration.split(" ")[0]);
       case 'Duration: High to Low':
-        return [...courses].sort((a, b) => b.courseDuration.split(" ")[0]- a.courseDuration.split(" ")[0]);
+        return [...courses].sort((a, b) => b.courseDuration.split(" ")[0] - a.courseDuration.split(" ")[0]);
       default:
         return courses;
     }
@@ -64,8 +64,8 @@ const sortMixedArray = (arr,order) => {
         onClick={toggleDropdown}
         className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
       >
-        Sort    
-        {!isDropdownOpen?<MdKeyboardArrowDown className="ml-2 -mr-1 h-5 w-5" size={20}/>:<MdKeyboardArrowUp className="ml-2 -mr-1 h-5 w-5" size={20}/>}
+        Sort
+        {!isDropdownOpen ? <MdKeyboardArrowDown className="ml-2 -mr-1 h-5 w-5" size={20} /> : <MdKeyboardArrowUp className="ml-2 -mr-1 h-5 w-5" size={20} />}
       </button>
 
       {/* Dropdown Menu */}
@@ -79,22 +79,22 @@ const sortMixedArray = (arr,order) => {
               Price: Low to High
             </button>
             <button
-              onClick={() => { setFilteredCourses(sortCourses("Price: High to Low"))}}
+              onClick={() => { setFilteredCourses(sortCourses("Price: High to Low")) }}
               className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
               Price: High to Low
             </button>
             <button
-              onClick={() => { setFilteredCourses(sortCourses("Duration: Low to High"))}}
+              onClick={() => { setFilteredCourses(sortCourses("Duration: Low to High")) }}
               className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
-               Duration: Low to High
+              Duration: Low to High
             </button>
             <button
-              onClick={() => { setFilteredCourses(sortCourses("Duration: High to Low"))}}
+              onClick={() => { setFilteredCourses(sortCourses("Duration: High to Low")) }}
               className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
             >
-               Duration: High to Low
+              Duration: High to Low
             </button>
           </div>
         </div>

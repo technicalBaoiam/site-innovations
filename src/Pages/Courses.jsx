@@ -109,7 +109,7 @@ const Courses = () => {
       </div>
       <section
         ref={sectionRef}
-        className="pt-16 pb-16 px-14  dark:bg-black dark:text-white"
+        className="pt-16 pb-16 md:px-14  dark:bg-black dark:text-white"
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -151,7 +151,7 @@ const Courses = () => {
                     <FaHandsHelping className="h-8 w-8 text-white" />
                   )}
                 </div>
-                <h3 className="text-xl font-bold">{title}</h3>
+                <h3 className="text-xl text-center font-bold">{title}</h3>
                 <p className="mt-2 text-center">
                   {index === 0 &&
                     "Courses led by experienced teachers and professionals."}
@@ -213,7 +213,7 @@ const Courses = () => {
           >
             {data?.map((el, index) => (
               <SwiperSlide
-                key={el.id}
+                key={index}
                 ref={(el) => (cardsRef.current[index] = el)} // Assigning ref to each card
                 className="group rounded-xl border shadow-md flip-card w-96 h-72 overflow-hidden"
               >

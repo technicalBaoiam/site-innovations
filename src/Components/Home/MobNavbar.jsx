@@ -7,6 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 import { MdSchool } from "react-icons/md";
+import ScrollableList from "../Miscellaneous/ScrollableList";
 // import { CollegeCourse, OtherCourse, School } from "../../Data";
 
 const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
@@ -30,15 +31,14 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
   const closeSideBar = () => {
     setShowmenu(false);
   };
- 
+
   // console.log(course);
 
   return (
     <div>
       <aside
-        className={`fixed lg:hidden top-0 left-0 z-[100] w-10/12 sm:w-2/5 h-screen transition-transform  ${
-          showmenu ? "translate-x-0" : "-translate-x-full"
-        }  `}
+        className={`fixed lg:hidden top-0 left-0 z-[100] w-10/12 sm:w-2/5 h-screen transition-transform  ${showmenu ? "translate-x-0" : "-translate-x-full"
+          }  `}
       >
         <div className="block lg:hidden h-full px-3 pb-8 overflow-y-auto rounded-r-lg  bg-white border taxt-gray-600 dark:text-white dark:bg-black">
           <div className="flex justify-between items-center w-full px-2 py-4 sticky top-0 z-50 dark:bg-black">
@@ -52,11 +52,10 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
 
           <ul className="space-y-2 font-medium divide-y ">
             <li
-              className={`${mobTabtyles} ${
-                location.pathname === "/" && activeTab === "Home"
+              className={`${mobTabtyles} ${location.pathname === "/" && activeTab === "Home"
                   ? "text-[#1638C9]  dark:text-white"
                   : "text-gray-600 dark:text-gray-400"
-              }`}
+                }`}
               onClick={() => {
                 setActiveTab("Home");
                 closeSideBar();
@@ -67,11 +66,10 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
               </Link>
             </li>
             <li
-              className={`${mobTabtyles} flex-col items-start ${
-                activeTab === "Course"
+              className={`${mobTabtyles} flex-col items-start ${activeTab === "Course"
                   ? "text-[#1638C9]  dark:text-white"
                   : "text-gray-600 dark:text-gray-400"
-              }`}
+                }`}
             >
               <div
                 className="flex justify-between w-full items-center"
@@ -108,24 +106,13 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                     )}
                   </li>
                   {schoolCate && (
-                    <div className=" w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 md:h-fit overflow-auto flex flex-col max-h-56 divide-y gap-2">
-                      {course[0]?.courses?.map((course, i) => {
-                        return (
-                          <Link
-                            onClick={() => {
-                              setShowmenu((old) => !old);
-                              setSubCateDrop((old) => !old);
-                              setSchoolCate((old) => !old);
-                            }}
-                            key={i}
-                            to={`/course/${course.title}/${course.id}`}
-                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                          >
-                            {course.title}
-                          </Link>
-                        );
-                      })}
-                    </div>
+                    <ScrollableList linkClickHandler={() => {
+                      setShowmenu((old) => !old);
+                      setSubCateDrop((old) => !old);
+                      setSchoolCate((old) => !old);
+                    }}
+                      array={course[0]?.courses}
+                    />
                   )}
                   <li
                     onClick={() => {
@@ -145,26 +132,14 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                       <FaChevronDown size={14} />
                     )}
                   </li>
-                  {collegeCate && (
-                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                      {course[1]?.courses.map((course, i) => {
-                        return (
-                          <Link
-                            onClick={() => {
-                              setShowmenu((old) => !old);
-                              setSubCateDrop((old) => !old);
-                              setCollegeCate((old) => !old);
-                            }}
-                            key={i}
-                            to={`/course/${course.title}/${course.id}`}
-                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                          >
-                            {course.title}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  )}
+                  {collegeCate &&
+                    <ScrollableList linkClickHandler={() => {
+                      setShowmenu((old) => !old);
+                      setSubCateDrop((old) => !old);
+                      setCollegeCate((old) => !old);
+                    }}
+                      array={course[1]?.courses}
+                    />}
                   <li
                     onClick={() => {
                       setOtherCourses((old) => !old);
@@ -183,35 +158,24 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
                       <FaChevronDown size={14} />
                     )}
                   </li>
-                  {otherCourses && (
-                    <div className="w-full py-3 text-gray-600 dark:text-gray-400 bg-white border-black/20  text-sm p-1 shadow-lg z-50 h-64 overflow-auto flex flex-col gap-2 divide-x">
-                      {course[2]?.courses.map((course, i) => {
-                        return (
-                          <Link
-                            onClick={() => {
-                              setShowmenu((old) => !old);
-                              setSubCateDrop((old) => !old);
-                              setOtherCourses((old) => !old);
-                            }}
-                            key={i}
-                            to={`/course/${course.title}/${course.id}`}
-                            className="px-2 py-1 rounded-md cursor-pointer hover:bg-slate-200"
-                          >
-                            {course.title}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  )}
+                  {otherCourses && <ScrollableList
+                    linkClickHandler={() => {
+                      setShowmenu((old) => !old);
+                      setSubCateDrop((old) => !old);
+                      setOtherCourses((old) => !old);
+                    }}
+                    array={course[2]?.courses}
+                  />
+                  }
+
                 </ul>
               )}
             </li>
             <li
-              className={`${mobTabtyles} ${
-                location.pathname === "/about-us" && activeTab === "About Us"
+              className={`${mobTabtyles} ${location.pathname === "/about-us" && activeTab === "About Us"
                   ? "text-[#1638C9]  dark:text-white"
                   : "text-gray-600 dark:text-gray-400"
-              }`}
+                }`}
               onClick={() => {
                 setActiveTab("About Us");
                 closeSideBar();
@@ -225,11 +189,10 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
               </Link>
             </li>
             <li
-              className={`${mobTabtyles} ${
-                location.pathname === "/blogs" && activeTab === "Blogs"
+              className={`${mobTabtyles} ${location.pathname === "/blogs" && activeTab === "Blogs"
                   ? "text-[#1638C9]  dark:text-white"
                   : "text-gray-600 dark:text-gray-400"
-              }`}
+                }`}
               onClick={() => {
                 setActiveTab("Blogs");
                 closeSideBar();
@@ -240,26 +203,24 @@ const MobNavbar = ({ showmenu, setShowmenu, course, isDark, setIsDark }) => {
               </Link>
             </li>
             <li
-              className={`${mobTabtyles} ${
-                location.pathname === "/" && activeTab === ""
+              className={`${mobTabtyles} ${location.pathname === "/" && activeTab === ""
                   ? "text-[#1638C9]  dark:text-white"
                   : "text-gray-600 dark:text-gray-400"
-              }`}
+                }`}
               onClick={() => {
                 setActiveTab("");
                 closeSideBar();
               }}
             >
-              <Link to={"/"} className="ms-3 dark:text-white">
+              <Link to={"/contact"} className="ms-3 dark:text-white">
                 Contact Us
               </Link>
             </li>
             <li
-              className={`${mobTabtyles} ${
-                location.pathname === "/gcep" && activeTab === "GCEP"
+              className={`${mobTabtyles} ${location.pathname === "/gcep" && activeTab === "GCEP"
                   ? "text-[#1638C9]  dark:text-white dark:bg-black"
                   : "text-gray-600 dark:text-gray-400"
-              }`}
+                }`}
               onClick={() => {
                 setActiveTab("GCEP");
                 closeSideBar();

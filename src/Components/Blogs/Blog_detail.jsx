@@ -41,12 +41,12 @@ const Blog_detail = () => {
   const [datacmmt, setDatacmmt] = useState([]);
 
   const { id } = useParams();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    // console.log(content_data);
-    // console.log(content_data[id].heading1);
-    return () => {};
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  //   // console.log(content_data);
+  //   // console.log(content_data[id].heading1);
+  //   return () => {};
+  // }, []);
   document.title = "Baoiam - Blog Details";
 
   const handlePostSubmit = () => {

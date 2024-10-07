@@ -66,7 +66,7 @@ const Program = ({ title, data }) => {
       >
         {title}
       </h2>
-      <div className="">
+      <div className="md:px-10">
         <Swiper
           keyboard={{ enabled: true }}
           navigation={true}
@@ -74,15 +74,15 @@ const Program = ({ title, data }) => {
           modules={[Keyboard, Pagination, Navigation, Scrollbar]}
           spaceBetween={24}
           breakpoints={{
-            320: { slidesPerView: 1 },
-            640: { slidesPerView: 2 },
-            768: { slidesPerView: 3 },
-            1024: { slidesPerView: 3.5 },
-            1200: { slidesPerView: 4 },
+            320: { slidesPerView: 1, spaceBetween:10 },
+            640: { slidesPerView: 2, spaceBetween:10 },
+            768: { slidesPerView: 2, spaceBetween:20 },
+            1024: { slidesPerView: 3,spaceBetween:20 },
+            1440: { slidesPerView: 4,spaceBetween:20 },
           }}
           // onSlideChange={() => console.log("Slide changed")}
           // onSwiper={(swiper) => console.log("Swiper initialized")}
-          className="  w-full py-4 flex flex-col justify-center items-center"
+          className="  w-full py-4 mx-auto  flex flex-col justify-center items-center"
         >
           {data?.map((course, index) =>(
             <SwiperSlide key={index}>

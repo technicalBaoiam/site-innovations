@@ -109,95 +109,20 @@ const ContactUs = () => {
     }));
   };
 
-useEffect(() => {
-
-  const splitText = new Split('.h1',{
-    types:'lines'
-  })
-
- gsap.fromTo(splitText.lines,{
-  opacity:0,
-  yPercent:100
- },{
-  opacity:1,
-  yPercent:0,
-  duration:0.6,
- })
-
- gsap.fromTo('.con',{ opacity:0,y:50 },{
-  opacity:1,
-  y:0,
-  duration:0.7,
-  ease:'power1.out'
- })
-
- const tl = gsap.timeline()
-
- tl.fromTo('.con1',{opacity:0,y:30},{
-  opacity:1,
-  y:0,
-  duration:0.6,
-  ease:'power1.out'
- })
-
-tl.fromTo('.rvl',{opacity:0,y:30},
-  {
-    opacity:1,
-    duration:0.5,
-    y:0,
-    ease:'power1.out',
-  }
-)
-
-tl.fromTo('.icon',{opacity:0,scale:0.1},
-  {
-    opacity:1,
-    scale:1,
-    duration:1,
-    ease:'power1.out',
-    stagger:0.2,
-  },
-  '-=0.6'
-)
-tl.fromTo('.icon2',{opacity:0,x:30},
-  {
-    opacity:1,
-    x:0,
-    duration:1,
-    ease:'power1.out',
-    stagger:0.2,
-  },
-  '-=0.7'
-)
-
-tl.fromTo('.icon3',{opacity:0,x:30},
-  {
-    opacity:1,
-    x:0,
-    duration:1,
-    ease:'power1.out',
-    stagger:0.2,
-  },
-  '-=0.9'
-)
-
-
-},[])
-
 
 
   return (
-    <div className="ContactUs my-8">
+    <div className="ContactUs my-8 pb-10">
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           {/* Overlay */}
           <div
-            className="fixed inset-0 bg-gray-600 bg-opacity-50 transition-opacity"
+            className="fixed inset-0 bg-black/70 backdrop-blur-sm transition-opacity"
             onClick={() => setShowPopup(false)} // Click outside to close
           ></div>
 
           {/* Modal Content */}
-          <div className="relative bg-white rounded-lg p-8 shadow-2xl z-10 text-center">
+          <div className="relative w-[25%] bg-white rounded-lg p-8 shadow-2xl z-10 text-center">
             {/* Success Icon */}
             <FaCheckCircle
               size={50}
@@ -207,12 +132,11 @@ tl.fromTo('.icon3',{opacity:0,x:30},
             />
 
             <h2 className="text-2xl font-bold text-indigo-600 mb-4 transition-all duration-300 ease-in-out">
-              Your details have been recorded successfully!!
+              Thank you!
             </h2>
-            {/* <p className="text-gray-700 mb-6">
-              Your enrollment was successful. We’re excited to have you on
-              board!
-            </p> */}
+            <p className="text-gray-700 mb-6">
+             We have received your query. Our team will reach out soon.
+            </p>
 
             {/* Decorative Element */}
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-green-400 to-blue-500 rounded-t-md"></div>
@@ -220,16 +144,16 @@ tl.fromTo('.icon3',{opacity:0,x:30},
             {/* Close Button */}
             <button
               onClick={() => setShowPopup(false)}
-              className="bg-gradient-to-br from-purple-600 via-indigo-500 to-indigo-700 text-white px-6 py-2 rounded-full hover:bg-indigo-700 focus:outline-none transition-all"
+              className="bg-indigo-500 text-white px-6 py-1 rounded hover:bg-indigo-700 focus:outline-none transition-all"
             >
-              Close
+             Close
             </button>
           </div>
         </div>
       )}
       <section className="relative dark:bg-black px-4 py-8 md:py-10 z-10 mt-4 md:mt-14 mb-6 md:mb-6 overflow-hidden">
         <div className="relative max-w-5xl mx-auto text-center z-10">
-          <h1 className="h1 m-0 overflow-hidden text-3xl md:text-5xl font-semibold dark:text-white text-gray-900">
+          <h1 className="h1 overflow-hidden text-3xl md:text-5xl font-semibold dark:text-white text-gray-900">
             <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
               Get in Touch
             </span>{" "}
@@ -252,7 +176,7 @@ tl.fromTo('.icon3',{opacity:0,x:30},
             </h2>
             <form
               id="form1"
-              className="space-y-6"
+              className="space-y-3"
               onSubmit={(e) => {
                 handleSubmit(e);
               }}
@@ -384,13 +308,13 @@ tl.fromTo('.icon3',{opacity:0,x:30},
                   name="message"
                   rows="4"
                   value={formData.message}
-                  className="w-full p-3 border dark:bg-slate-800 border-gray-300 rounded-md"
+                  className="text-xs md:text-base w-full p-3 border dark:bg-slate-800 border-gray-300 rounded-md"
                   placeholder="Your message here..."
                 ></textarea>
               </div>
 
               {/* Consent Checkbox */}
-              <div className="flex items-center">
+              <div className="flex items-start">
                 <input
                   id="consent"
                   name="Consent"
@@ -402,7 +326,7 @@ tl.fromTo('.icon3',{opacity:0,x:30},
                 />
                 <label
                   htmlFor="consent"
-                  className="dark:text-slate-300 text-gray-700 text-xs"
+                  className="dark:text-slate-300 text-gray-700 text-[0.6rem] md:text-xs"
                 >
                   I consent to receiving updates and notifications from online
                   Baoiam and its affiliates via email, SMS, WhatsApp, and voice

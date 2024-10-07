@@ -151,14 +151,14 @@ const FaqItem = ({ question, answer }) => {
   return (
     <div className="en12 border rounded-lg mx-5 shadow-lg  text-gray-600 px-8 my-4">
       <button
-        className="w-full text-left flex justify-between items-center py-4 text-base md:text-lg text-black font-bold hover:text-indigo-600"
+        className="w-full text-left flex justify-between items-center py-4 text-base md:text-lg text-black dark:text-slate-200 font-bold dark:hover:text-indigo-200 hover:text-indigo-600"
         onClick={() => setIsOpen(!isOpen)}
       >
         {question}
         <span className="ml-2">{isOpen ? '-' : '+'}</span>
       </button>
       {isOpen && (
-        <div className="py-4">
+        <div className="py-4 dark:text-slate-300">
           <hr className=" border-gray-300 mb-4" />
           {answer}
         </div>

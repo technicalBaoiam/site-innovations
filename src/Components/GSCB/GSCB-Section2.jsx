@@ -8,12 +8,12 @@ const section2 = [
     title: "Global Collaboration ",
     desc: "Join a global network of educators and institutions to share knowledge, research, and best practices.",
   },
-  {
-    id: 2,
-    img: "https://images.stockcake.com/public/9/9/3/9937c65f-bb06-4547-9543-42d779319201_large/virtual-reality-exploration-stockcake.jpg",
-    title: "Enhanced Learning Resources",
-    desc: "Access cutting-edge technology, digital platforms, and content designed to improve student engagement and learning outcomes.",
-  },
+  // {
+  //   id: 2,
+  //   img: "https://images.stockcake.com/public/9/9/3/9937c65f-bb06-4547-9543-42d779319201_large/virtual-reality-exploration-stockcake.jpg",
+  //   title: "Enhanced Learning Resources",
+  //   desc: "Access cutting-edge technology, digital platforms, and content designed to improve student engagement and learning outcomes.",
+  // },
   {
     id: 3,
     img: "https://images.stockcake.com/public/f/1/1/f1181b68-648d-4108-b82e-e06a4bbe8fc7_large/innovative-strategy-planning-stockcake.jpg",
@@ -112,7 +112,7 @@ const Cards = () => {
   }, []);
 
   return (
-    <section className="carddiv1 w-full h-full mt-24 px-6 md:px-12 lg:px-24">
+    <section className="carddiv1 mx-auto w-full h-full mt-24 px-6 md:px-12 lg:px-24">
       {/* Heading wrapper */}
       <div className="cards1 flex justify-center mb-8 lg:mb-5">
         <h2 className=" text-3xl md:text-4xl font-bold text-left">
@@ -125,7 +125,7 @@ const Cards = () => {
       </div>
 
       {/* Cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 items-center">
+      <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-10 items-center">
         {section2.map((info, index) => {
           const cardClass =
             index === 0
@@ -138,7 +138,7 @@ const Cards = () => {
           return (
             <div
               key={index}
-              className={`group flex flex-col h-auto w-full rounded-xl overflow-hidden md:h-[80%] md:w-[90%] cursor-pointer gap-6 relative ${cardClass}`}
+              className={`group flex flex-col w-[80%] h-[300px] rounded-xl overflow-hidden md:h-[350px] md:w-[30%] cursor-pointer gap-6 relative ${cardClass}`}
             >
               <img
                 className="w-full h-full hover:opacity-10 object-cover"

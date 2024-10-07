@@ -96,7 +96,7 @@ const cards = [
 ];
 
 const Enterpunership = () => {
-  document.title = "Baoiam Innovations | Careers";
+  document.title = "Baoiam Innovations | Entrepreneurship";
   useEffect(() => {
     window.scrollTo(0, 0);
 
@@ -286,26 +286,26 @@ const Enterpunership = () => {
   return (
     <div>
       {/*//! Banner */}
-      <div className="flex items-center flex-col gap-5  md:mt-0 md:gap-8 lg:gap-0 md:flex-row px-8 md:px-20 w-full h-full md:h-[60vh]">
+      <div className="flex items-center flex-col gap-5  md:mt-0 md:gap-8 lg:gap-0 md:flex-row px-8 md:px-16 w-full h-full lg:py-20    ">
         {/* Image Section */}
-        <div className="w-full md:w-[40%]">
-          <div className="en2  sm:h-80 md:h-96 lg:h-[40rem] overflow-hidden ">
+        <div className=" md:w-[400px] lg:w-[600px]  ">
+          <div className="en2  lg:mt-10  ">
             <img
               src={img}
-              className="rounded-2xl  md:mt-32 shadow-xl "
+              className="rounded-2xl shadow-xl "
               alt="Entrepreneurship"
             />
           </div>
         </div>
 
         {/* Text Section */}
-        <div className=" text-center md:text-left lg:text-right md:w-[70%]  ">
-          <h2 className="text-3xl px-1 md:text-4xl md:pl-7 lg:text-5xl bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent font-bold">
+        <div className=" text-center md:text-right lg:text-right md:w-[70%]  ">
+          <h2 className="text-3xl px-1 md:text-3xl md:pt-10 md:pl-7 lg:text-4xl bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent font-bold">
             Entrepreneurship{" "}
             <span className="text-black dark:text-white">Course</span>
           </h2>
 
-          <p className="mt-5 lg:text-lg md:text-base sm:text-sm text-sm md:pl-7 text-slate-600 ">
+          <p className="mt-5 dark:text-slate-200 lg:text-lg md:text-base sm:text-sm text-sm md:pl-7 text-slate-600 ">
             Welcome to <strong>BAOIAM</strong>, the premier learning platform
             exclusively for women entrepreneurs! Ignite your entrepreneurial
             spirit and embark on your journey to success. As a launchpad for
@@ -327,8 +327,8 @@ const Enterpunership = () => {
       </div>
 
       {/*//! Program Overview */}
-      <div className="p-6 md:p-10">
-        <div className="endiv1 mx-auto max-w-7xl px-4 md:px-6">
+      <div className="p-6 md:p-10 lg:mb-12">
+        <div className="endiv1 mx-auto max-w-7xl px-4 md:px-2">
           {/* Heading Section */}
           <div className="text-center my-10">
             <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
@@ -340,12 +340,12 @@ const Enterpunership = () => {
           </div>
 
           {/* Content Section */}
-          <div className="flex flex-col-reverse md:flex-row items-center justify-between">
+          <div className="flex flex-col-reverse md:flex-row lg:my-5 items-center justify-between">
             {/* Image Section */}
 
             {/* Text Section */}
-            <div className="en4 w-full md:w-1/2 lg:w-1/2 md:ml-8 lg:ml-10">
-              <p className="mt-2 text-center md:text-left lg:text-lg md:text-base sm:text-sm text-sm text-slate-600  ">
+            <div className="en4 w-full md:w-[900px] lg:w-1/2  lg:ml-10">
+              <p className="mt-2 dark:text-slate-200 text-center md:text-left lg:text-lg md:text-base sm:text-sm text-sm text-slate-600  ">
                 Our Entrepreneurship Courses are formulated in a way that can be
                 easily studied and comprehended. We offer a plethora of courses
                 that are skill-centric and are purely based on practical
@@ -358,12 +358,12 @@ const Enterpunership = () => {
                 ⏳ Enrollment Deadline Approaching Soon!
               </div> */}
             </div>
-            <div className="en5 w-full md:w-1/2 lg:w-1/2 mb-6 md:pl-28 md:mb-0">
+            <div className="en5 w-full md:w-[600px] lg:w-1/2 mb-6 md:pl-16 md:mb-0">
               <div className="relative">
                 <img
                   src={img4}
                   alt="Person"
-                  className="rounded-2xl object-cover w-[500px] rounded-tr-3xl rounded-bl-3xl shadow-[7px_7px_#4338ca] sm:shadow-[15px_15px_#4338ca] lg:shadow-[20px_20px_#4338ca]"
+                  className="rounded-2xl object-cover w-[500px] rounded-tr-3xl rounded-bl-3xl shadow-[7px_7px_#4338ca] sm:shadow-[10px_10px_#4338ca] md:shadow-[10px_10px_#4338ca] lg:shadow-[17px_17px_#4338ca]"
                 />
               </div>
             </div>
@@ -384,13 +384,12 @@ const Enterpunership = () => {
           </h2>
 
           {/* Cards Container */}
-          <div className="en7 flex flex-col   md:flex-row  justify-center md:space-x-7 mt-10 md:mt-16">
+          <div className="en7 flex flex-col  lg:flex-row justify-center md:mx-10 lg:space-x-7 mt-10 md:mt-16">
             {cards.map((card, index) => (
               <div
                 key={index}
-                className={`relative rounded-2xl  shadow-xl border border-gray-200 bg-white hover:scale-105 hover:border-gray-500 hover:shadow-2xl transition-transform duration-300 ease-in-out p-6 sm:p-8 w-full md:w-1/2 lg:w-1/2 flex flex-col justify-between ${
-                  index === 1 ? "top-20" : index === 2 ? "top-40" : ""
-                }`}
+                className={`relative rounded-2xl shadow-xl dark:bg-[#25223f] border border-gray-200 bg-white hover:scale-105 dark:border-gray-400 dark:hover:border-white hover:border-gray-500 hover:shadow-2xl transition-transform duration-300 ease-in-out p-6 sm:p-8 w-full  lg:w-1/2 flex flex-col justify-between ${index === 1 ? "top-20" : index === 2 ? "top-40" : " "
+                  }`}
               >
                 <div>
                   {/* Card icon */}
@@ -399,12 +398,12 @@ const Enterpunership = () => {
             </h4> */}
 
                   {/* Card Title */}
-                  <h4 className="text-xl sm:text-xl font-semibold text-indigo-600 mb-4">
+                  <h4 className="text-xl sm:text-xl font-semibold dark:text-indigo-200 text-indigo-600 mb-4">
                     {card.title}
                   </h4>
 
                   {/* Card Description */}
-                  <p className=" mt-8 leading-relaxed text-center lg:text-base md:text-base sm:text-sm text-sm text-gray-800">
+                  <p className=" mt-8 dark:text-slate-200 leading-relaxed text-center lg:text-base md:text-base sm:text-sm text-sm text-gray-800">
                     {card.description}
                   </p>
                 </div>
@@ -414,23 +413,26 @@ const Enterpunership = () => {
         </div>
       </div>
       {/* //!Women Entrepreneurship Program */}
-      <div className="p-6 md:p-10">
-        <div className="endiv4 mx-auto max-w-7xl px-4 md:px-6">
+
+      <div className="p-6 md:p-10 lg:mb-12">
+        <div className="endiv1 mx-auto max-w-7xl px-4 md:px-2">
           {/* Heading Section */}
-          <div className="en8 text-center my-10">
+          <div className="text-center my-10">
             <h2 className="text-3xl md:text-4xl text-center mb-8 lg:mb-12 font-bold">
-              <span className=" bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
-                Women
-              </span>{" "}
-              Entrepreneurship
+              Women{" "}
+              <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
+                Entrepreneurship
+              </span>
             </h2>
           </div>
 
-          {/* Content Section: Image and Text */}
-          <div className="flex flex-col-reverse text-center md:text-left md:flex-row items-center justify-between">
+          {/* Content Section */}
+          <div className="flex flex-col-reverse md:flex-row lg:my-5 items-center justify-between">
+            {/* Image Section */}
+
             {/* Text Section */}
-            <div className="en9 w-full md:w-1/2 lg:w-1/2 md:ml-8 lg:ml-10">
-              <p className="mt-2 lg:text-lg md:text-base sm:text-sm text-sm text-slate-600  ">
+            <div className="en4 w-full md:w-[900px] lg:w-1/2  lg:ml-10">
+              <p className="mt-2 dark:text-slate-200 text-center md:text-left lg:text-lg md:text-base sm:text-sm text-sm text-slate-600  ">
                 Our Women Entrepreneurship Program aims to support and empower
                 women in starting and growing their businesses. This program is
                 specially pieced together by our experts to guide our women
@@ -440,18 +442,13 @@ const Enterpunership = () => {
                 challenges women may face in the business world. The goal is to
                 promote economic independence and gender equality.
               </p>
-              {/* <div className="text-black font-bold mt-4">
-                ⏳ Enrollment Deadline Approaching Soon!
-              </div> */}
             </div>
-
-            {/* Image Section */}
-            <div className="en10 w-full md:w-1/2 lg:w-1/2 mb-6 md:mb-0">
-              <div className="relative md:pl-28">
+            <div className="en5 w-full md:w-[600px] lg:w-1/2 mb-6 md:pl-16 md:mb-0">
+              <div className="relative">
                 <img
                   src={img3}
                   alt="Person"
-                  className="rounded-2xl object-cover w-96 rounded-tr-3xl rounded-bl-3xl shadow-[7px_7px_#4338ca] sm:shadow-[15px_15px_#4338ca] lg:shadow-[20px_20px_#4338ca] "
+                  className="rounded-2xl object-cover w-[500px] rounded-tr-3xl rounded-bl-3xl shadow-[7px_7px_#4338ca] sm:shadow-[10px_10px_#4338ca] md:shadow-[10px_10px_#4338ca] lg:shadow-[17px_17px_#4338ca]"
                 />
               </div>
             </div>
@@ -568,7 +565,7 @@ const Enterpunership = () => {
           </div>
         </div>
       </div> */}
-      
+
       {/*//! Faq */}
       {/* <Faq /> */}
       {/* <div>

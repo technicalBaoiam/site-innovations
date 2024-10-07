@@ -3,6 +3,12 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import data from "./testimonialsData.json";
 
+import testimonals2 from "../../assets/Images/testimonals2.jpg";
+
+import testimonals4 from "../../assets/Images/testimonals4.jpg";
+
+import testimonals6 from "../../assets/Images/testimonals6.jpg";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Star = ({ filled }) => (
@@ -17,42 +23,21 @@ const Star = ({ filled }) => (
 );
 
 const Testimonials = () => {
-  useEffect(() => {
-    // Animating the heading
-    gsap.fromTo(
-      ".testimonials-heading",
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: ".testimonials-heading",
-          start: "top 80%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
 
-    // Animating the testimonial cards
-    gsap.fromTo(
-      ".testimonial-card",
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: ".testimonial-card",
-          start: "top 85%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  }, []);
+  const images = [
+    {
+      imgSrc: testimonals6,
+      name: "Atharv Ingale",
+    },
+    {
+      imgSrc: testimonals4,
+      name: "Aishwarya Kamble",
+    },
+    {
+      imgSrc: testimonals2,
+      name: "Kaushiki Dey",
+    },
+  ];
 
   return (
     <div className="my-12 relative z-10">
@@ -71,7 +56,7 @@ const Testimonials = () => {
       </div>
 
       {/* Testimonial Cards */}
-      <div className="grid md:grid-cols-3 gap-6  max-w-6xl relative mx-auto mt-20 px-4">
+      <div className="grid md:grid-cols-3 gap-6 md:gap-10  max-w-6xl relative mx-auto mt-20 px-8 md:px-20">
         {data.testimonials.map((testimonial, index) => (
           <div
             key={index}
@@ -80,9 +65,9 @@ const Testimonials = () => {
           >
             {/* Profile Image */}
             <img
-              src={testimonial.image}
+              src={images[index].imgSrc}
               className="w-14 h-14 rounded-full absolute -top-7 left-1/2 transform -translate-x-1/2"
-              alt={testimonial.name}
+              alt={images[index].name}
             />
             {/* Testimonial Quote */}
             <div className="mt-8 text-center">

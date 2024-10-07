@@ -136,7 +136,7 @@ export const swiperData = [
   {
     id: 1,
     image: t4,
-    name: " Siddharth Tomar",
+    name: "Mr. Siddharth Tomar",
     role: "Founder & CEO",
     linkedin: "",
     desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
@@ -144,7 +144,7 @@ export const swiperData = [
   {
     id: 1,
     image: t1,
-    name: " Prachi Agrawal",
+    name: "Ms. Prachi Agrawal",
     role: "Content & Marketing Head",
     linkedin: "",
     desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
@@ -152,7 +152,7 @@ export const swiperData = [
   {
     id: 1,
     image: t5,
-    name: " Shreyansh Sinha",
+    name: "Mr. Shreyansh Sinha",
     role: "Product Head",
     linkedin: "",
     desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
@@ -160,33 +160,26 @@ export const swiperData = [
   {
     id: 1,
     image: t2,
-    name: " Virendra Singh",
+    name: "Mr. Virendra Singh",
     role: "Head of Operations",
     linkedin: "",
     desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
-    image: t4,
-    name: " Nivedita Mahadik",
-    role: "Academic Head",
-    linkedin: "",
-    desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
-  },
-  {
-    id: 1,
     image: t3,
-    name: " Virat Locham",
+    name: "Mr. Virat Locham",
     role: "Sales Director",
     linkedin: "",
     desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
   {
     id: 1,
-    image: t5,
-    name: "Parul Arora",
-    role: "Branch Head",
+    image: t4,
+    name: "Ms. Laxmi Chaudhary",
+    role: "Senior Technical Manager",
     linkedin: "",
     desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
+  
 ]

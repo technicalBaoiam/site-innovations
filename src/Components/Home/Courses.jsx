@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import { FaBook, FaProjectDiagram, FaGlobe, FaUsers } from "react-icons/fa";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -59,45 +59,51 @@ const Courses = () => {
   // }, []);
 
 
-  useEffect(() => {
+useLayoutEffect(() => {
 
-    gsap.fromTo('.trig4',{
-      opacity:0,
-      y:30
-    },
-    {
-      opacity:1,
-      y:0,
-      duration:0.6,
-      ease:'power1.out',
-      stagger:0.2,
-      scrollTrigger:{
-        trigger:'.section-div2',
-        start:'top 80%',
-        end:'bottom 80%'
-      }
-    })
-    
-    
-    },[])
+let context = gsap.context(() => {
 
+  gsap.fromTo('.Courseanime',{
+    opacity:0,
+    y:30,
+   
+  },
+  {
+    opacity:1,
+  
+    y:0,
+    duration:0.6,
+    ease:'power1.out',
+    stagger:0.2,
+    scrollTrigger:{
+      trigger:'.Coursediv',
+      start:'top 80%',
+      end:'bottom 80%'
+    }
+  })
+
+})
+
+return () => context.revert()
+
+})
 
 
   return (
-    <div className="section-div2 px-10 md:px-16 mx-auto dark:bg-[#010203] pb-5">
-      <div className="text-center mx-auto mb-10 md:mb-12">
-        <h2 className="trig4 text-3xl lg:text-4xl dark:text-white font-extrabold text-gray-900 mb-3">
+    <div className="px-10 md:px-16 mx-auto dark:bg-[#010203] pb-5">
+      <div className="Coursediv text-center mx-auto mb-10 md:mb-12">
+        <h2 className="Courseanime text-3xl lg:text-4xl dark:text-white font-extrabold text-gray-900 mb-3">
           What Sets Us{" "}
           <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
             Apart
           </span>
         </h2>
-        <p className="trig4 text-base dark:text-gray-300 sm:text-lg text-gray-600">
+        <p className="Courseanime text-base dark:text-gray-300 sm:text-lg text-gray-600">
           Our commitment to quality, dedication and achievement oriented mindset sets us apart
         </p>
       </div>
 
-      <div className="trig4 flex flex-col mx-auto justify-center md:flex-row gap-8">
+      <div className="Courseanime flex flex-col mx-auto justify-center md:flex-row gap-8">
         {data.map((stat, i) => {
           return <div className="w-60 shadow-[7px_7px_#4338CA] border border-[#515050] p-4 rounded-xl">
             <div className="flex items-center mx-auto justify-start gap-4 mb-3">
@@ -112,23 +118,7 @@ const Courses = () => {
         })}
       </div>
 
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {data.map((stat, index) => (
-          <div
-            key={index}
-            ref={(el) => (cardsRef.current[index] = el)} // Store each card's ref in the array
-            className="bg-zinc-100 dark:bg-indigo-900 bg-opacity-60 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg p-4 text-center hover:shadow-xl transition-shadow duration-300 ease-in-out"
-          >
-            <div className="flex items-center justify-center mb-4">
-              {stat.icon}
-            </div>
-            <h2 className="text-2xl font-semibold text-gray-800 dark:text-white mb-4">
-              {stat.title}
-            </h2>
-            <p className="text-gray-600 dark:text-white">{stat.description}</p>
-          </div>
-        ))}
-      </div> */}
+      
     </div>
   );
 };

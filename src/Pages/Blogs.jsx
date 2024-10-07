@@ -160,31 +160,36 @@ const Blog = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
 
-   gsap.fromTo('.b2',{opacity:0,y:30},{
-    opacity:1,
-    y:0,
-    duration:0.6,
-    ease:'power1.out',
-    stagger:0.2,
-   })
-
-
-   gsap.fromTo('.b3',{opacity:0,x:30},
-    {
-      opacity:1,
-      x:0,
-      duration:0.6,
-      ease:'power1.out',
-      stagger:0.2,
-      scrollTrigger:{
-        trigger:'.blogdiv1',
-        start:'top 88%',
-        end:'bottom 85%',
+    gsap.fromTo(
+      ".b2",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power1.out",
+        stagger: 0.2,
       }
-    }
-   )
-   
-   return () => {};
+    );
+
+    gsap.fromTo(
+      ".b3",
+      { opacity: 0, x: 30 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+        ease: "power1.out",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".blogdiv1",
+          start: "top 88%",
+          end: "bottom 85%",
+        },
+      }
+    );
+
+    return () => {};
   }, []);
 
   function SampleNextArrow(props) {
@@ -268,7 +273,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="dark:bg-black dark:text-white">
+    <div className='dark:bg-black dark:text-white'>
       <HeaderBlog
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
@@ -276,54 +281,60 @@ const Blog = () => {
         setSearchResults={setSearchResults}
         blog_list={blog_list}
       />
-      <div className="max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8">
-        <h1 className="b2 text-3xl font-bold text-center">
+      <div className='max-w-7xl dark:bg-black dark:text-white mx-auto py-8 px-4 sm:px-6 lg:px-8'>
+        <h1 className='b2 text-3xl font-bold text-center'>
           Our Latest Highlights
         </h1>
-        <h2 className="b2 text-lg text-center dark:text-slate-300 mt-2 mb-6">
+        <h2 className='b2 text-lg text-center dark:text-slate-300 mt-2 mb-6'>
           Dive into our latest blogs for fresh insights and trending topics{" "}
         </h2>
 
-        <div className=" p-6"></div>
-        <div className="blogdiv1 px-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          {searchResults.map((item, i) => (
-            <Link className="b3" key={i} to={`/Blog_detail/${i}` }>
-              <div className='bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
-                <div className='relative'>
-                  <img
-                    className="w-full h-48 object-cover"
-                    src={item.imgSrc}
-                    alt={`${item.title}`}
-                  />
-                  {/* Button positioned over the image */}
-                  <button
-                    type="button"
-                    className="absolute bottom-2 left-3 dark:bg-slate-300 bg-slate-400 transition-all text-black text-xs font-medium rounded-lg p-2"
-                  >
-                    {item.category}
-                  </button>
+        <div className=' p-6'></div>
+        {searchResults.length === 0 ? (
+          <div className='text-center text-black text-lg mb-[15%] md:text-3xl  font-semibold dark:text-slate-300'>
+            No blog available
+          </div>
+        ) : (
+          <div className='blogdiv1 px-4 md:px-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10'>
+            {searchResults.map((item, i) => (
+              <Link className='b3' key={i} to={`/Blog_detail/${i}`}>
+                <div className='bg-white flex flex-col h-full dark:bg-black dark:text-white shadow-lg dark:hover:shadow-gray-300 dark:hover:shadow-md rounded-lg overflow-hidden transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300 '>
+                  <div className='relative'>
+                    <img
+                      className='w-full h-48 object-cover'
+                      src={item.imgSrc}
+                      alt={`${item.title}`}
+                    />
+                    {/* Button positioned over the image */}
+                    <button
+                      type='button'
+                      className='absolute bottom-2 left-3 dark:bg-slate-300 bg-slate-400 transition-all text-black text-xs font-medium rounded-lg p-2'
+                    >
+                      {item.category}
+                    </button>
+                  </div>
+                  <div className='p-4 flex-grow '>
+                    <h2 className='text-lg font-bold my-2'>{item.text}</h2>
+                    <span
+                      className='text-sm text-slate-700 dark:text-slate-300 font-semibold'
+                      style={{
+                        display: "-webkit-box",
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                        WebkitLineClamp: 2, // Limit to 2 lines
+                      }}
+                    >
+                      {item.des}
+                    </span>
+                    <p className='text-xs text-slate-500 dark:dark:text-slate-400 font-medium mt-2'>
+                      {item.info}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4 flex-grow ">
-                  <h2 className="text-lg font-bold my-2">{item.text}</h2>
-                  <span
-                    className="text-sm text-slate-700 dark:text-slate-300 font-semibold"
-                    style={{
-                      display: "-webkit-box",
-                      WebkitBoxOrient: "vertical",
-                      overflow: "hidden",
-                      WebkitLineClamp: 2, // Limit to 2 lines
-                    }}
-                  >
-                    {item.des}
-                  </span>
-                  <p className="text-xs text-slate-500 dark:dark:text-slate-400 font-medium mt-2">
-                    {item.info}
-                  </p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
+              </Link>
+            ))}
+          </div>
+        )}
 
         {/* slider */}
 

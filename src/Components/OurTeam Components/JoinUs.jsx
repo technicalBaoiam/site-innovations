@@ -25,7 +25,7 @@ const JoinUs = () => {
   }, []);
 
   return (
-    <div className="tdiv5 t5 w-full h-52 md:h-80 my-6 relative ">
+    <div className="tdiv5 t5 h-52 md:h-80 my-6 relative ">
       <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-sm bg-black/80"></div>
       <img
         src={OurHands}

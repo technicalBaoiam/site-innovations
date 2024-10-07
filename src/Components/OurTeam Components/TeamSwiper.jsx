@@ -38,38 +38,39 @@ export const TeamSwiper = () => {
     <>
       <div className="tdiv1 t2 text-center text-3xl md:text-4xl p-6 py-6 tracking-wide leading-4 font-bold">
         Our <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
-            Leaders
-            </span>
+          Leaders
+        </span>
       </div>
-      <div className="hidden p-6  md:grid h-full w-full items-center justify-around grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="hidden p-6  md:grid h-full w-full items-center justify-around grid-cols-3 lg:grid-cols-4 gap-7 gap-y-14">
         {swiperData.slice(0, 8).map((el) => {
           return (
-            <div className="group h-80 w-64 flip-card rounded-xl overflow-hidden">
-              <div className="flip-card-inner rounded-xl">
+            <div className="group h-80 bg-slate-100 rounded-2xl w-64 flip-card overflow-hidden">
+              <div className="flip-card-inner rounded-2xl">
                 {/* Front Side (Image) */}
-                <div className="t2 flip-card-front mx-auto">
+                <div className="t2 flip-card-front rounded-2xl mx-auto">
                   <img
-                    className="h-full w-full  mx-auto  rounded-md object-cover"
+                    className="h-full w-full rounded-2xl mx-auto object-cover"
                     src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoEAMYKHiwI5JH_IlxayW3-9UurHlASFy9A&s"}
                     alt={el.name}
                   />
                 </div>
 
                 {/* Back Side (Details) */}
-                <div className="flip-card-back rounded-xl bg-black/50 bg-opacity-80 text-black dark:text-white flex flex-col justify-center items-center ">
+                <div className="flip-card-back bg-black/50 bg-opacity-80 rounded-2xl text-white flex flex-col justify-center items-center">
                   <img
-                    className="h-full  absolute w-80 sm:w-96 mx-auto rounded-md object-cover"
+                    className="h-full rounded-2xl absolute w-80 sm:w-96 mx-auto object-cover"
                     src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoEAMYKHiwI5JH_IlxayW3-9UurHlASFy9A&s"}
                     alt={el.name}
                   />
-                  <div className="absolute w-full h-full hover:opacity-100 backdrop-blur-md dark:bg-black/80 bg-slate/80"></div>
-                  <h3 className="text-center z-10 font-sans font-medium text-sm md:text-lg">
-                    {/* {el.name} */} Coming soon...
+                  <div className="absolute w-full rounded-2xl h-full hover:opacity-100 backdrop-blur-md dark:bg-black/80 bg-slate/80"></div>
+                  <h3 className="text-center text-zinc-600 z-10 font-sans font-medium text-sm md:text-lg">Comming Soon ! </h3>
+                  {/* <h3 className="text-center z-10 font-sans font-medium text-sm md:text-lg">
+                    {el.name}
                   </h3>
                   <p className="text-center z-10 text-white font-bold text-xs md:text-sm">
-                    {/* {el.role} */}
+                    {el.role}
                   </p>
-                  {/* <div className="py-2 flex z-10 items-center justify-center gap-2">
+                  <div className="py-2 flex z-10 items-center justify-center gap-2">
                     <FaLinkedin className="text-blue-600 text-xl" />
                     <FaXTwitter className="text-white" />
                   </div> */}
@@ -78,7 +79,7 @@ export const TeamSwiper = () => {
             </div>
           );
         })}
-      </div>
+      </div >
 
       <div className="p-6 md:hidden">
         <Swiper
@@ -112,20 +113,20 @@ export const TeamSwiper = () => {
               >
                 <img
                   className="h-full rounded-md object-cover w-full"
-                  src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoEAMYKHiwI5JH_IlxayW3-9UurHlASFy9A&s"}
-                  alt="team image"
+                  src={el.image}
+                  alt=""
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 hover:opacity-100 hover:backdrop-blur-md  flex flex-col justify-center items-center transition-opacity duration-300 rounded-md">
-                  <h3 className="text-center text-white font-sans font-medium text-sm md:text-lg">
-                    {/* {el.name} */}
+                  <h3 className="text-center text-white font-sans font-medium text-sm md:text-lg">comming soon
+                    {el.name}
                   </h3>
                   <p className="text-center text-gray-300 text-xs md:text-sm">
-                    {/* {el.role} */}
+                    {el.role}
                   </p>
-                  {/* <div className=" py-2 flex items-center justify-center gap-2">
+                  <div className=" py-2 flex items-center justify-center gap-2">
                     <FaLinkedin className="text-blue-600 text-xl text-center" />
                     <FaXTwitter className="text-black font-bold" />
-                  </div> */}
+                  </div>
                 </div>
               </SwiperSlide>
             );

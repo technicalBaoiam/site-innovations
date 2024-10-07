@@ -40,18 +40,18 @@ export const HeaderBlog = ({
   };
 
   useEffect(() => {
-
-    gsap.fromTo('.b1',{opacity:0,y:30},
+    gsap.fromTo(
+      ".b1",
+      { opacity: 0, y: 30 },
       {
-        opacity:1,
-        y:0,
-        duration:0.6,
-        ease:'power1.out',
-        stagger:0.1,
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power1.out",
+        stagger: 0.1,
       }
-    )
-
-  },[])
+    );
+  }, []);
 
   return (
     <>

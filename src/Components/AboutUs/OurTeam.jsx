@@ -1,9 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useLayoutEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { swiperData } from "../../Components/OurTeam Components/teamData";
 import { FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -17,42 +16,54 @@ import {
 } from "swiper/modules";
 
 // Register ScrollTrigger with GSAP
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const TeamComponent = () => {
-  const [data, setData] = useState(swiperData);
+const TeamComponent = ( {data}) => {
+  // const [data, setData] = useState(data);
   const cardsRef = useRef([]);
 
-  useEffect(() => {
-    
-    gsap.fromTo('.sectionanime-5',
-      {
-        opacity:0,
-        y:30
-      },
-      {
-        opacity:1,
-        y:0,
-        duration:0.6,
-        ease:'power1.out',
-        stagger:0.2,
-        scrollTrigger:{
-          trigger:'.sectiondiv-5',
-          start:'top 70%',
+  useLayoutEffect(() => {
+
+    let context = gsap.context(() => {
+
+      gsap.fromTo('.Ourteamanime',
+        {
+          opacity:0,
+          y:30,
+         
+        },
+        {
+          opacity:1,
+        
+          y:0,
+          duration:0.6,
+          ease:'power1.out',
+          stagger:0.2,
+          scrollTrigger:{
+            trigger:'.OurTeamdiv',
+            start:'top 70%',
+          }
         }
-      }
-    )
+      )
+  
+    })
+    return () => context.revert()
+
+    })
+    
+    
 
 
-  }, []);
+
+
 
   return (
-    <div className="sectiondiv-5 team-component">
-      <div className="sectionanime-5 text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
+    <div className="OurTeamdiv team-component">
+      <div className="Ourteamanime text-center text-xl md:text-4xl p-6 py-8 tracking-wide leading-4 font-bold">
         Our <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">Team</span>
       </div>
 
-      <div className="sectionanime-5 p-6">
+      <div className="Ourteamanime p-6">
         <Swiper
           keyboard={{ enabled: true }}
           navigation={true}
@@ -71,7 +82,7 @@ const TeamComponent = () => {
         >
           {data?.map((el, index) => (
             <SwiperSlide
-              key={el.id}
+              key={index}
               ref={(el) => (cardsRef.current[index] = el)} // Assigning ref to each card
               className="group rounded-xl border shadow-md flip-card w-96 h-72 overflow-hidden"
             >

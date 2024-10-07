@@ -13,19 +13,14 @@ const TermsAndConditions = () => {
       <h1 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">
         TERMS & CONDITIONS
       </h1>
-
       <section className="mb-6 sm:mb-8">
         <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
           Introduction
         </h2>
         <p className="mb-3 sm:mb-4">
-          Welcome to Diuveens, your trusted destination for premium cosmetics
-          and skincare products. We are dedicated to providing you with
-          high-quality beauty solutions that enhance your natural glow. These
-          Terms and Conditions outline the rules and regulations for the use of
-          our website and the purchase of our products.
+        Welcome to Baoiam, an ed-tech platform that provides various courses, including but not limited to art and craft, creative writing, and machine learning. By using our website or enrolling in any of our courses, you agree to be bound by the following Terms and Conditions. If you do not agree with these terms, please refrain from using our services.
         </p>
-        <p className="mb-3 sm:mb-4">
+        {/* <p className="mb-3 sm:mb-4">
           By accessing and using the Diuveens website, you agree to comply with
           and be bound by the following terms and conditions. Please read them
           carefully. If you do not agree with any part of these terms, you are
@@ -34,157 +29,203 @@ const TermsAndConditions = () => {
         <p>
           Our commitment is to ensure a satisfying and secure shopping
           experience for all our valued customers.
-        </p>
+        </p> */}
       </section>
-
       <section className="mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Products</h2>
-        <h3 className="text-lg sm:text-xl font-bold mb-2">
+        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">User Accounts</h2>
+        {/* <h3 className="text-lg sm:text-xl font-bold mb-2">
           Product Information
-        </h3>
+        </h3> */}
         <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
           <li>
-            The Diuveens strives to provide accurate and detailed descriptions
-            of all products available on our website. However, we do not
-            guarantee that the descriptions are entirely error-free, complete,
-            or current.
+          To access certain features of Baoiam, you may be required to create an account.
           </li>
           <li>
-            The images of products on our website are for illustrative purposes
-            only. While we make every effort to display the colors accurately,
-            we cannot guarantee that your device's display of the colors will
-            accurately reflect the actual color of the products.
+          You are responsible for maintaining the confidentiality of your account credentials.
+          </li>
+          <li>
+          You must provide accurate and complete information when creating an account and keep this information updated.
+          </li>
+          <li>
+          Baoiam reserves the right to terminate accounts at its discretion, including but not limited to cases where the user violates these Terms and Conditions.
           </li>
         </ul>
 
-        <h3 className="text-lg sm:text-xl font-bold mb-2">Pricing</h3>
+        <h3 className="text-lg sm:text-xl font-bold mb-2">Course Enrollment</h3>
         <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
           <li>
-            All prices are subject to change without prior notice at the
-            discretion of Diuveens.
+          Enrollment in any course is subject to availability and the payment of applicable fees.
           </li>
           <li>
-            Prices for products are inclusive of applicable taxes unless stated
-            otherwise.
+          Baoiam reserves the right to change course content, instructors, or schedules without prior notice.
           </li>
-          <li>
+          {/* <li>
             Shipping and handling charges will be added to the total price at
             checkout and are subject to change.
+          </li> */}
+        </ul>
+
+        <h3 className="text-lg sm:text-xl font-bold mb-2">User Conduct</h3>
+        <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
+          <li>
+          You agree to use our platform only for lawful purposes and in a manner that does not infringe the rights of others.
+          </li>
+          <li>
+          The use of any Baoiam content for commercial purposes without our express consent is strictly prohibited.
           </li>
         </ul>
 
-        <h3 className="text-lg sm:text-xl font-bold mb-2">Availability</h3>
+        <h3 className="text-lg sm:text-xl font-bold mb-2">intellectual Property</h3>
         <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
           <li>
-            We strive to ensure that our product availability is accurate and up
-            to date. However, we do not guarantee that all items will be in
-            stock at the time of your order.
+          All course content, including text, videos, images, and other materials, is the intellectual property of Baoiam or its licensors.
           </li>
           <li>
-            In the event a product is unavailable after an order has been
-            placed, we will notify you promptly and provide options for a
-            substitute product, a backorder, or a full refund.
-          </li>
-        </ul>
-
-        <h3 className="text-lg sm:text-xl font-bold mb-2">Use of Products</h3>
-        <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
-          <li>
-            Our products are intended for personal use only and are not to be
-            resold or redistributed without written permission from Diuveens.
-          </li>
-          <li>
-            Please follow all usage instructions, warnings, and guidelines
-            provided with the products to ensure proper use and to avoid adverse
-            reactions.
+          You may not copy, distribute, or create derivative works from any of our content without our express written permission.
           </li>
         </ul>
 
         <h3 className="text-lg sm:text-xl font-bold mb-2">
-          Product Safety and Allergies
+        Limitation of Liability
         </h3>
         <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
           <li>
-            Diuveens takes product safety seriously and lists all ingredients on
-            our product packaging and on our website. However, we are not liable
-            for any allergic reactions or adverse effects caused by any of the
-            ingredients used in our products.
+          Baoiam is not liable for any indirect, incidental, or consequential damages arising from your use of our services.
           </li>
           <li>
-            If you have any known allergies or sensitivities, please review the
-            product ingredients carefully and consult with a healthcare
-            professional before use.
+          Our platform is provided "as is" without any warranties, either express or implied.
           </li>
         </ul>
       </section>
-
-      <section className="mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-          Returns and Exchanges
-        </h2>
+      <section className="mb-8">
+          <h2 className="text-xl mb-2 font-bold">Changes to Terms</h2>
+          <p>Baoiam reserves the right to update these Terms and Conditions at any time. Any changes will be effective immediately upon posting on our website.</p>
+      </section>
+        <hr/>
+      <section className="mb-6 sm:mb-8 py-5">
+      <h1 className="text-2xl sm:text-3xl font-bold mb-5 sm:mb-6 text-center">
+      Privacy Policy
+      </h1>
+      <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+          Introduction
+      </h2>
         <p>
-          Our returns and exchanges policy is detailed in a separate section of
-          our Terms and Conditions. Please refer to the Returns and Exchanges
-          section for information on how to return or exchange a product.
+        At Baoiam, we are committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your personal information when you use our platform.
         </p>
       </section>
-
       <section className="mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Website</h2>
-
-        <h3 className="text-lg sm:text-xl font-bold mb-2">Eligibility</h3>
+        <h3 className="text-xl sm:text-xl font-bold mb-3 sm:mb-4">
+        Information We Collect
+        </h3>
+        <p>
+          <span className="font-bold">Personal Information:</span> When you register for an account or enroll in a course, we may collect personal details such as your name, email address, and phone number.
+        </p>
+        <p>
+          <span className="font-bold">Payment Information:</span> For paid courses, we collect payment information, including billing details and credit/debit card information, processed securely by third-party payment processors.
+        </p>
+        <p>
+          <span className="font-bold">Usage Data:</span> We may collect information about how you access and interact with our website, including your IP address, browser type, and device information.
+        </p>
+      </section>
+      <section className="mb-6 sm:mb-8">
+        <h2 className="text-xl sm:text-xl font-bold mb-3 sm:mb-4">
+        How We Use Your Information
+        </h2>
         <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
           <li>
-            By using the Diuveens website, you confirm that you are at least 18
-            years old or are accessing the site under the supervision of a
-            parent or guardian.
+          To provide and manage your account and deliver course content.
           </li>
           <li>
-            Users must ensure that all information provided during registration
-            or any other interaction with our website is accurate, current, and
-            complete.
+          To improve our services based on your feedback and usage.
+          </li>
+          <li>
+          To send promotional offers or updates about new courses, if you have opted to receive them.
+          </li>
+        </ul>
+      </section>
+      <section className="md:mb-3 mb-6 sm:mb-8">
+      <h2 className="text-xl sm:text-xl font-bold  mb-3 sm:mb-4">
+       Data Sharing and Security
+        </h2>
+        <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
+          <li>
+          We do not sell or share your personal data with third parties, except where necessary to provide our services (e.g., payment processors) or as required by law.
+          </li>
+          <li>
+          We implement reasonable security measures to protect your data, but no method of transmission over the internet is completely secure.
+          </li>
+        </ul>
+      </section>
+      <section className="md:mb-4 mb-6 sm:mb-8">
+       <h2 className="text-xl sm:text-xl font-bold md:mb-2 mb-3 sm:mb-4">
+       Cookies
+       </h2>
+       <p>
+       We use cookies to enhance your experience on our platform. You can control the use of cookies through your browser settings.
+       </p>
+      </section>
+      <section className="mb-6 sm:mb-8">
+       <h2 className="text-xl sm:text-xl font-bold md:mb-2 mb-3 sm:mb-4">
+       Changes to Privacy Policy
+       </h2>
+       <p>
+       Baoiam reserves the right to modify this Privacy Policy at any time. Changes will be posted on our website, and your continued use of the platform implies acceptance of the updated policy.
+       </p>
+      </section>
+      <hr/>
+      <section className="mb-6 py-5 sm:mb-8">
+       <h1 className="text-2xl sm:text-3xl font-bold mb-5 sm:mb-6 text-center">
+       Refund Policy
+      </h1>
+      <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+          Introduction
+      </h2>
+        <p>
+        At Baoiam, we strive to provide quality educational content. However, if you are not satisfied with your course, please review the following Refund Policy.
+        </p>
+      </section>
+      <section className="mb-6 sm:mb-8">
+        <h3 className="md:text-xl text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Eligibility for Refunds </h3>
+
+        {/* <h3 className="text-lg sm:text-xl font-bold mb-2">Eligibility</h3> */}
+        <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
+          <li>
+          Refunds will only be provided for courses that are not completed.
+          </li>
+          <li>
+          If you have accessed more than 25% of the course content, you will not be eligible for a refund.
+          </li>
+          <li>
+          Requests for refunds must be made within 7 days of purchase.
           </li>
         </ul>
 
-        <h3 className="text-lg sm:text-xl font-bold mb-2">Account Security</h3>
+        <h3 className="text-lg sm:text-xl font-bold mb-2">Process for Refunds</h3>
         <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
           <li>
-            You are responsible for maintaining the confidentiality of your
-            account information, including your password, and for all activities
-            that occur under your account.
+          To request a refund, please contact our support team at [support@baoiam.com] with your order details.
           </li>
           <li>
-            You agree to notify Diuveens immediately of any unauthorized use of
-            your account or any other breach of security.
+          Once your refund request is approved, we will process your refund within 7-10 business days.
+          </li>
+          <li>
+          Refunds will be processed to the original method of payment.
           </li>
         </ul>
 
         <h3 className="text-lg sm:text-xl font-bold mb-2">
-          Prohibited Activities
+        Non-Refundable Services
         </h3>
         <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
           <li>
-            You agree not to engage in any activities that may harm or interfere
-            with the functioning of the Diuveens website, including but not
-            limited to:
+          Custom mentorship, counseling services, or offline classes are non-refundable once availed.
           </li>
-          <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
-            <li>
-              Uploading or distributing viruses, malware, or any other harmful
-              software.
-            </li>
-            <li>
-              Attempting to gain unauthorized access to our systems or networks.
-            </li>
-            <li>Using the website for any fraudulent or unlawful purpose.</li>
-            <li>
-              Copying, distributing, or disclosing any part of the website in
-              any medium without our prior written consent.
-            </li>
+          <li>
+            Promotional or discounted courses may not be eligible for refunds unless specified.
+          </li>
           </ul>
-        </ul>
 
-        <h3 className="text-lg sm:text-xl font-bold mb-2">
+        {/* <h3 className="text-lg sm:text-xl font-bold mb-2">
           Intellectual Property
         </h3>
         <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
@@ -229,55 +270,17 @@ const TermsAndConditions = () => {
             You acknowledge and agree that Diuveens is not liable for any loss
             or damage caused by your use of any third-party websites.
           </li>
-        </ul>
-      </section>
+        </ul> */}
 
       <section className="mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-          Privacy Policy
-        </h2>
-        <p>
-          Your use of the Diuveens website is also governed by our Privacy
-          Policy, which can be found here. The Privacy Policy explains how we
-          collect, use, and protect your personal information.
-        </p>
+       <h2 className="text-xl sm:text-xl font-bold md:mb-2 md-3 sm:mb-4">
+       Changes to Refund Policy
+       </h2>
+       <p>
+       Baoiam reserves the right to amend this Refund Policy at any time. Changes will be effective immediately and will be posted on our website.
+       </p>
       </section>
 
-      <section className="mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-          Modification and Termination
-        </h2>
-        <p>
-          Diuveens reserves the right to modify, suspend, or terminate the
-          website or any part thereof at any time without notice. We may also
-          update these Terms and Conditions from time to time. Continued use of
-          the website following any such changes constitutes your acceptance of
-          the new terms.
-        </p>
-      </section>
-
-      <section className="mb-6 sm:mb-8">
-        <h2 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
-          Disclaimer of Warranties and Limitation of Liability
-        </h2>
-        <ul className="list-disc pl-5 sm:pl-8 mb-3 sm:mb-4">
-          <li>
-            The Diuveens website is provided on an "as is" and "as available"
-            basis. We make no warranties, express or implied, regarding the
-            operation or availability of the website or the information,
-            content, or materials included on it.
-          </li>
-          <li>
-            To the fullest extent permitted by law, Diuveens disclaims all
-            warranties, express or implied, including but not limited to implied
-            warranties of merchantability and fitness for a particular purpose.
-          </li>
-          <li>
-            Diuveens will not be liable for any damages of any kind arising from
-            the use of the website, including but not limited to direct,
-            indirect, incidental, punitive, and consequential damages.
-          </li>
-        </ul>
       </section>
     </div>
   );

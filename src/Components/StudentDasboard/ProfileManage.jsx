@@ -12,7 +12,7 @@ const ProfileManage = () => {
 
   // accessing user data from Redux store
   const userInfo = useSelector((state) => state.user.profile);
-  console.log(userInfo, "profile management userinfo state check");
+  // console.log(userInfo, "profile management userinfo state check");
   const [animatePing, setAnimatePing] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   // const [email, setEmail] = useState({
@@ -95,7 +95,7 @@ const ProfileManage = () => {
     try {
       let transformedData = {};
 
-      console.log(`Saving ${section}...`);
+      // console.log(`Saving ${section}...`);
 
       if (section === "personalInfo") {
         transformedData = {
@@ -104,7 +104,7 @@ const ProfileManage = () => {
           email: formData.email,
         };
 
-        console.log("Personal Info Data:", transformedData);
+        // console.log("Personal Info Data:", transformedData);
 
         const { data } = await axios.patch(
           `${apiUrl}/api/auth/users/me/`,
@@ -116,9 +116,11 @@ const ProfileManage = () => {
             },
           }
         );
+        console.log("profile update:", data);
 
         // dispatching updated data to Redux
-        dispatch(setProfile1(data));
+        dispatch(setProfile1({ ...userInfo, ...data }));
+
         setShowPopup(true);
         setFormData((prev) => ({
           ...prev,
@@ -134,9 +136,13 @@ const ProfileManage = () => {
           instagram: formData.socialLinks.instagram,
         };
 
-        console.log("Other Info Data:", transformedData);
+        // console.log("Other Info Data:", transformedData);
 
-        await axiosInstance.put(`${apiUrl}/api/profile/`, transformedData);
+        const { data } = await axiosInstance.put(
+          `${apiUrl}/api/profile/`,
+          transformedData
+        );
+        console.log("other data:", data);
 
         // dispatching updated data to Redux
         dispatch(setProfile1({ ...userInfo, ...transformedData }));
@@ -148,7 +154,7 @@ const ProfileManage = () => {
         }));
       }
     } catch (error) {
-      console.error("Error updating profile:", error);
+      // console.error("Error updating profile:", error);
     }
   };
 

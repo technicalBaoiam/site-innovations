@@ -16,9 +16,9 @@ export const WebDevTeam = () => {
     <>
       <CommonComp
         heading={"Meet Our Team"}
-        para={
-          "Our web development team powers BAOIAM’s digital landscape with innovation and expertise. They excel at turning complex challenges into intuitive, user-centric solutions, ensuring a seamless online experience. Discover the talented individuals who build and elevate our digital platforms."
-        }
+        // para={
+        //   "Our web development team powers BAOIAM’s digital landscape with innovation and expertise. They excel at turning complex challenges into intuitive, user-centric solutions, ensuring a seamless online experience. Discover the talented individuals who build and elevate our digital platforms."
+        // }
         dataArray={webData}
       />
     </>

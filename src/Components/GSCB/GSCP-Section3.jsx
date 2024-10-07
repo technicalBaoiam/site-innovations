@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-
 const GSCPBottom = () => {
   const textRef = useRef(null); // Reference for the text to animate
 
@@ -15,9 +14,9 @@ const GSCPBottom = () => {
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
-          trigger: textRef.current, 
-          start: "top 80%",         
-          toggleActions: "play none none reverse", 
+          trigger: textRef.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
         },
       }
     );
@@ -28,9 +27,10 @@ const GSCPBottom = () => {
       <div className="absolute inset-0 bg-black opacity-0 dark:opacity-65"></div>
       <h6
         ref={textRef}
-        className="relative text-xl md:text-2xl lg:text-3xl z-10 max-xs:text-[5vw] max-xs:leading-tight"
+        className="relative md:mx-40 text-xl md:text-2xl lg:text-3xl z-10 max-xs:text-[5vw] max-xs:leading-tight"
       >
-        For any questions or to discuss partnership opportunities, please contact us at{" "}
+        For any questions or to discuss partnership opportunities, please
+        contact us at{" "}
         <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
           partner@baoiam.com
         </span>

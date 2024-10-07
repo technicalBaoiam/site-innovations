@@ -77,17 +77,17 @@ const ContactForm = () => {
     }
   };
   return (
-    <div className="mt-20 w-[70%] p-4 mx-auto h-full max-lg:w-[80%] max-md:w-[90%] max-sm:w-[95%] max-xs:w-full max-xs:p-4 max-xs:mt-10">
+    <div className="mt-20 w-full md:w-[80%] lg:w-[70%] p-4 mx-auto h-full max-xs:p-4 max-xs:mt-10">
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           {/* Overlay */}
           <div
-            className="fixed inset-0 bg-gray-600 bg-opacity-50 transition-opacity"
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
             onClick={() => setShowPopup(false)} // Click outside to close
           ></div>
 
           {/* Modal Content */}
-          <div className="relative bg-white rounded-lg p-8 shadow-2xl z-10 text-center">
+          <div className="relative w-[80%] sm:w-[60%] md:w-[50%] xl:w-[40%] bg-white rounded-lg p-8 shadow-2xl z-10 text-center">
             {/* Success Icon */}
             <FaCheckCircle
               size={50}
@@ -96,8 +96,8 @@ const ContactForm = () => {
               }`}
             />
 
-            <h2 className="text-2xl font-bold text-indigo-600 mb-4 transition-all duration-300 ease-in-out">
-              Thank you for submitting your details. We'll get back to you soon
+            <h2 className=" font-semibold text-indigo-600 mb-4 transition-all duration-300 ease-in-out">
+            Thank you! We’ve received your submission and will get back to you soon.
             </h2>
             {/* <p className="text-gray-700 mb-6">
               Your enrollment was successful. We’re excited to have you on
@@ -110,28 +110,28 @@ const ContactForm = () => {
             {/* Close Button */}
             <button
               onClick={() => setShowPopup(false)}
-              className="bg-gradient-to-br from-purple-600 via-indigo-500 to-indigo-700 text-white px-6 py-2 rounded-full hover:bg-indigo-700 focus:outline-none transition-all"
+              className="bg-indigo-500 text-white px-4 py-2 rounded hover:bg-indigo-700 focus:outline-none transition-all"
             >
               Close
             </button>
           </div>
         </div>
       )}
-      <h1 className="text-5xl font-semibold max-lg:text-4xl max-md:text-3xl max-sm:text-3xl max-xs:text-3xl max-xs:text-center">
+      <h1 className="md:text-3xl text-xl mb-4 font-semibold">
         Contact
       </h1>
 
       <form
-        className="w-full h-full py-4 flex flex-col gap-4 text-black max-sm:gap-4"
+        className="w-full h-full py-4 px-4 flex flex-col gap-4 text-black max-sm:gap-4"
         onSubmit={(e) => {
           submitData(e);
         }}
       >
         {/* Name */}
         <div className="flex flex-col w-full">
-          <div className="flex items-center justify-between gap-8 w-full max-sm:flex-col max-sm:gap-4">
-            <div className="w-1/2 flex flex-col max-sm:w-full">
-              <label className=" font-medium max-sm:text-base dark:text-white">
+          <div className="flex items-center justify-between gap-4 md:gap-8 w-full flex-col md:flex-row">
+            <div className="md:w-1/2 flex flex-col w-full">
+              <label className=" font-medium dark:text-white">
                 First Name <span className="text-red-600">*</span>
               </label>
               <input
@@ -142,14 +142,14 @@ const ContactForm = () => {
                 contact_type="text"
                 id="first"
                 placeholder="Enter your First Name...."
-                className="px-4 py-2 dark:bg-slate-800 dark:text-white border-gray-300 border border-black/60 w-full max-sm:py-1"
+                className="px-4 text-sm py-2 rounded-lg mt-1 dark:bg-slate-800 dark:text-white border-gray-300 border border-black/60 w-full max-sm:py-1"
                 required
               />
               {/* <label htmlFor="first" className="text-sm dark:text-white">
                 First
               </label> */}
             </div>
-            <div className="w-1/2 flex flex-col max-sm:w-full">
+            <div className="md:w-1/2 flex flex-col w-full">
               <label className=" font-medium max-sm:text-base dark:text-white">
                 Last Name <span className="text-red-600">*</span>
               </label>
@@ -161,7 +161,7 @@ const ContactForm = () => {
                 contact_type="text"
                 id="last"
                 placeholder="Enter your Last Name...." 
-                className="px-4 py-2 dark:bg-slate-800 border-gray-300 dark:text-white border border-black/60 w-full max-sm:py-1"
+                className="px-4 py-2  text-sm  rounded-lg mt-1 dark:bg-slate-800 border-gray-300 dark:text-white border border-black/60 w-full max-sm:py-1"
                 required
               />
               {/* <label htmlFor="last" className="text-sm dark:text-white">
@@ -171,8 +171,8 @@ const ContactForm = () => {
           </div>
         </div>
         {/* Email & Phone */}
-        <div className="flex gap-8 w-full max-sm:flex-col max-sm:gap-4">
-          <div className="flex-col flex w-1/2 max-sm:w-full">
+        <div className="flex gap-8 w-full flex-col md:flex-row">
+          <div className="md:w-1/2 flex flex-col w-full">
             <label className=" font-medium dark:text-white" htmlFor="email">
               Email <span className="text-red-600">*</span>
             </label>
@@ -184,12 +184,12 @@ const ContactForm = () => {
               contact_type="email"
               id="email"
               placeholder="Enter your email address...."
-              className="px-4 py-2 dark:bg-slate-800 border-gray-300 border dark:text-white border-black/60 w-full max-sm:py-1"
+              className="px-4 py-2  text-sm  rounded-lg mt-1 dark:bg-slate-800 border-gray-300 border dark:text-white border-black/60 w-full max-sm:py-1"
               required
             />
           </div>
 
-          <div className="flex-col flex w-1/2 max-sm:w-full">
+          <div className="md:w-1/2 flex flex-col w-full">
             <label className=" font-medium dark:text-white" htmlFor="phone">
               Phone <span className="text-red-600">*</span>
             </label>
@@ -203,14 +203,14 @@ const ContactForm = () => {
               inputMode="numeric"
               maxLength={10}
               placeholder="Enter your contact number..."
-              className="px-4 py-2 dark:bg-slate-800 border-gray-300 border dark:text-white border-black/60 w-full max-sm:py-1"
+              className="px-4 py-2  text-sm  rounded-lg mt-1 dark:bg-slate-800 border-gray-300 border dark:text-white border-black/60 w-full max-sm:py-1"
             />
           </div>
         </div>
 
         {/* Company */}
-        <div className="flex gap-8 w-full max-sm:flex-col max-sm:gap-4">
-          <div className="flex-col flex w-1/2 max-sm:w-full">
+        <div className="flex gap-8 w-full flex-col md:flex-row">
+          <div className="md:w-1/2 flex flex-col w-full">
             <label className=" font-medium dark:text-white" htmlFor="industry">
               Type
             </label>
@@ -220,7 +220,7 @@ const ContactForm = () => {
                 setFormData({ ...formData, contact_type: e.target.value });
               }}
               id="industry"
-              className="px-4 py-2 dark:bg-slate-800 border border-gray-300 dark:text-white border-black/60 w-full max-sm:py-1"
+              className="px-4 py-2  text-sm  rounded-lg mt-1 dark:bg-slate-800 border border-gray-300 dark:text-white border-black/60 w-full max-sm:py-1"
             >
               <option value="">Select a Type</option>
               {industry.map((i) => (
@@ -230,7 +230,7 @@ const ContactForm = () => {
               ))}
             </select>
           </div>
-          <div className="flex-col flex w-1/2 max-sm:w-full">
+          <div className="md:w-1/2 flex flex-col w-full">
             <label className=" font-medium dark:text-white" htmlFor="company">
               Institute <span className="text-red-600">*</span>
             </label>
@@ -242,7 +242,7 @@ const ContactForm = () => {
               contact_type="text"
               id="company"
               placeholder="Enter your University...." 
-              className="px-4 py-2 border dark:bg-slate-800 border-gray-300 dark:text-white border-black/60 w-full max-sm:py-1"
+              className="px-4 py-2  text-sm  rounded-lg mt-1 border dark:bg-slate-800 border-gray-300 dark:text-white border-black/60 w-full max-sm:py-1"
               required
             />
 
@@ -264,12 +264,12 @@ const ContactForm = () => {
             contact_type="text"
             id="agency"
             placeholder="Enter your position...."
-            className="px-2 py-2 dark:bg-slate-800 border-gray-300 border dark:text-white border-black/60 w-full max-sm:py-1"
+            className="px-2 py-2 rounded-lg  text-sm  mt-1 dark:bg-slate-800 border-gray-300 border dark:text-white border-black/60 w-full max-sm:py-1"
           />
         </div>
         {/* Job & Industry
         <div className="flex gap-8 w-full max-sm:flex-col max-sm:gap-4">
-          <div className="flex-col flex w-1/2 max-sm:w-full">
+          <div className="md:w-1/2 flex flex-col w-full">
             <label
               className=" font-medium dark:text-white"
               htmlFor="job"
@@ -283,7 +283,7 @@ const ContactForm = () => {
               }}
               contact_type="text"
               id="job"
-              className="px-4 py-2 border border-black/60 w-full max-sm:py-1"
+              className="px-4 py-2 rounded-lg mt-1 border border-black/60 w-full max-sm:py-1"
             />
           </div>
         </div> */}
@@ -301,11 +301,11 @@ const ContactForm = () => {
             rows={4}
             id="help"
             placeholder="Write us to..."
-            className="px-4 py-2 border dark:bg-slate-800 border-gray-300 dark:text-white border-black/60 w-full mt-2 max-sm:py-1"
+            className="px-4 py-2 rounded-lg  text-sm  border dark:bg-slate-800 border-gray-300 dark:text-white border-black/60 w-full mt-2 max-sm:py-1"
           ></textarea>
           <button
             contact_type="submit"
-            className="px-6 py-2 mt-4 uppercase rounded-full bg-indigo-500 text-white border-black hover:bg-indigo-600 max-sm:text-sm max-sm:px-4 max-sm:py-1"
+            className="px-6 py-2 mt-4 font-semibold rounded-full bg-black dark:bg-indigo-600 text-center text-white border-black hover:bg-indigo-600 max-sm:text-sm max-sm:px-4 max-sm:py-1"
           >
             {loading ? "Loading..." : "Submit"}
           </button>

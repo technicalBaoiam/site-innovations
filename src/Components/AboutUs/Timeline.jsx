@@ -20,26 +20,26 @@ const MilestoneCard = ({ icon: Icon, description }) => (
 
 const Timeline = () => {
   useEffect(() => {
-   
+
     gsap.fromTo('.sec4',
       {
-        opacity:0,
-        y:30
+        opacity: 0,
+        y: 30
       },
       {
-        opacity:1,
-        y:0,
-        duration:1,
-        ease:'power1.out',
-        stagger:0.2,
-        scrollTrigger:{
-          trigger:'.secdiv4',
-          start:'top 70%',
-          end:'bottom 80%'
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power1.out',
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: '.secdiv4',
+          start: 'top 70%',
+          end: 'bottom 80%'
         }
       }
     )
-   
+
   }, []);
 
   return (

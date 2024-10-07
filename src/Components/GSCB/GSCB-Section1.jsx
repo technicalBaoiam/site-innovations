@@ -173,9 +173,9 @@ const Section1 = ({ dark }) => {
           </p>
         </div>
 
-        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 max-md:grid-cols-1">
+        <div className=" grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10 md:mx-20 max-md:grid-cols-1">
           {/* Step 1 */}
-          <div className="cards flex flex-col items-center bg-white dark:bg-white/10 dark:border dark:border-white p-6 lg:p-8 rounded-lg shadow-md hover:shadow-lg dark:shadow-gray-200 transition-shadow duration-300">
+          <div className="cards flex flex-col items-center bg-white dark:bg-white/10 p-6 lg:p-8 rounded-lg">
             <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
               <span className="text-2xl font-bold">
                 <BsFillEnvelopeAtFill />
@@ -184,13 +184,13 @@ const Section1 = ({ dark }) => {
             <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200 max-xs:text-lg">
               Submit an Inquiry
             </h3>
-            <p className="text-sm lg:text-lg text-gray-600 dark:text-gray-400 text-center max-xs:text-base">
+            <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 text-center">
               Submit an inquiry via the partnership form below.
             </p>
           </div>
 
           {/* Step 2 */}
-          <div className="cards flex flex-col items-center bg-white dark:bg-white/10 dark:border dark:border-white p-6 lg:p-8 rounded-lg shadow-md hover:shadow-lg dark:shadow-gray-200 transition-shadow duration-300">
+          <div className="cards flex flex-col items-center bg-white dark:bg-white/10  p-6 lg:p-8 rounded-lg">
             <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
               <span className="text-2xl font-bold">
                 <MdPreview />
@@ -199,14 +199,14 @@ const Section1 = ({ dark }) => {
             <h3 className="text-xl lg:text-2xl font-semibold mb-4 text-gray-800 dark:text-gray-200 max-xs:text-lg">
               Review & Discuss
             </h3>
-            <p className="text-sm lg:text-lg text-gray-600 dark:text-gray-400 text-center max-xs:text-base">
+            <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 text-center max-xs:text-base">
               Our team will review your institution’s goals and discuss how we
               can collaborate.
             </p>
           </div>
 
           {/* Step 3 */}
-          <div className="cards flex flex-col items-center bg-white dark:border dark:border-white  dark:bg-white/10 p-6 lg:p-8 rounded-lg shadow-md hover:shadow-lg dark:shadow-gray-200 transition-shadow duration-300">
+          <div className="cards flex flex-col items-center bg-white  dark:bg-white/10 p-6 lg:p-8 rounded-lg ">
             <div className="flex items-center justify-center bg-gradient-to-l from-pink-500  to-violet-600 text-white rounded-full w-16 h-16 mb-6">
               <span className="text-2xl font-bold">
                 <FaHandshake />
@@ -215,7 +215,7 @@ const Section1 = ({ dark }) => {
             <h3 className="text-xl lg:text-2xl font-semibold mb-4 w-full text-center text-gray-800 dark:text-gray-200 max-xs:text-lg">
               Tailored Partnership
             </h3>
-            <p className="text-sm lg:text-lg text-gray-600 dark:text-gray-400 text-center max-xs:text-base">
+            <p className="text-sm lg:text-base text-gray-600 dark:text-gray-400 text-center max-xs:text-base">
               Once approved, we will co-create a tailored partnership plan to
               meet your educational needs.
             </p>

@@ -52,7 +52,7 @@ const ProfileComp = ({ userInfo }) => {
   };
   // console.log(userInfo);
   const user = useSelector((state) => {
-    console.log(state);
+    console.log("inside profilecomp: ", state);
     return state.user;
   });
 
@@ -171,10 +171,10 @@ const ProfileComp = ({ userInfo }) => {
             </div>
             <div className="flex flex-col">
               <h1 className="text-indigo-600 font-semibold md:text-2xl mb-2">
-                {userInfo.first_name} {userInfo.last_name}
+                {user.profile.first_name} {user.profile.last_name}
               </h1>
               <div className="my-1 text-xs md:text-base">
-                {userInfo.is_email_verified ? (
+                {user.profile.is_email_verified ? (
                   <div className="text-green-700 flex items-center gap-3">
                     <AiOutlineCheckCircle size={17} /> <p>Email is verified</p>
                   </div>
@@ -193,48 +193,48 @@ const ProfileComp = ({ userInfo }) => {
               </div>
               <div className="my-1 text-xs md:text-base">
                 Email:
-                <span className="text-indigo-600"> {userInfo.email}</span>
+                <span className="text-indigo-600"> {user.profile.email}</span>
               </div>
-              {userInfo.mobile_number && (
+              {user.profile.mobile_number && (
                 <div className="my-1 text-xs md:text-base">
                   Mobile:
                   <span className="text-indigo-600">
                     {" "}
-                    {userInfo.mobile_number}
+                    {user.profile.mobile_number}
                   </span>
                 </div>
               )}
-              {userInfo.college_name && (
+              {user.profile.college_name && (
                 <div className="my-1 text-xs md:text-base">
                   College:
                   <span className="text-indigo-600">
                     {" "}
-                    {userInfo.college_name}
+                    {user.profile.college_name}
                   </span>
                 </div>
               )}
-              {userInfo.school_name && (
+              {user.profile.school_name && (
                 <div className="my-1 text-xs md:text-base">
                   School:
                   <span className="text-indigo-600">
                     {" "}
-                    {userInfo.school_name}
+                    {user.profile.school_name}
                   </span>
                 </div>
               )}
               <div className="flex items-center gap-2 mt-4 max-xs:mt-2">
-                {userInfo.linkedin && (
-                  <Link to={userInfo.linkedin}>
+                {user.profile.linkedin && (
+                  <Link to={user.profile.linkedin}>
                     <FaLinkedin className="bg-indigo-500 size-6 p-1 rounded-full text-white" />
                   </Link>
                 )}
-                {userInfo.github && (
-                  <Link to={userInfo.github}>
+                {user.profile.github && (
+                  <Link to={user.profile.github}>
                     <FaGithub className="bg-indigo-500 size-6 p-1 rounded-full text-white" />
                   </Link>
                 )}
-                {userInfo.instagram && (
-                  <Link to={userInfo.instagram}>
+                {user.profile.instagram && (
+                  <Link to={user.profile.instagram}>
                     <FaInstagram className="bg-indigo-500 size-6 p-1 rounded-full text-white" />
                   </Link>
                 )}

@@ -43,7 +43,7 @@ const CourseNav = ({ setShow, course }) => {
   return (
     <div>
       <div className="flex flex-col h-fit w-fit p-1">
-        {label.map((c, i) => {
+        {label.map((c, i) => { 
           return (
             <div
               key={i}
@@ -69,7 +69,7 @@ const CourseNav = ({ setShow, course }) => {
         <div className="absolute top-0 ml-0.5 py-3 left-72 overflow-y-scroll w-72 overflow-x-hidden bg-white dark:bg-black dark:border-white border-black/50 border-[1px] text-sm p-1 shadow-lg z-50 dark:text-white rounded-md">
           {course[0]?.courses?.map((sub, index) => {
             return (
-              <div key={index} className="pl-3 hover:bg-slate-200 mb-1 py-1 hover:text-amber-600 rounded dark:hover:bg-indigo-500 dark:hover:text-white">
+              <div key={index} className="pl-3 hover:bg-slate-200 mb-1 py-1 hover:text-amber-600 rounded dark:hover:bg-slate-700 dark:hover:text-white">
                 <Link
                   onClick={() => setShow(false)}
                   to={`/course/${sub.slug}/${sub.id}`}

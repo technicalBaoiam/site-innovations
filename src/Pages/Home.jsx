@@ -19,32 +19,34 @@ import { universities } from "../assets/Universities/Universities";
 import OurReach from "../Components/Home/OurReach";
 import ExploreSubjects from "../Components/College/ExploreSubjects";
 import TeamCard from "../Components/Home/TeamCard";
+import { swiperData } from "./../Components/OurTeam Components/teamData";
+
 import { TeamSwiper } from "../Components/OurTeam Components/TeamSwiper";
 const Home = ({ dark }) => {
   document.title = "Baoiam Innovations | Home";
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="w-full">
       {/* <div className="max-w-11/12 mx-auto"> */}
-        <Hero />
-        <How />
-        {/* <ExploreSubjects /> */}
-        <Slider />
-        <ServicesTab />
-        <Partners />
-        <Courses />
-        <Categories />
-        <UniversityPartners />
+      <Hero />
+      <How />
+      {/* <ExploreSubjects /> */}
+      <Slider />
+      <ServicesTab />
+      <Partners />
+      <Courses />
+      <Categories />
+      <UniversityPartners />
 
-        <Protocol />
-        {/* <JoinNow /> */}
-        <OurTeam />
-        {/* <TeamCard /> */}
-        {/* <TeamSwiper /> */}
-        <Phone />
+      <Protocol />
+      {/* <JoinNow /> */}
+      <OurTeam data={swiperData} />
+      {/* <TeamCard /> */}
+      {/* <TeamSwiper /> */}
+      <Phone />
       {/* </div> */}
-    </>
+    </div>
   );
 };
 

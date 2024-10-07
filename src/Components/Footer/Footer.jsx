@@ -22,10 +22,10 @@ import { LogoDark, LogoLight } from "../../assets/assets";
 function Footer({ dark }) {
   const navigate = useNavigate();
   return (
-    <footer className="bg-zinc-100 dark:bg-black dark:text-white">
+    <footer className="bg-zinc-100 dark:bg-white/10 dark:text-white">
       <div className="mx-auto px-4 pt-7 md:pt-14">
         <div className="flex md:px-10 flex-col gap-6 md:flex-row w-full">
-          <div onClick={() => navigate("/")} className={`w-[44%] md:w-[14%] `}>
+          <div onClick={() => navigate("/")} className={`w-[34%] md:w-[10%] `}>
             <img
               src={dark ? LogoDark : LogoLight}
               className="w-full"
@@ -304,7 +304,7 @@ function Footer({ dark }) {
         <hr className="h-[1.4px] bg-slate-500" />
         <div className="py-4 md:px-20">
           <div className="flex flex-col gap-2 md:gap-0 md:flex-row items-center justify-between text-left">
-            <div className="text-[0.6rem] md:text-xs flex items-center gap-4 text-black">
+            <div className="text-[0.6rem] flex items-center gap-4 text-black">
               <Link
                 to={"/terms-conditions"}
                 className="text-black dark:text-white text-nowrap flex items-center"

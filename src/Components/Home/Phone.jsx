@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { App_phone } from "../../assets/assets";
 import { FaCheckCircle } from "react-icons/fa";
 import axios from "axios";
@@ -55,60 +55,6 @@ const Phone = () => {
   };
 
 
-useEffect(() => {
-
-  const tl = gsap.timeline({
-    scrollTrigger:{
-      trigger:'.sectionEnd',
-      start:'top 60%',
-      end:'bottom 80%'
-    }
-  })
-
-
-  tl.fromTo('.txtimg',{
-    opacity:0,
-    scale:0.7,
-  },
-  {
-    opacity:1,
-    scale:1,
-    duration:0.6,
-    ease:'power1.out',
-    stagger:0.2,
-  }
-)
-
-tl.fromTo('.txt1',{
-  opacity:0,
-  y:30
-},
-{
-  opacity:1,
-  y:0,
-  duration:0.6,
-  ease:'power1.out',
-  stagger:0.2,
-},
-'-=0.5')
-
-tl.fromTo('.txt2',{
-  opacity:0,
-  scale:0.7,
-},
-{
-  opacity:1,
-  scale:1,
-  duration:0.4,
-  ease:'power1.out',
-  stagger:0.2,
-}
-)
-
-
-},[])
-
-
   return (
     <>
       {showPopup && (
@@ -150,7 +96,7 @@ tl.fromTo('.txt2',{
           </div>
         </div>
       )}
-      <div className="sectionEnd flex w-full gap-8 pb-20 py-10 dark:bg-[#010203] dark:text-white items-center mx-auto justify-center flex-col md:flex-row">
+      <div className="Phonediv flex w-full gap-8 pb-20 py-10 dark:bg-[#010203] dark:text-white items-center mx-auto justify-center flex-col md:flex-row">
         <div className="txtimg w-40 md:w-[23%]">
           <img src={App_phone} className="w-full" alt="Android app-Baoiam" />
         </div>
@@ -224,7 +170,7 @@ tl.fromTo('.txt2',{
               Join now
             </button>
           </div> */}
-            <div className="txt2 w-fit flex p-1 rounded-full text-left border focus-within:border-gray-700">
+            <div className="w-fit flex p-1 rounded-full text-left border focus-within:border-gray-700">
               <input
                 type="email"
                 ref={emailRef}

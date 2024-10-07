@@ -38,7 +38,7 @@ tl.fromTo('.heroimg',{opacity:0,scale:0.9},
   };
 
   return (
-    <div className="bg-white md:py-10 dark:bg-[#010203] dark:text-white flex flex-col-reverse md:flex-row px-8 lg:px-20 lg:-mt-16 items-center">
+    <div className="HomeHero bg-white md:py-10 dark:bg-[#010203] dark:text-white flex flex-col-reverse md:flex-row px-8 lg:px-20 lg:-mt-16 items-center">
       {/* Left Side: Heading and Content */}
       <div
         className="w-full flex mx-auto md:pl-5 gap-y-1 pb-10 md:pb-0 flex-col lg:w-1/2 text-center md:text-left"
@@ -46,9 +46,9 @@ tl.fromTo('.heroimg',{opacity:0,scale:0.9},
         <h1 className="hero1 text-3xl md:text-4xl lg:text-5xl font-extrabold">
           Your{" "}
           <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
-            Success,
-          </span>{" "}
-          Our <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+            Success
+          </span>
+          ,{" "}Our <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
           Mission </span>
         </h1>
 

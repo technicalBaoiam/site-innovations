@@ -84,8 +84,7 @@ const Sidebar = () => {
 
   const handleLogoutClick = () => {
     // Perform any logout logic here (e.g., clearing authentication tokens)
-    localStorage.removeItem("access_token");
-    localStorage.removeItem("userInfo");
+    localStorage.clear();
     navigate("/login", { replace: true });
   };
 
