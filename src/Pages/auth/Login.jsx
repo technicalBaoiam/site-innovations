@@ -265,7 +265,7 @@ const Login = () => {
   }, []);
 
   return (
-    <>
+    <div className="-mt-24">
       <ToastContainer />
 
       <div className="flex items-center justify-center h-screen w-screen py-2 bg-transparent relative overflow-hidden z-3 dark:text-black">
@@ -399,7 +399,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

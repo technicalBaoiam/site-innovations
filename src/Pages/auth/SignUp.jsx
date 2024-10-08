@@ -232,7 +232,7 @@ const SignUp = () => {
   }, []);
 
   return (
-    <section className="relative overflow-hidden w-screen h-screen">
+    <section className="relative overflow-hidden -mt-24 w-screen h-screen">
       {showPopup && (
         <div className="fixed inset-0 flex items-center justify-center z-50">
           {/* Overlay */}
@@ -285,7 +285,7 @@ const SignUp = () => {
         className=" w-[400px] h-[400px] bottom-[-15%] right-[-5%]  rounded-full blur-3xl bg-gradient-to-r from-indigo-600 to-teal-400 opacity-40 absolute "
         ></div>
       {/* <div className="py-5"> */}
-        <div className="mx-auto  flex items-center justify-center w-full h-screen  my-auto px-4 sm:px-1 lg:px-8 ">
+        <div className="mx-auto  flex items-center justify-center w-screen h-screen my-auto px-4 sm:px-1 md:px-8 ">
           <div className="flex justify-center  lg:px-[6rem]  ">
             <div className="relative  dark:bg-zinc-500  bg-zinc-200 overflow-hidden w-[40vw] lg:w-[32vw] hidden md:block md:rounded-l-2xl">
               {/* Animated Circles in Background */}
