@@ -162,7 +162,7 @@ export default function SliderSection() {
                       </p>
                       <button
                         onClick={() =>
-                          navigate(`/course/${slide.title}/${slide.id}`)
+                          navigate(`/course/${slide.slug}/${slide.id}`)
                         }
                         className="bg-gradient-to-r text-xs rounded-md from-amber-500 to-red-600 text-white mb-6 px-3 py-1 font-semibold hover:bg-gradient-to-l"
                       >
