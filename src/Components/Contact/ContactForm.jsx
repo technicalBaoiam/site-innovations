@@ -24,114 +24,6 @@ import thumbsUp from "../../assets/Images/thumbs-up (1).gif";
 import { TbCircleCheckFilled } from "react-icons/tb";
 
 
-const ContactUs = () => {
-  // const togglePopup = () => {
-  //   setShowPopup(true);
-  //   setAnimatePing(true);
-
-  //   // Remove ping animation after a short duration
-  //   setTimeout(() => {
-  //     setAnimatePing(false);
-  //   }, 1000); // Adjust duration as needed
-  // };
-
-  return (
-    <div className="ContactUs my-8">
-      <section className="relative bg-white px-4 py-8 md:py-10 z-10 mt-4 md:mt-14 mb-6 overflow-hidden">
-        <div className="relative max-w-5xl mx-auto text-center z-10">
-          <h1 className="text-3xl md:text-5xl font-semibold text-gray-900">
-            <span className="bg-gradient-to-r from-pink-500  to-violet-600 bg-clip-text text-transparent">
-              Get in Touch
-            </span>{" "}
-            with Us
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 mt-4 md:mt-6">
-            Have any questions, feedback, or need assistance? We're just a
-            message away.
-            <br /> Fill out the form below, and our team will get back to you
-            shortly.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-2 px-4 md:px-6 bg-white rounded-xl">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6 lg:gap-12">
-          <div className="lg:w-3/5 space-y-4">
-            <div className="bg-white p-6 lg:p-8 rounded-lg border">
-              <h2 className="text-xl md:text-2xl font-bold mb-4">
-                Contact Information
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <FaEnvelope className="mr-4" />
-                  <a href="mailto:support@baoiam.com" className="underline">
-                    support@baoiam.com
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <FaPhoneAlt className="mr-4" />
-                  <a href="tel:08069640635" className="underline">
-                    08069640635
-                  </a>
-                </div>
-                <div className="flex items-center">
-                  <FaMapMarkerAlt className="mr-4" />
-                  <a href="#" className="underline">
-                    B Block Noida Sector 15 Uttar Pradesh
-                  </a>
-                </div>
-              </div>
-              <div className="flex justify-start gap-4 mt-6">
-                <Link
-                  to="https://www.facebook.com/people/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF/100064896061625/"
-                  target="_blank"
-                  className="text-black dark:text-white hover:text-gray-500"
-                >
-                  <FaFacebook size={22} />
-                </Link>
-                <Link
-                  to="https://www.instagram.com/baoiam_innovations/"
-                  target="_blank"
-                  className="text-black dark:text-white hover:text-gray-500"
-                >
-                  <FaInstagram size={22} />
-                </Link>
-                <Link
-                  to="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/mycompany/"
-                  target="_blank"
-                  className="text-black dark:text-white hover:text-gray-500"
-                >
-                  <FaLinkedin size={22} />
-                </Link>
-                <Link
-                  to="https://twitter.com/BAOIAM1"
-                  target="_blank"
-                  className="text-black text-nowrap flex items-center dark:text-white hover:text-gray-500"
-                >
-                  <FaSquareXTwitter size={22} />
-                </Link>
-              </div>
-
-              <div className="h-56 w-full mt-6 md:mt-8">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56778.23569201361!2d77.29743635795448!3d28.56460407812812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3036ecb3b95%3A0x927e51f17b1aeb5b!2sB%20Block%2C%20Sector%2015%2C%20Noida%2C%20Uttar%20Pradesh%20201021!5e0!3m2!1sen!2sin!4v1694209323043"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  allowFullScreen=""
-                  aria-hidden="false"
-                  tabIndex="0"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default ContactUs;
 
 export const ContactFormComponent = () => {
   const [category, setCategory] = useState("");
@@ -229,7 +121,21 @@ export const ContactFormComponent = () => {
       }
     } catch (error) {
       setLoading(false);
-      toast.error("An error occurred",error);
+       const errorMessages = error.response?.data?.student_full_name || [];
+    
+    // Customize the error message based on the content
+    let errorMessage = "An unexpected error occurred. Please try again.";
+    
+    if (errorMessages.length > 0) {
+      // Check for specific error messages and customize them
+      if (errorMessages.includes("Full name must include at least a first name and a last name.")) {
+        errorMessage = "Please enter both your first and last name.";
+      } else {
+        errorMessage = errorMessages[0]; // Use the first message from the server
+      }
+    }
+      // Display the error message using toast
+      toast.error(errorMessage);
       console.error("Error submitting form", error);
     }
   };
