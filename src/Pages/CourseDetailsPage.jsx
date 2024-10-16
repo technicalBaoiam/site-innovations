@@ -100,7 +100,7 @@ const CourseDetailsPage = () => {
 
     window.addEventListener("scroll", handleScroll);
   }, [dispatch, id, courseData, status]);
-  console.log(courseData, " courseData action");
+  // console.log(courseData, " courseData action");
   // console.log(courses, ' courses dkdkdkdk action')
   if (status === "loading" && !courseData) {
     return (
@@ -375,7 +375,10 @@ const CourseDetailsPage = () => {
                 );
               })}
             </div>
-            <div className="flex w-full justify-center">
+            <div className="flex flex-col items-center w-full justify-center">
+              <p className="font-bold text-orange-600 text-2xl mb-6 dark:text-amber-500">
+                {`at ₹${courseData?.course?.plans?.[0].price}/-`}
+              </p>
               <button
                 onClick={() => dispatch(toggleEnrollForm())}
                 className="relative inline-flex mx-auto w-fit hover:bg-gradient-to-l bg-gradient-to-r from-amber-500 to-red-600 px-6 md:px-8 lg:px-12 py-2 md:py-3 text-xs md:text-sm overflow-hidden text-white font-medium border border-orange-400 rounded-lg group"
@@ -387,6 +390,18 @@ const CourseDetailsPage = () => {
                 <span className="relative text-nowrap">Enroll Now</span>
               </button>
             </div>
+            {/* Price and Button */}
+            {/* <div className="mt-auto flex justify-between items-center">
+              <p className="font-bold text-orange-600 text-base mb-6 dark:text-amber-500">
+                {`₹ ${courseData?.course?.plans?.[0].price}`}
+              </p>
+              <button
+                onClick={() => <p>p</p>}
+                className="bg-gradient-to-r text-xs rounded-md from-amber-500 to-red-600 text-white mb-6 px-3 py-1 font-semibold hover:bg-gradient-to-l"
+              >
+                View More
+              </button>
+            </div> */}
           </div>
         </div>
       </div>

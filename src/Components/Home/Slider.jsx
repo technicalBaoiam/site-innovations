@@ -10,7 +10,7 @@ import { School } from "../../Data";
 import { categories } from "../../assets/swiper-imgs/categories"; // Import JSON data
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFeaturedCourses } from '../../Redux/slices/courseSlice'; // Adjust the import path as necessary
+import { fetchFeaturedCourses } from "../../Redux/slices/courseSlice"; // Adjust the import path as necessary
 import { BeatLoader } from "react-spinners";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -22,50 +22,50 @@ export default function SliderSection() {
 
   // redux start
   const dispatch = useDispatch();
-  const { featuredCourses, status, error } = useSelector((state) => state.courses);
-      
+  const { featuredCourses, status, error } = useSelector(
+    (state) => state.courses
+  );
+
   useEffect(() => {
     // console.log("Component rendered, current status:", status);
-    if (status === 'idle') {
+    if (status === "idle") {
       dispatch(fetchFeaturedCourses());
     }
   }, [dispatch, status]);
 
+  useLayoutEffect(() => {
+    let context = gsap.context(() => {
+      gsap.fromTo(
+        ".Homeslideranime",
+        {
+          opacity: 0,
+          y: 40,
+        },
+        {
+          opacity: 1,
 
- useLayoutEffect(() => {
-
-  let context = gsap.context(() => {
-
-  
-
-    gsap.fromTo('.Homeslideranime', {
-      opacity: 0,
-      y: 40,
-     
-    },
-      {
-        opacity: 1,
-       
-        y: 0,
-        duration: 1,
-        ease: 'power1.out',
-        stagger: 0.2,
-        scrollTrigger: {
-          trigger: '.Homeslidediv',
-          start: 'top 70%',
-          end: 'bottom 80%',
+          y: 0,
+          duration: 1,
+          ease: "power1.out",
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: ".Homeslidediv",
+            start: "top 70%",
+            end: "bottom 80%",
+          },
         }
-      })
-    })     
+      );
+    });
 
-    return () => context.revert()
+    return () => context.revert();
+  });
 
-  },)
-
-  if (status === 'loading') {
-    return <div className="flex justify-center items-center h-[90vh]">
-      <BeatLoader color="#4F46E5" loading={true} size={15} />
-    </div>;;
+  if (status === "loading") {
+    return (
+      <div className="flex justify-center items-center h-[90vh]">
+        <BeatLoader color="#4F46E5" loading={true} size={15} />
+      </div>
+    );
   }
   // redux end
 
@@ -73,7 +73,12 @@ export default function SliderSection() {
     return (
       <div className="slider-section Homeslidediv dark:bg-[#010203] w-full relative md:py-12 overflow-hidden ">
         <div className="text-center mb-0 lg:mb-8">
-          <h2 className="Homeslideranime text-3xl md:text-4xl font-extrabold mb-8">Featured <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent" >Courses</span></h2>
+          <h2 className="Homeslideranime text-3xl md:text-4xl font-extrabold mb-8">
+            Featured{" "}
+            <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">
+              Courses
+            </span>
+          </h2>
         </div>
 
         <div className="Homeslideanime mx-4 mt-8 md:mx-14">
@@ -134,16 +139,32 @@ export default function SliderSection() {
                   <div className="px-4 h-[45%] flex flex-col justify-between">
                     {/* Title and Description */}
                     <div className="flex flex-col space-y-1">
-                      <h3 className="font-extrabold pt-2 text-base md:text-lg text-nowrap">{slide.title}</h3>
+                      <h3 className="font-extrabold pt-2 text-base md:text-lg text-nowrap">
+                        {slide.title}
+                      </h3>
                       <p className="text-xs md:text-sm pr-3 line-clamp-3 text-slate-600 dark:text-slate-200">
                         {slide.description}
                       </p>
                     </div>
                     {/* View More Button */}
-                    <div className="self-end mb-6">
+                    {/* <div className="self-end mb-6">
                       <button
                         onClick={() => navigate(`/course/${slide.title}/${slide.id}`)}
                         className="bg-gradient-to-r w-fit rounded-md text-xs from-amber-500 to-red-600 text-white px-4 py-1 font-semibold hover:bg-gradient-to-l transition-all ease-in-out duration-300"
+                      >
+                        View More
+                      </button>
+                    </div> */}
+                    {/* Price and Button */}
+                    <div className="mt-auto flex justify-between items-center">
+                      <p className="font-bold text-orange-600 text-base mb-6 dark:text-amber-500">
+                        ₹{slide.plans[0].price}
+                      </p>
+                      <button
+                        onClick={() =>
+                          navigate(`/course/${slide.slug}/${slide.id}`)
+                        }
+                        className="bg-gradient-to-r text-xs rounded-md from-amber-500 to-red-600 text-white mb-6 px-3 py-1 font-semibold hover:bg-gradient-to-l"
                       >
                         View More
                       </button>
@@ -151,10 +172,7 @@ export default function SliderSection() {
                   </div>
                 </div>
               </SwiperSlide>
-            ))
-            }
-
-
+            ))}
           </Swiper>
         </div>
 
@@ -166,6 +184,6 @@ export default function SliderSection() {
           <button className="swiper-button-next text-indigo-500 transition"></button>
         </div>
       </div>
-    )
+    );
   }
 }
