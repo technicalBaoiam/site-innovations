@@ -160,7 +160,7 @@ export const swiperData = [
   {
     id: 1,
     image: t2,
-    name: "Mr. Virendra Singh",
+    name: "Mr. Virender Singh",
     role: "Head of Operations",
     linkedin: "",
     desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
@@ -181,5 +181,4 @@ export const swiperData = [
     linkedin: "",
     desc: "Started training at BAOIAM and got placed as a Entrepreneur with a package of 14 LPA. I would like to show my heartly gratitude to BAOIAM and its trainers for helping me out in building me career.",
   },
-  
-]
+];
