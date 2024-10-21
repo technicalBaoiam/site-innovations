@@ -39,17 +39,16 @@ const data = [
   {
     head: `
       <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>The path to a successful tech career: The Importance of web development skills</h1>
-      <div class='flex justify-center'><img src="${web_dev1}" class='mb-4 w-full'
+      <div class='flex justify-center pr-5'><img src="${web_dev1}" class='mb-4 w-full'
  /></div>
-      <p>Discover the importance of web development skills in today’s era. Learn why programming languages like JavaScript, HTML, and CSS are important for front-end, back-end, and full-stack development. Explore how mastering these skills can shape your path to a successful tech career.</p>
+      <p class=pr-5>Discover the importance of web development skills in today’s era. Learn why programming languages like JavaScript, HTML, and CSS are important for front-end, back-end, and full-stack development. Explore how mastering these skills can shape your path to a successful tech career.</p>
 
-    `,
-    body: `
-      <div>
-        <h2 class='font-bold text-lg mt-7 mb-3'>Introduction to Web Development in Tech Careers</h2>
-        <p>The tech industry is constantly growing and expanding , and web development is one of the most crucial skills for people who want to shape their career in this industry. Whether you are making a website, building an app, or optimizing a website, learning web development skills is important in a tech career. So let us know more about what these skills are and their importance.</p>
-        <h2 class='font-bold text-lg mt-7 mb-3'>Why Web Development Skills Are Essential</h2>
-        <ul class='list-disc ml-5'>
+
+       <div>
+        <h2 class='font-bold text-lg mt-7 mb-3 pr-5'>Introduction to Web Development in Tech Careers</h2>
+        <p class='pr-5'>The tech industry is constantly growing and expanding , and web development is one of the most crucial skills for people who want to shape their career in this industry. Whether you are making a website, building an app, or optimizing a website, learning web development skills is important in a tech career. So let us know more about what these skills are and their importance.</p>
+        <h2 class='font-bold text-lg mt-7 mb-3 pr-5'>Why Web Development Skills Are Essential</h2>
+        <ul class='list-disc ml-5 pr-5'>
         <li class='mt-2'><b>High Demand for Web Developers:</b>Web Developers are responsible for the proper functioning and the visual appearance of the web. They design it according to the needs and requirements of users making it user - friendly. As most of the companies are going digital, the demand of the web developer is increasing to make a strong presence of the company online.</li>
         <li class='mt-2'><b>Job Security:</b>As the digital world is expanding, web development is becoming the most crucial and high-demand job across the world. This increases the stability and job security for the web developers.</li>
         <li class='mt-2'><b>Continuous Learning and Growth:</b>As the tech industry keeps evolving and updating every day, it offers numerous new opportunities to the web developers. It helps them to keep up with the latest trends and technologies.</li>
@@ -57,8 +56,15 @@ const data = [
         <li class='mt-2'><b>Versatility Across Industries:</b>Every sector including finance, entertainment, businesses, or healthcare, needs a web developer. It gives a web developer an opportunity to work in diverse fields.</li>
 
         </ul>
-        <h2 class='font-bold text-lg mt-7 mb-3'>Core Web Development Skills to Master</h2>
-        <ul class='list-disc ml-5'>
+        </div>
+       
+
+    `,
+    body: `
+    
+    <div >
+       <h2 class='font-bold text-lg mt-7 mb-3 px-5'>Core Web Development Skills to Master</h2>
+        <ul class='list-disc ml-5 px-5'>
         <li class='mt-2'><b>HTML:</b>A web developer must master HTML( Hypertext Markup Language) as it is the foundation language which is used to give the structure of the content on a web. It contains headings, paragraphs,links, images, and more.</li>
         <li class='mt-2'><b>CSS:</b>Cascading Style Sheet is used to style and layout a web page — for example, to give the font, color, size, animation, etc.</li>
         <li class='mt-2'><b>JavaScript:</b>It is used to make a webpage interactive — for example, to update content, build web applications, animate images, and handle user input.</li>
@@ -70,8 +76,9 @@ const data = [
  <li class='mt-2'><b>Full Stack Development:</b>It covers both front - end and back - end development.</li>
 
         </ul>
-        <h2 class='font-bold text-lg mt-7 mb-3'>The Role of Web Development in Different Tech Careers</h2>
-        <ul class='list-disc ml-5'>
+     
+        <h2 class='font-bold text-lg mt-7 mb-3 px-5'>The Role of Web Development in Different Tech Careers</h2>
+        <ul class='list-disc ml-5 px-5'>
           <li class='mt-2'><b>Front - End Developer:</b>A front - end developer works on the client- side of the website. They use languages like HTML, CSS, and JavaScript to design and give the layout to the web. They make the web interactive, engaging, and user - friendly. They are responsible for making the strong presence of the web. They identify the bugs and fix them. They also keep the website updated.
 In short, all the things you can see on the web are done by a front- end developer.
 </li>
@@ -83,8 +90,8 @@ In short, all the things you can see on the web are done by a front- end develop
 <li class='mt-2'><b>E-commerce Developer:</b>As most of  the shops are going digital such as Amazon, Flipkart, Myntra, or Nykaa, the versatility of web developers is increasing. An E- Commerce Developer is responsible for building, managing, and optimizing online stores, online transactions, and performance.</li>
 
         </ul>
-        <h2 class='font-bold text-lg mt-7 mb-3'>Learning Pathways for Web Development</h2>
-        <ul class='list-disc ml-5'>
+        <h2 class='font-bold text-lg mt-7 mb-3 px-5'>Learning Pathways for Web Development</h2>
+        <ul class='list-disc  px-5'>
           <li class='mt-2'><b>Online Courses:</b><p>Platform like baoiam(<a style='text-decoration:underline' href='https://www.baoiam.com/'>https://www.baoiam.com/</a>), udemy(https://www.udemy.com/), and coursera(https://www.coursera.org/) offers complete web development courses.</p></li>
           <li class='mt-2'><b>Coding Bootcamps:</b><p>
             Coding Bootcamps offers training programs for a time period of 3 - 6 months, in which they give an opportunity to work on real - time projects.
@@ -100,28 +107,31 @@ In short, all the things you can see on the web are done by a front- end develop
           <li class='mt-2'><b>Formal Education:</b><p>You can also pursue a degree in computer science, information technology, or web development course from a college or university.</p></li>
         </ul>
       </div>
+     
     `,
   },
   {
     head: `
     <h2 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>
      Challenges of Implementing Ed-Tech Companies And How  to Overcome Them.</h2>
-    <div><img src="${ed_tech}" class='mb-4'
+    <div class='pr-5'><img src="${ed_tech}" class='mb-4'
  /></div>
-    <p>Edtech is the new trend in the educational world more than that it is reshaping how education is delivered. successfully running an Ed-Tech company is not a cakewalk. It comes with its own set of challenges. Exploring the challenges of using technology in education becomes crucial, no matter whether you are a student or an aspiring Ed-tech entrepreneur.</p>
-    `,
-    body: `
-    <div>
-            <h1 class='font-bold text-lg mt-7 mb-3'>Key Challenges in Ed-Tech Implementation</h1>
+    <p class='pr-5'>Edtech is the new trend in the educational world more than that it is reshaping how education is delivered. successfully running an Ed-Tech company is not a cakewalk. It comes with its own set of challenges. Exploring the challenges of using technology in education becomes crucial, no matter whether you are a student or an aspiring Ed-tech entrepreneur.</p>
+
+     <h1 class='font-bold text-lg mt-7 mb-3'>Key Challenges in Ed-Tech Implementation</h1>
             <p class='mb-5'>Here is a breakdown of some of the challenges in the effective implementation of ed-tech:-</p>
-            <ol class='list-decimal ml-5'>
+            <ol class='list-decimal ml-5 mr-5'>
             <li class='mt-2'><b>To stand out: </b>When we have a lot of options in front of us to choose from we always seek the best. Similarly, when consumers (parents) and users (students) are on the hunt for the best ed-tech, they want something that adds extra value to their education that others cannot. In ed-tech, the real difficulty is to be different with the same content which others are also providing. That difference should be attractive, effective and productive at the same time.</li>
             <li class='mt-2'><b>Managing the user retention rate :</b>It's not difficult for an ed-tech company to make its consumers log in to their website by providing some free courses on their website. What is difficult is not to let them log out. Today with so many options to change anything conventionally, customers are difficult to gain.</li>
             <li class='mt-2'><b>Keeping up with trends in technology:</b>Technology change is very rapid. With the change in technology people's preference for content consumption is also changing. At the start of the ed-tech era a smart board and camera were enough to connect to students but nowadays not only a smart board but many other tech tools are required including some software for example an image of space is not enough, 3D  animation is needed for better understanding and retention of students. So keeping in touch with the dynamics of tech is very important for an edtech company.</li>
             <li class='mt-2'><b>Resistance to change:</b>Change is the only constant. Think if during the pandemic people had simply accepted the fact that schools and colleges would stay closed so would education, how would the world be today ? 2 years later? Yes but instead we chose to go over new ways of studying and teaching through different video meeting apps. Similarly, constantly changing the style to approach student learning should be changed for the better.</li>
-            <li class='mt-2'><b>Understanding the difference between consumer and user:</b> Here the consumer is the parent and the user is the student. In most of the ed-tech companies, parents are the ones who pay for them. Understanding their mindset might be a difficult task. </li>
+           <li class='mt-2'><b>Understanding the difference between consumer and user:</b> Here the consumer is the parent and the user is the student. In most of the ed-tech companies, parents are the ones who pay for them. Understanding their mindset might be a difficult task. </li>
             
             </ol>
+    `,
+    body: `
+    <div>
+           
             <h2  class='font-bold text-lg mt-7 mb-3'>How to overcome these challenges </h2>
              Understanding these hurdles is crucial for making the most out of educational technology. May seems to be overwhelming but it can be resolved by considering these key points:-
              <ol class='list-disc ml-5 mt-5 mb-5'>
@@ -139,18 +149,20 @@ In short, all the things you can see on the web are done by a front- end develop
   {
     head: `
     <div>
-    <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>The era of early childhood education:  take up changes, block challenges and, exercise of strategic tools </h1>
-    <div><img src="${era_of_early_childhood}" class='mb-4 w-full'
+    <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10 pr-5'>The era of early childhood education:  take up changes, block challenges and, exercise of strategic tools </h1>
+    <div><img src="${era_of_early_childhood}" class='mb-4 w-full pr-5'
  /></div>
-    <p>Early childhood education is crucial for a child's overall development, encompassing cognitive, emotional, and social growth. Educational videos and interactive learning tools are increasingly essential in this stage, as they provide engaging and age-appropriate content that enhances learning experiences. Discover the profound impact of EdTech in shaping early childhood education, fostering a strong foundation for lifelong learning.</p>
+ <div class='pr-5'>
+    <p >Early childhood education is crucial for a child's overall development, encompassing cognitive, emotional, and social growth. Educational videos and interactive learning tools are increasingly essential in this stage, as they provide engaging and age-appropriate content that enhances learning experiences. Discover the profound impact of EdTech in shaping early childhood education, fostering a strong foundation for lifelong learning.</p>
     </div>
+    <div class='pr-5'> <h2 class='font-bold text-lg mt-7 mb-3'>What is early childhood education technology? </h2>
+      <p class='mb-3'>In this changing era of technology, developing a child from early childhood is crucial. The Integration of edtech, a mix of fun learning educational technology with digital methods, has revolutionized how young children communicate and interact with others effectively. Ed tech can potentially transform your children's Future in this ed tech trends Era. </p>
+      <p class='mb-3'>Edtech refers To the use of digital tools and technologies specifically designed to gain the superior experiences of young children, typically at a very young age around eight years old. We have a vast range of edtech companies. They are ready to offer early childhood ed tech courses with the help of digital tools and Strategies. For young learners, various digital tools and strategies can significantly enhance their educational experiences.   </p>
+      <p class='mb-5'>Early childhood is that time of learning when children can adapt new tools and techniques easily with a fresh mind. Ed tech's impact on childhood education focuses on integrating digital tools and resources to enhance learning for young children. This area of education focuses on educational games and learning games. However, edtech tools like educational videos and teaching videos have made it easier for children to grasp easily. </p></div>
     `,
     body: `
     <div>
-      <h2 class='font-bold text-lg mt-7 mb-3'>What is early childhood education technology? </h2>
-      <p class='mb-3'>In this changing era of technology, developing a child from early childhood is crucial. The Integration of edtech, a mix of fun learning educational technology with digital methods, has revolutionized how young children communicate and interact with others effectively. Ed tech can potentially transform your children's Future in this ed tech trends Era. </p>
-      <p class='mb-3'>Edtech refers To the use of digital tools and technologies specifically designed to gain the superior experiences of young children, typically at a very young age around eight years old. We have a vast range of edtech companies. They are ready to offer early childhood ed tech courses with the help of digital tools and Strategies. For young learners, various digital tools and strategies can significantly enhance their educational experiences.   </p>
-      <p class='mb-5'>Early childhood is that time of learning when children can adapt new tools and techniques easily with a fresh mind. Ed tech's impact on childhood education focuses on integrating digital tools and resources to enhance learning for young children. This area of education focuses on educational games and learning games. However, edtech tools like educational videos and teaching videos have made it easier for children to grasp easily. </p>
+     
       <h2 class='font-bold text-lg mt-5 mb-3'>Exploring edtech - Tools and strategies for ed tech in early childhood </h2>
       <ul class='ml-5 list-disc'>
       <li class='mt-2'><b>Interactive methods with fun learning:</b>One of the most popular edtech childhood education Is the use of educational games and learning games. These methods make learning engaging and interactive. Our old traditional methods somehow failed to do this. For example, storytelling and games to learn English helps children to grasp basic language. These tools are designed to reinforce concepts that with the Help of a child can learn vocabulary grammar, correct pronunciation, and vocabulary.</li>
@@ -167,19 +179,21 @@ In short, all the things you can see on the web are done by a front- end develop
   {
     head: `
       <h2 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>The Rise of EdTech: How It’s Shaping Modern Education</h2>
-      <div class='flex justify-center'><img src="${new_excited_tech_edu1}" class='mb-4 w-full'
+      <div class='flex justify-center pr-5'><img src="${new_excited_tech_edu1}" class='mb-4 w-full '
  /></div>
-      <p>Here, uncover the rise of Edtech: how it’s shaping modern education. Education is the most prioritised sector that is evolving through the help of technology. In this blog, we share a detailed study of how technology gives a new insight to digital education.</p>
-    `,
-    body: `
-    
-      <div>
+      <p class='pr-5'>Here, uncover the rise of Edtech: how it’s shaping modern education. Education is the most prioritised sector that is evolving through the help of technology. In this blog, we share a detailed study of how technology gives a new insight to digital education.</p>
+      <div class='pr-5'>
       <h2 class='font-bold text-xl mt-5 mb-1'>WHAT IS EDUCATION TECHNOLOGY?</h2>
       <p>Education technology is a new edition of the modern era, aimed to provide new insight into education. Education institutions, schools and colleges share a common mission to provide their students with the knowledge and skills that form the basis of a successful future. Education technology (ed-tech) is an advancing tool in targeting this goal, and its advancement is opening the doors to featuring new ways to use it in today’s classrooms. Explore what ed-tech is, how it creates value among the students, its current trends, and how to keep pace in an increasingly connected 5g world. This generation has made exciting tools which are path breaking in the education sector and paved the way for new and updated technology. Using ed-tech in education can lead us to another dimension. </p>
       <div class='flex justify-center mt-3 mb-3'>
       <img src="${new_excited_tech_edu2}" class='w-full'/>
       </div>
       <p>Ed-tech has some unique tools that help to deliver knowledge and communication. It opens new ways to software, smart devices and electronics. These ed tech tools help to empower school faculty to teach more effectively and remotely, promote better knowledge retention for the students, and help to engage more students. In the current scenario,more ed-tech companies have flourished with their courses, Baoiam is among the top. Baoiam is offering courses like software testing, data analytics, UI/UX design, and Seo development through a smart board classroom.</p>
+    `,
+    body: `
+    
+      
+      
        <h2 class='font-bold text-xl mt-5 mb-1'>6 WAYS OF MODERN TECHNOLOGY ENHANCES EDUCATION </h2>
       <p>Aspirants today can expect an interactive learning experience beyond passive learning through sitting in a live classroom and listening to a lecture. Ed-tech enables faculty to prepare students for future skills and workplaces through digital learning.There are lots of digital education tools like Google Docs, Google Classroom, Grammarly, Assessment Tools, Animoto,Canva, Pear Deck etc. that can be used from the comfort of your home through digital classrooms. It emphasizes new ways of collaborative learning and engagement.</p>
       <p>Among the many benefits of education technology in the digital education are:</p>
@@ -203,19 +217,20 @@ In short, all the things you can see on the web are done by a front- end develop
   },
   {
     head: `
-      <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>Mastering Financial Literacy for All: Essential Skills for a Brighter Future</h1>
-      <div class='flex justify-center'><img src="${financial_literacy}" class='mb-4 w-full'
+      <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10 pr-5'>Mastering Financial Literacy for All: Essential Skills for a Brighter Future</h1>
+      <div class='flex justify-center pr-5'><img src="${financial_literacy}" class='mb-4 w-full'
  /></div>
-      <p>Knowing how to mastering financial literacy for all: essential skills for a brighter future, is a burning topic for the students belonging from the different age groups.Students are well aware about their financial needs and how to manage them properly. </p>
-    `,
-    body: `
-    <div>
-      <h2 class='font-bold text-lg mt-7 mb-3'>Introduction-</h2>
+      <p class='pr-5'>Knowing how to mastering financial literacy for all: essential skills for a brighter future, is a burning topic for the students belonging from the different age groups.Students are well aware about their financial needs and how to manage them properly. </p>
+      <div class='pr-5'> <h2 class='font-bold text-lg mt-7 mb-3'>Introduction-</h2>
       <p>Financial literacy for all is no longer a luxury but a necessity in today's globalised speedy world. Understanding money management, savings, investments, and debt can dramatically improve one’s quality of life and future prospects. The good news is that there are countless financial literacy resources for all available today, making it easier than ever to enhance your financial knowledge. This blog post will delve into the importance of financial literacy, key concepts to master, and the resources and courses that can guide your learning journey to the summit. Demand for financial literacy is rising to its verge, so all the Learning Platforms across India, here Baoiam is getting familiar to provide the knowledge of financial literacy.</p>
       <h2 class='font-bold text-lg mt-7 mb-3'>Why Financial Literacy Matters so far-</h2>
       <p>Financial literacy is part and parcel of our daily life because it provides the knowledge and skills needed to make informed financial decisions. Many adults find themselves in a dilemma when it comes to managing their finances, which can lead to poor decisions that negatively impact their lives. By knowing the foundational aspects of financial literacy, individuals can gain confidence and take control over their financial plans. Most informing features of financial education are-</p>
       <div class='flex justify-center mt-3 mb-3'><img src="${financial_literacy2}" class='w-full'/></div>
-      <ul class='list-disc ml-5'>
+     </div>
+    `,
+    body: `
+    <div>
+        <ul class='list-disc ml-5'>
         <li class='mt-2'><b>Reduces Stress:</b>If you are able to know how to manage your money, it will lead you with less financial anxiety.</li>
         <li class='mt-2'><b>Improves Decision-Making:</b>Financially literate individuals can make lucid and smarter choices, whether it's about spending,saving, or investing.</li>
         <li class='mt-2'><b>Preparation for Emergencies:</b>Being financially savvy prepares you for unexpected situations, like job loss or medical emergencies.</li>
@@ -288,19 +303,22 @@ In short, all the things you can see on the web are done by a front- end develop
   },
   {
     head: `
+    <div class='pr-5'>
       <h1 class='font-bold text-2xl lg:text-3xl md:text-2xl sm:text-2xl xs:text-xl mb-10'>Unlocking the Future of Education: Ed-Tech Latest Trends   </h1>
       <div class='flex justify-center'><img src="${ed_tech_latest_trends}" class='mb-4 w-full'
  /></div>
       <p>Ed-tech stands for Educational Technologies. It is the use of digital technologies, tools, and platforms to improve teaching, learning, and educational administration. Some successful EdTech companies are Baoiam, Coursera, Khan Academy, etc. </p>
-    `,
-    body: `
-      <p class='mt-5'> Let us have a glance at some of the new trends in Ed-Tech.</p>
+       <p class='mt-5'> Let us have a glance at some of the new trends in Ed-Tech.</p>
       <h2 class='font-bold text-lg mt-7 mb-3'> Personalized Learning Experiences:</h2>
       <p>One of the major changes in Ed-Tech is the transition towards personalized learning, in which material and pace are adapted to individual learners' requirements. Baoiam's platform employs AI-powered algorithms to evaluate students' strengths and weaknesses, allowing for personalized lesson plans that improve learning outcomes. This technique not only accommodates different learning styles but also keeps students engaged and motivated.</p>
       <h2 class='font-bold text-lg mt-7 mb-3'>E-learning and M-learning</h2>
       <div class='mt-3 mb-3 flex justify-center'>
         <img src="${e_learning}" class='w-full'/>
       </div>
+      </div>
+    `,
+    body: `
+     
       <p>Electronic learning (E-learning or web-based learning) is the easiest mode of education using the internet, multimedia, and other digital resources to provide curriculum, engage students, and evaluate their progress delivery. Mobile learning (M-learning) means the use of mobile devices such as smartphones, tablets, and other portable gadgets to facilitate learning and educational activities. Using their smartphones or tablets, students may participate in interactive activities, access multimedia content, and learn at their own pace anytime and anywhere.</p>
       <h2 class='font-bold text-lg mt-7 mb-3'> Gamification and Interactive Learning</h2>
       <p>Gamification has proven to be a game changer in education, making learning more enjoyable and engaging. To keep students involved, it uses gamified components, including quizzes, leaderboards, and interactive challenges. This strategy uses psychological characteristics of gaming, such as competitiveness and prizes, to boost student motivation and involvement.</p>
