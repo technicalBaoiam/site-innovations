@@ -324,30 +324,34 @@ const ITIE = () => {
       {/* ITIE */}
 
 
-<div className="relative flex flex-col-reverse md:flex-row items-center justify-center bg-white p-8 mt-8 md:p-16 mx-auto md:mx-20 rounded-3xl overflow-hidden">
+<div className="relative flex flex-col-reverse md:flex-row items-center justify-center bg-transparent p-8 mt-8 md:p-16 mx-auto md:mx-20 rounded-3xl">
   {/* Background Accent Shape */}
-  <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-indigo-300 via-pink-200 to-violet-300 opacity-30 rounded-full transform -translate-x-1/3 -translate-y-1/4 pointer-events-none"></div>
+  <div className="absolute top-0 -left-8 w-1/2 h-full opacity-50 dark:opacity-25 bg-gradient-to-br from-indigo-300 via-pink-200 to-violet-300 rounded-full transform -translate-x-1/3 -translate-y-1/4 pointer-events-none blur-3xl"></div>
 
   {/* Text Section */}
   <div className="relative text-section w-full md:w-1/2 text-center md:text-left z-10">
-    <h1 className="text-3xl sm:text-5xl md:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
-      Interns <span className="text-indigo-600">TEACH</span> Interns <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">EARN</span>
+    <h1 className="text-3xl sm:text-5xl md:text-5xl font-bold text-gray-900 dark:text-gray-200 leading-tight tracking-tight">
+      Interns <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">TEACH</span> Interns <span className="bg-gradient-to-r from-pink-500 to-violet-600 bg-clip-text text-transparent">EARN</span>
     </h1>
-    <h2 className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-700 mt-4">
+    <h2 className="text-2xl sm:text-3xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mt-4">
       ITIE Revolutionizes Internships
     </h2>
-    <p className="text-gray-600 mt-6 max-w-lg text-sm sm:text-base md:text-lg leading-relaxed">
+    <p className="text-gray-600 dark:text-gray-300 mt-6 max-w-lg text-sm leading-relaxed">
       Our mission is all about learning and sharing. Our platform is designed to help you gain knowledge, share your expertise with others, and earn rewards along the way.
     </p>
-    <button onClick={() => navigate('/Maintenance')} className="mt-8 inline-block bg-gradient-to-r from-indigo-800 to-indigo-500 text-white py-3 px-8 rounded-full text-lg shadow-lg transform hover:scale-105 hover:bg-gradient-to-l transition-transform duration-300 ease-in-out">
+    <button onClick={() => navigate('/Maintenance')} className="mt-8 inline-block bg-gradient-to-r from-indigo-800 to-indigo-500 text-white py-3 px-8 rounded-full text-sm shadow-lg transform hover:scale-105 hover:bg-gradient-to-l transition-transform duration-300 ease-in-out">
       I am Interested
     </button>
+
   </div>
 
   {/* Image Section */}
   <div className="relative image-section w-full md:w-1/2 mt-8 md:mt-0 flex justify-center z-10">
     <img src={hero} alt="Person pointing" className="w-full h-auto object-cover rounded-2xl transform hover:scale-105 transition-transform duration-300" />
   </div>
+
+  <div className="absolute -bottom-20 -right-20 w-1/2 h-full opacity-50 dark:opacity-25 bg-gradient-to-br from-indigo-300 via-pink-200 to-violet-300 rounded-full transform pointer-events-none blur-3xl"></div>
+
 </div>
 
 

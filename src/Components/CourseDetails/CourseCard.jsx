@@ -93,10 +93,10 @@ const CourseCard = () => {
                 </div>
               </div>
               <div className="mt-8 mb-3 flex items-center">
-                <div onClick={() => navigate("/Maintenance")} className="inline-block bg-blue-200 cursor-pointer border-2 border-indigo-600 rounded-lg px-3 py-1 text-sm font-semibold text-indigo-700 mx-2">
+                <div onClick={() => navigate("/Maintenance")} className="inline-block bg-blue-100 cursor-pointer rounded-lg px-3 py-1 text-sm font-semibold text-indigo-600 mx-2">
                   Plus
                 </div>
-                <div onClick={() => navigate("/Maintenance")} className="inline-block bg-blue-200 cursor-pointer border-2 border-indigo-600 rounded-lg px-2 py-1 text-sm font-semibold text-indigo-700">
+                <div onClick={() => navigate("/Maintenance")} className="inline-block bg-blue-100 cursor-pointer shadow rounded-lg px-2 py-1 text-sm font-semibold text-indigo-600">
                   Premium
                 </div>
               </div>

@@ -102,8 +102,8 @@ const App = () => {
           <Route
             path="/ITIE"
             element={
-              // <ITIE />
-              <Maintenance />
+               <ITIE />
+              // <Maintenance />
             }
           />
           <Route path="/signup" element={<SignUp />} />
